@@ -10,43 +10,26 @@
 
 @section('list-content')
     @parent
+  
 
-<div class="image-container set-full-height" style="background-image: url('images/wizard.jpg')">
-    <!--   Creative Tim Branding   -->
-    <a href="http://creative-tim.com">
-         <div class="logo-container">
-            <div class="logo">
-                <img src="images/new_logo.png">
-            </div>
-            <div class="brand">
-                Creative Tim
-            </div>
-        </div>
-    </a>
-    
-    <!--   Big container   -->
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-           
-            <!--      Wizard container        -->   
             <div class="wizard-container"> 
                 <form action="" method="">
                 <div class="card wizard-card ct-wizard-orange" id="wizard">
                 
                 <!--        You can switch "ct-wizard-orange"  with one of the next bright colors: "ct-wizard-blue", "ct-wizard-green", "ct-wizard-orange", "ct-wizard-red"             -->
                 
-                        <div class="wizard-header">
-                            <h3>
-                               <b>BUILD</b> YOUR PROFILE <br>
-                               <small>This information will let us know more about you.</small>
-                            </h3>
-                        </div>
-                        <ul>
+                      <div class="wizard-header">
+                          <h3>
+                             <b>BUILD</b> YOUR PROFILE <br>
+                             <small>This information will let us know more about you.</small>
+                          </h3>
+                      </div>
+
+                      <ul>
                             <li><a href="#about" data-toggle="tab">About</a></li>
                             <li><a href="#account" data-toggle="tab">Account</a></li>
                             <li><a href="#address" data-toggle="tab">Address</a></li>
-                        </ul>
+                      </ul>
                         <div class="tab-content">
                             <div class="tab-pane" id="about">
                               <div class="row">
@@ -157,7 +140,7 @@
                             </div>
                         </div>
                         <div class="wizard-footer">
-                                <div class="pull-right">
+                              <div class="pull-right">
                                     <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Next' />
                                     <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' />
         
@@ -169,56 +152,7 @@
                         </div>  
                 </div>
                 </form>
-            </div> <!-- wizard container -->
-        </div>
-        </div><!-- end row -->
-    </div> <!--  big container -->
-    
-    
-     <div class="footer">
-      <div class="container">
-             Made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>. Free download <a href="http://www.creative-tim.com/product/wizard">here.</a>
-      </div>
-    </div>
-    
-    <div class="fixed-plugin">
-        <div class="dropdown open">
-          <a href="#" data-toggle="dropdown"> 
-            <i class="fa fa-cog fa-2x"> </i>
-          </a>
-          <ul class="dropdown-menu">
-           <li class="active">
-                <a href="http://ct-freebies.herokuapp.com/wizard-demo-register">
-                   <img src="images/thumb_register.png">
-                   Register user flow
-                </a>
-            </li>
-            <li>
-                <a href="http://ct-freebies.herokuapp.com/wizard-demo-list-boat">
-                   <img src="images/thumb_list_boat.png">
-                   List your boat
-                </a>
-            </li>
-            <li>
-                <a href="http://ct-freebies.herokuapp.com/wizard-demo-list-place">
-                   <img src="images/thumb_list_place.png">
-                   List your place
-                </a>
-            </li>
-           <li>
-                <a href="http://ct-freebies.herokuapp.com/wizard-components" target="_blank" class="btn btn-default btn-fill">How to use</a>
-            </li>
-            <li>
-                <a href="http://www.creative-tim.com/product/wizard" target="_blank" class="btn btn-info btn-fill">Download, it's free!</a>
-            </li>
-            <li><a></a></li>
-          </ul>
-        </div>
-     </div>
-
-
-</div>
-    
+            </div> 
 
 
 <script>
@@ -226,24 +160,15 @@
 		$("#page").load("ballots");     
 	});
 
-</script>>
-
-<!--
-<script>
-    $(function(){
-        CRUD.url_base = 'ballots';
-        Helper.rules = {
-            'name':{ required : true },
-            'place'  : { required  : true }
-        };
-        Helper.messages = {
-            'name':{ required : 'Debe ingresar el nombre del paciente' },
-            'place' : { required : 'Debe ingresar el lugar a enviar' }
-        }
-//        Helper.validate('#form-create');
-    })
 </script>
--->
+
+
 {!! Html::script('app/helpers/crud_operate.js') !!}
 {!! Html::script('app/admin/generate.js') !!}
+
+
+{!! Html::script('wizar/js/jquery.bootstrap.wizard.js') !!}
+{!! Html::script('wizar/js/wizard.js') !!}
+
+
 @stop

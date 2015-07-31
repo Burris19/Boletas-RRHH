@@ -8,7 +8,7 @@
     </title>
     <meta name="author" content="Julian Hernandez">
     <meta name="robots" content="noindex, nofollow">
-
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 
     <!-- Icons -->
@@ -23,16 +23,18 @@
     <link rel="apple-touch-icon" href="img/icon180.png" sizes="180x180">
     <!-- END Icons -->
 
+    
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <!-- Stylesheets -->
     {!! Html::style('/css/app.css') !!}
     {!! Html::style('/assets/css/plugins.css') !!}
     {!! Html::style('/assets/css/main.css') !!}
     {!! Html::style('/assets/css/themes.css') !!}
     {!! Html::style('/assets/css/themes/flat.css') !!}
-    {!! Html::style('/wizard/src/bootstrap-wizard.css') !!}
-    {!! Html::style('/wizard/demo/chosen/chosen.css') !!}
+   
 
-    {!! Html::style('/css/app2.css') !!}
+    {!! Html::style('/wizar/css/bootstrap.min.css') !!}
+    {!! Html::style('/wizar/css/gsdk-base.css') !!}
 
     <!-- END Stylesheets -->
 

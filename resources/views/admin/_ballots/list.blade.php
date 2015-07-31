@@ -30,38 +30,15 @@
             <td>{{ $value->dp_name }}</td>
             <td>{{ $value->dp_name }}</td>
             <td>{{ $value->user->username }}</td>
-
             <td class="text-center">
                 <a href="{{ $value->id }}" data-toggle="tooltip" title="Descargar Imagen Boleta" class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>
                 <a href="{{ $value->id }}" data-toggle="tooltip" title="Descargar Imagen Boleta" class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>
                 <a href="{{ $value->id }}" data-toggle="tooltip" title="Descargar Imagen Boleta" class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>
             </td>
-
-
-
-
          </tr>
     @endforeach
 @stop
 
-<!--@include('admin._ballots.create') -->
-<div id="div-modal"></div>
-<!--
-<script>
-    $(function(){
-        CRUD.url_base = 'ballots';
-        Helper.rules = {
-            'name':{ required : true },
-            'place'  : { required  : true }
-        };
-        Helper.messages = {
-            'name':{ required : 'Debe ingresar el nombre del paciente' },
-            'place' : { required : 'Debe ingresar el lugar a enviar' }
-        }
-//        Helper.validate('#form-create');
-    })
-</script>
--->
 {!! Html::script('app/helpers/crud_operate.js') !!}
 {!! Html::script('app/admin/generate.js') !!}
 @stop
