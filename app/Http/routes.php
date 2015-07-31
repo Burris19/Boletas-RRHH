@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index');
+Route::get('home', 'HomeController@index');
+
+Route::group(['prefix'=>'/','namespace'=>'Admin'],function(){
+    Route::resource('ballots','BallotsController');
+    Route::resource('users','UsersController');
 });
+
+Route::controllers([
+	'/' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+
+
