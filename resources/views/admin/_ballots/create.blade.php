@@ -13,13 +13,17 @@
   
     <div class="wizard-container"> 
       <form action="" method="">
-        <div class="card wizard-card ct-wizard-orange" id="wizard">
+        <div class="card wizard-card ct-wizard-azzure" id="wizard">
           <ul>
-            <li><a href="#about" data-toggle="tab">Datos Personales</a></li>
-            <li><a href="#account" data-toggle="tab">Datos Familiares</a></li>
-            <li><a href="#address" data-toggle="tab">Datos Educativos</a></li>
-            <li><a href="#laboral" data-toggle="tab">Datos Laborales</a></li>
-            <li><a href="#presupuesto" data-toggle="tab">Datos Prosupuesto</a></li>
+            <li><a href="#about" data-toggle="tab">Personal</a></li>
+            <li><a href="#account" data-toggle="tab">Familiar</a></li>
+            <li><a href="#address" data-toggle="tab">Educativo</a></li>
+            <li><a href="#laboral" data-toggle="tab">Laboral</a></li>
+            <li><a href="#presupuesto" data-toggle="tab">Presupuesto</a></li>
+            <li><a href="#residencia" data-toggle="tab">Residencia</a></li>
+            <li><a href="#salud" data-toggle="tab">Salud</a></li>
+            <li><a href="#vecinos" data-toggle="tab">Vecinos</a></li>
+            
           </ul>
 
         <div class="tab-content">
@@ -523,62 +527,39 @@
                   </div>
                 </div>
 
-
               </div>
             </div>            
           </div>
 
-
+          <!-- Presupuesto Familiar -->
           <div class="tab-pane" id="presupuesto">
             <div class="row">
               <div class="col-sm-10 col-sm-offset-1">
                 <div class="row">
-                  <table class="table table-hover">                   
+                  <table class="table table-hover ">                   
                     <thead>                      
                       <tr>
-                        <th scope="col">Descripcion</th>                       
-                        <th scope="col">Ingresos</th>   
-                        <th scope="col">Egresos</th>
-                        <th scope="col">Diferencia</th>
+                        <th >Descripcion</th>                       
+                        <th >Ingresos</th>   
+                        <th >Egresos</th>
+                        <th >Diferencia</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="info">
-                        <th>Gastos de recreacion</th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>                        
-                      </tr>
-                                            <tr>
-                        <th>Gastos de recreacion</th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>                        
-                      </tr>
-                      <tr class="info">
-                        <th>Gastos de recreacion</th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>
-                        <th>
-                          <input type = "number" value="10">
-                        </th>                        
-                      </tr>
+                      @foreach(config('presupuesto.inputs') as $key => $description)
+                        <tr>
+                          <th><label>{{ $description }}</label></th>
+                          <th>
+                            <input type = "number" value="" class = "form-control" style="text-align: center" name="pf{{ $key + 1 }}" id="pf{{ $key + 1 }}">
+                          </th>
+                          <th>
+                            <input type = "number" value="" class = "form-control" style="text-align: center" name="pf{{ $key + 1 }}" id="pf{{ $key + 1 }}">
+                          </th>
+                          <th>
+                            <input type = "number" value="" class = "form-control" style="text-align: center" name="pf{{ $key + 1 }}" id="pf{{ $key + 1 }}">
+                          </th>                        
+                        </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -586,14 +567,118 @@
             </div>            
           </div>
 
+          <!-- Condiciones de Residencia -->
+          <div class="tab-pane" id="residencia">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <div class="row">
+                  @foreach(config('presupuesto.residencia') as $key => $description)
+                     <div class="row">
+                        <div class="form-group col-xs-12">
+                          <label>{{ $description }}</label>
+                          <input type = "text" class = "form-control" id = "cr{{ $key +1}}" name = "cr{{ $key + 1}}" placeholder = "{{ $description }}" required>                    
+                        </div>                                 
+                      </div>
+                  @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Salud -->
+          <div class="tab-pane" id="salud">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <!-- salud -->
+                <p class="bg-primary info-text">Cuadro de salud</p>
+                <div class="row">
+                  <table class="table table-hover ">                   
+                    <thead>                      
+                      <tr>
+                        <th >Descripcion</th>                       
+                        <th >Resultado</th>   
+                        <th >Detalles</th>                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach(config('presupuesto.salud') as $key => $description)
+                        <tr>
+                          <th><label>{{ $description }}</label></th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="sl{{ $key + 1 }}" id="sl{{ $key + 1 }}" placeholder = "{{ $description }}">
+                          </th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="sl{{ $key + 1 }}" id="sl{{ $key + 1 }}" placeholder = "{{ $description }}">
+                          </th>                       
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Vicios-->
+                <p class="bg-primary info-text">Vicios y drogras</p>
+                <div class="row">
+                  <table class="table table-hover ">                   
+                    <thead>                      
+                      <tr>
+                        <th >Vicios y drogas</th>                       
+                        <th >Si</th>   
+                        <th >No</th>
+                        <th>Detalles</th>                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach(config('presupuesto.vicios') as $key => $description)
+                        <tr>
+                          <th><label>{{ $description }}</label></th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="vc{{ $key + 1 }}" id="vc{{ $key + 1 }}" placeholder = "{{ $description }}">
+                          </th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="vc{{ $key + 1 }}" id="vc{{ $key + 1 }}" placeholder = "{{ $description }}">
+                          </th>                       
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="vc{{ $key + 1 }}" id="vc{{ $key + 1 }}" placeholder = "{{ $description }}">
+                          </th> 
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>            
+          </div>
+
+          <!-- Vecinos -->
+          <div class="tab-pane" id = "vecinos">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1"> 
+                <div class="row">
+                  @foreach(config('presupuesto.vecinos') as $key => $description)
+                     <div class="row">
+                        <div class="form-group col-xs-12">
+                          <label>{{ $description }}</label>
+                          <input type = "text" class = "form-control" id = "vc{{ $key +1}}" name = "vc{{ $key + 1}}" placeholder = "{{ $description }}" required>                    
+                        </div>                                 
+                      </div>
+                  @endforeach
+                </div>
+              </div>  
+            </div>            
+          </div>
+
+
+
           <!-- Pie de pagina-->
           <div class="wizard-footer">
             <div class="pull-right">
-              <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Siguiente' />
-              <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Confirmar' />
+              <input type='button' class='btn btn-next btn-fill btn-info btn-wd btn-sm' name='next' value='Siguiente' />
+              <input type='button' class='btn btn-finish btn-fill btn-info btn-wd btn-sm' name='finish' value='Confirmar' />
             </div>
             <div class="pull-left">
-              <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Atras' />
+              <input type='button' class='btn btn-previous btn-fill btn-info btn-wd btn-sm' name='previous' value='Atras' />
             </div>
             <div class="clearfix">
               
