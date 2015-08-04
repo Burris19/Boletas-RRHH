@@ -92,8 +92,30 @@
                   </div>                  
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
-                    <label>No de Licencia</label>
-                    <input type = "number" class = "form-control" id = "dt10" name = "dt10" placeholder = "No de licencia" required>
+                    <label>¿Posee licencia de conducir?</label>
+                    <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                      <option>Si</option>
+                      <option>No</option>                      
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!--Profesion -->  
+                  <div class="form-group col-xs-6">
+                    <label>¿Que tipo de licencia posee?</label>
+                    <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                      <option>Tipo A</option>
+                      <option>Tipo B</option>                      
+                      <option>Tipo C</option>                      
+                      <option>Tipo M</option>                      
+                      <option>Tipo E</option>                      
+                    </select>
+                  </div>                  
+                  <!--Profesion -->  
+                  <div class="form-group col-xs-6">
+                    <label>¿Cual es su Numero de licencia?</label>
+                    <input type = "number" class="form-control" placeholder = "Numero de licencia" >
                   </div>
                 </div>
                 <div class="row">
@@ -295,7 +317,7 @@
                 <p class="bg-primary info-text">Informacion sobre Hermanos</p>      
 
                 
-                  <div class="row">
+                  <div class="row" id="grupo">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
                       <label>Nombre completo</label>                    
@@ -319,7 +341,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row">
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro1" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -332,7 +362,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro1" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -345,7 +374,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro1" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro2" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -358,7 +395,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro2" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -371,7 +407,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro2" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro3" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -384,7 +428,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro3" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -397,7 +440,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro3" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro4" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -410,7 +461,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro4" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -423,7 +473,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro4" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro5" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -436,7 +494,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro5" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -449,7 +506,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro5" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro6" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -462,7 +527,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro6" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -475,7 +539,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro6" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro7" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -488,7 +560,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro7" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -501,7 +572,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro7" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro8" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -514,7 +593,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro8" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -527,7 +605,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro8" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro9" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -540,7 +626,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro9" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -553,7 +638,15 @@
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
                   </div>
-
+                  <div class="row bro9" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>
                   <div class="row bro10" style="display: none">
                     <!-- Nombres del esposo --> 
                     <div class="form-group col-xs-6">
@@ -566,7 +659,6 @@
                       <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
                     </div>
                   </div>
-
                   <div class="row bro10" style="display: none">                  
                     <!-- A que se dedica -->
                     <div class="form-group col-xs-6">
@@ -578,7 +670,16 @@
                       <label>Numero Telefonico</label>                    
                       <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
                     </div>
-                  </div>                
+                  </div> 
+                  <div class="row bro10" style="display:none" >
+                    <!-- Observaciones -->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Observacion</label>                  
+                        <input type = "text" class = "form-control" id = "df23" name = "df23" placeholder = "Direccion completa" required>                                    
+                      </div>
+                    </div>
+                  </div>              
                 <input type='button' class='btn btn-fill btn-danger btn-wd btn-sm' id="addBrother" value='Agregar' />
 
                 <!-- Informacion Hijos -->
@@ -684,6 +785,13 @@
                     <label>Fecha</label>                    
                     <input type="text" class="form-control" id="de14" name="de14" placeholder="Rango fecha" required>
                   </div>           
+
+                <!-- Observacion -->
+                  <div class="form-group col-xs-12">
+                    <label>Observacion</label>                    
+                    <input type="text" class="form-control" id="de14" name="de14" placeholder="Rango fecha" required>
+                  </div>  
+
                 </div>
 
               </div>
@@ -1562,17 +1670,7 @@
                 </div>
               </div>
             </div> 
-
-
-
-
-
-
-
-
-
           </div>
-
           <!-- Presupuesto Familiar -->
           <div class="tab-pane" id="presupuesto">
             <div class="row">
@@ -1613,15 +1711,66 @@
           <div class="tab-pane" id="residencia">
             <div class="row">
               <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  @foreach(config('presupuesto.residencia') as $key => $description)
-                     <div class="row">
-                        <div class="form-group col-xs-12">
-                          <label>{{ $description }}</label>
-                          <input type = "text" class = "form-control" id = "cr{{ $key +1}}" name = "cr{{ $key + 1}}" placeholder = "{{ $description }}" required>                    
-                        </div>                                 
+                <div class="row">                  
+                   <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label>¿La vivienda es propia?</label>
+                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>                          
                       </div>
-                  @endforeach
+                      <div class="form-group col-xs-6">
+                        <label>¿Numero de habitacion?</label>
+                        <input type = "number" class = "form-control" id = "cr" name = "cr" placeholder = "Numero de habitaciones" required>                    
+                      </div>                                                                       
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label>¿Material con la que esta construida la vivienda?</label>
+                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                          <option>Lamina</option>
+                          <option>Block</option>
+                        </select>                          
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <label>¿Material del techo?</label>
+                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                          <option>Lamina</option>
+                          <option>Terraza</option>
+                        </select>                          
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label>¿Material del piso?</label>
+                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                          <option>Cerramico</option>
+                          <option>Cemento</option>
+                          <option>Tierra</option>
+                        </select>                          
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <label>¿Posee vehiculo pripio?</label>
+                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>                          
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label>¿Posee motocicleta pripia?</label>
+                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                          <option>Si</option>
+                          <option>No</option>                          
+                        </select>                          
+                    </div>                    
+                  </div> 
                 </div>
               </div>
             </div>
@@ -1638,8 +1787,8 @@
                     <thead>                      
                       <tr>
                         <th >Descripcion</th>                       
-                        <th >Resultado</th>   
-                        <th >Detalles</th>                        
+                        <th >Parte afectada</th>   
+                        <th >Fecha</th>                        
                       </tr>
                     </thead>
                     <tbody>
@@ -1664,9 +1813,8 @@
                   <table class="table table-hover ">                   
                     <thead>                      
                       <tr>
-                        <th >Vicios y drogas</th>                       
-                        <th >Si</th>   
-                        <th >No</th>
+                        <th>Vicios y drogas</th>                       
+                        <th>Respuestas</th>                           
                         <th>Detalles</th>                        
                       </tr>
                     </thead>
@@ -1675,11 +1823,11 @@
                         <tr>
                           <th><label>{{ $description }}</label></th>
                           <th>
-                            <input type = "text" value="" class = "form-control" name="vc{{ $key + 1 }}" id="vc{{ $key + 1 }}" placeholder = "{{ $description }}">
-                          </th>
-                          <th>
-                            <input type = "text" value="" class = "form-control" name="vc{{ $key + 1 }}" id="vc{{ $key + 1 }}" placeholder = "{{ $description }}">
-                          </th>                       
+                            <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>
+                          </th>                          
                           <th>
                             <input type = "text" value="" class = "form-control" name="vc{{ $key + 1 }}" id="vc{{ $key + 1 }}" placeholder = "{{ $description }}">
                           </th> 
@@ -1745,6 +1893,15 @@
       var egreso  = $('#pf2'+i).val();          
       var resultado = $('#pf3'+i);          
       total = total + (ingreso - egreso);
+
+      if (total < 0) {
+        resultado.css("background","red");
+      }
+      else {
+        resultado.css("background","white"); 
+      }
+
+
       resultado.val(total);  
     };  
     
@@ -1758,11 +1915,17 @@
     $(".bro" + conteo).css("display","block");    
     conteo++;
   });
+
   var conteo2 = 1;
   $("#addLab").click(function(e){
     $(".lab" + conteo2).css("display","block");    
     conteo2++;
   });
+
+
+
+
+
 </script>
 
 

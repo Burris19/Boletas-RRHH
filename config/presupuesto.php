@@ -54,6 +54,8 @@ return [
 	],
 
 	'vecinos' => [
+		'Nombre',
+		'Direccion',
 		'Edad',
 		'Cuanto tiempo tiene de conocerlo',
 		'Cuanto tiempo tiene de vivir el candidato en esa casa',
