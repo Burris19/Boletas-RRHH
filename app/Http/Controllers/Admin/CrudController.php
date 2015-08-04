@@ -59,7 +59,7 @@ class CrudController extends Controller {
         if ($validator->passes())
         {
             $record = $this->repo->create($data);
-            return compact('success','message','record','data');
+            return compact('success', 'message', 'record', 'data');
         }
         else
         {

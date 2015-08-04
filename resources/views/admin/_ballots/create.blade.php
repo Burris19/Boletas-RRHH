@@ -12,7 +12,7 @@
     @parent
   
     <div class="wizard-container"> 
-      <form action="" method="">
+      <form action="" method="" name = "form-wizar">
         <div class="card wizard-card ct-wizard-azzure" id="wizard">
           <ul>
             <li><a href="#about" data-toggle="tab">Personal</a></li>
@@ -35,43 +35,43 @@
                   <!-- Nombres --> 
                   <div class="form-group col-xs-6">
                     <label>Nombre</label>                    
-                    <input type="text" class="form-control" id="dt1" name="dt1" placeholder="Nombres" required>
+                    <input type="text" class="form-control" id="dp1" name="dp1" placeholder="Nombres" required>
                   </div>
                   <!-- pellidos -->
                   <div class="form-group col-xs-6">
                     <label>Apellido</label>                    
-                    <input type="text" class="form-control" id="dt2" name="dt2" placeholder="Apellidos" required>
+                    <input type="text" class="form-control" id="dp2" name="dp2" placeholder="Apellidos" required>
                   </div>
                 </div>
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-6">
                     <label>Telefono de Casa</label>                    
-                    <input type = "number" class = "form-control" id = "dt3" name = "dt3" placeholder = "Teléfono de Casa" required>
+                    <input type = "number" class = "form-control" id = "dp3" name = "dp3" placeholder = "Teléfono de Casa" required>
                   </div>
                   <!-- Celular -->
                   <div class="form-group col-xs-6">
                     <label>Celular</label>
-                    <input type = "number" class = "form-control" id = "dt4" name = "dt4" placeholder = "Teléfono Celular" required>
+                    <input type = "number" class = "form-control" id = "dp4" name = "dp4" placeholder = "Teléfono Celular" required>
                   </div>
                 </div>
                 <div class="row">
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>Edad</label>
-                    <input type = "number" class = "form-control" id = "dt5" name = "dt5" placeholder = "Edad" required>                    
+                    <input type = "number" class = "form-control" id = "dp5" name = "dp5" placeholder = "Edad" required>                    
                   </div>
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>Profesion</label>
-                    <input type = "text" class = "form-control" id = "dt6" name = "dt6" placeholder = "Profesion" required>                      
+                    <input type = "text" class = "form-control" id = "dp6" name = "dp6" placeholder = "Profesion" required>                      
                   </div>
                 </div>
                 <div class="row">
                   <!--Estado Civil -->
                   <div class="form-group col-xs-6">
                     <label>Estado Civil</label>
-                    <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                    <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                       <option>Casado</option>
                       <option>Soltero</option>
                       <option>Divorciado</option>
@@ -81,19 +81,19 @@
                   <!-- DPI -->
                   <div class="form-group col-xs-6">
                     <label>DPI</label>                    
-                    <input type = "number" class = "form-control" id = "dt8" name = "dt8" placeholder = "DPI" required>    
+                    <input type = "number" class = "form-control" id = "dp8" name = "dp8" placeholder = "DPI" required>    
                   </div>
                 </div>
                 <div class="row">
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>Nit</label>
-                    <input type = "number" class = "form-control" id = "dt9" name = "dt9" placeholder = "Nit" required>                    
+                    <input type = "number" class = "form-control" id = "dp9" name = "dp9" placeholder = "Nit" required>                    
                   </div>                  
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>¿Posee licencia de conducir?</label>
-                    <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                    <select class="form-control col-xs-6" id = "dp10" name = "dp10">
                       <option>Si</option>
                       <option>No</option>                      
                     </select>
@@ -104,7 +104,7 @@
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>¿Que tipo de licencia posee?</label>
-                    <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                    <select class="form-control col-xs-6" id = "dp11" name = "dp11">
                       <option>Tipo A</option>
                       <option>Tipo B</option>                      
                       <option>Tipo C</option>                      
@@ -115,19 +115,19 @@
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>¿Cual es su Numero de licencia?</label>
-                    <input type = "number" class="form-control" placeholder = "Numero de licencia" >
+                    <input type = "number" class="form-control" placeholder = "Numero de licencia" id = "dp12" name = "dp12">
                   </div>
                 </div>
                 <div class="row">
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>Religion</label>
-                    <input type = "text" class = "form-control" id = "dt11" name = "dt11" placeholder = "Religion" required>                    
+                    <input type = "text" class = "form-control" id = "dp13" name = "dp13" placeholder = "Religion" required>                    
                   </div>
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>Tipo de sangre</label>
-                    <input type = "text" class = "form-control" id = "dt12" name = "dt12" placeholder = "Tipo de sangre" required>                    
+                    <input type = "text" class = "form-control" id = "dp14" name = "dp14" placeholder = "Tipo de sangre" required>                    
                   </div>
                 </div>
                 <div class="row">
@@ -135,7 +135,7 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label>Direccion completa</label>                  
-                      <input type = "text" class = "form-control" id = "dt13" name = "dt13" placeholder = "Direccion completa" required>                                    
+                      <input type = "text" class = "form-control" id = "dp15" name = "dp15" placeholder = "Direccion completa" required>                                    
                     </div>
                   </div>
                 </div>
@@ -143,7 +143,7 @@
                   <div class="picture-container">
                     <div class="picture">
                       <img src="wizar/imagenes/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                      <input type="file" id="wizard-picture dt14" name >
+                      <input type="file" id="wizard-picture dp16" name = "dp16" >
                     </div>
                     <h6>Seleccionar Foto</h6>
                   </div>
@@ -1715,7 +1715,7 @@
                    <div class="row">
                       <div class="form-group col-xs-6">
                         <label>¿La vivienda es propia?</label>
-                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                           <option>Si</option>
                           <option>No</option>
                         </select>                          
@@ -1729,14 +1729,14 @@
                   <div class="row">
                     <div class="form-group col-xs-6">
                         <label>¿Material con la que esta construida la vivienda?</label>
-                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                           <option>Lamina</option>
                           <option>Block</option>
                         </select>                          
                     </div>
                     <div class="form-group col-xs-6">
                         <label>¿Material del techo?</label>
-                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                           <option>Lamina</option>
                           <option>Terraza</option>
                         </select>                          
@@ -1746,7 +1746,7 @@
                   <div class="row">
                     <div class="form-group col-xs-6">
                         <label>¿Material del piso?</label>
-                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                           <option>Cerramico</option>
                           <option>Cemento</option>
                           <option>Tierra</option>
@@ -1754,7 +1754,7 @@
                     </div>
                     <div class="form-group col-xs-6">
                         <label>¿Posee vehiculo pripio?</label>
-                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                           <option>Si</option>
                           <option>No</option>
                         </select>                          
@@ -1765,7 +1765,7 @@
                   <div class="row">
                     <div class="form-group col-xs-6">
                         <label>¿Posee motocicleta pripia?</label>
-                        <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                           <option>Si</option>
                           <option>No</option>                          
                         </select>                          
@@ -1823,7 +1823,7 @@
                         <tr>
                           <th><label>{{ $description }}</label></th>
                           <th>
-                            <select class="form-control col-xs-6" id = "dt7" name = "dt7">
+                            <select class="form-control col-xs-6" id = "dp7" name = "dp7">
                               <option>Si</option>
                               <option>No</option>
                             </select>
@@ -1876,7 +1876,7 @@
           </div>  
           </div>
         </form>
-      </div><!-- Final--> 
+    </div><!-- Final--> 
 
 
 <script>
@@ -1920,6 +1920,22 @@
   $("#addLab").click(function(e){
     $(".lab" + conteo2).css("display","block");    
     conteo2++;
+  });
+
+  $('[name = "next"]').click(function(){
+    var data = $('[name = "form-wizar"]').serialize();
+  
+      $.ajax({
+      type: 'POST',
+      url: 'ballots',
+      data: data,
+      success: function(data) {
+          console.info(data);
+     
+        }
+      })
+
+
   });
 
 
