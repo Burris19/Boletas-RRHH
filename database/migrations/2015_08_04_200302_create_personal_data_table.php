@@ -33,7 +33,6 @@ class CreatePersonalDataTable extends Migration {
             $table->integer('id_record')->unsigned();
             $table->foreign('id_record')->references('id')->on('records');
             $table->timestamps();
-
 		});
 	}
 
