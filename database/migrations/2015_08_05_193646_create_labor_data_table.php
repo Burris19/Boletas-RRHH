@@ -12,7 +12,22 @@ class CreateLaborDataTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('laborData',function(Blueprint $table){
+			$table->string('empresa');
+			$table->string('direccion');
+			$table->string('telefono');
+			$table->string('puesto');
+			$table->string('jefe_inmediato');
+			$table->string('puesto_jefe_inmediato');
+			$table->string('fecha_inicio');
+			$table->string('fecha_retiro');
+			$table->string('ultimo_salario');
+			$table->string('motivo_despido');
+			$table->string('referencia_obtenida');
+			$table->integer('id_record')->unsigned();
+            $table->foreign('id_record')->references('id')->on('records');
+            $table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +37,7 @@ class CreateLaborDataTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('laborData');
 	}
 
 }

@@ -7,6 +7,7 @@ use App\Repositories\BallotRepo;
 use App\Repositories\PersonalDataRepo;
 use App\Repositories\FamilyDataRepo;
 use App\Repositories\EducationDataRepo;
+use App\Repositories\LaborDataRepo;
 
 
 
@@ -17,16 +18,20 @@ class BallotsController extends CrudController {
     protected $personalDataRepo;
     protected $familyDataRepo;
     protected $educationDataRepo;
+    protected $laborDataRepo;
+
 
     function __construct(BallotRepo $ballotRepo,
     					 PersonalDataRepo $personalDataRepo,
                          FamilyDataRepo $familyDataRepo,
-                         EducationDataRepo $educationDataRepo)
+                         EducationDataRepo $educationDataRepo,
+                         LaborDataRepo $laborDataRepo)
     {
         $this->repo = $ballotRepo;
         $this->personalDataRepo = $personalDataRepo;
         $this->familyDataRepo = $familyDataRepo;
         $this->educationDataRepo = $educationDataRepo;
+        $this->laborDataRepo = $laborDataRepo;
     }
 
        
@@ -151,6 +156,36 @@ class BallotsController extends CrudController {
             $dataEducation['tipo'] = 'universidad';
             $dataEducation['id_record'] = $ballot->id;
             $this->educationDataRepo->create($dataEducation);
+
+
+        //Informacion Laboral
+            $e = 1;
+            while ( $e < 122) {            
+                $dataLabor['empresa'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['direccion'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['telefono'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['puesto'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['jefe_inmediato'] = $data['dl'.$e];            
+                $e++;
+                $dataLabor['puesto_jefe_inmediato'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['fecha_inicio'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['fecha_retiro'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['ultimo_salario'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['motivo_despido'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['referencia_obtenida'] = $data['dl'.$e];
+                $e++;
+                $dataLabor['id_record'] = $ballot->id;
+                $this->laborDataRepo->create($dataLabor);
+            }
 
     }
 
