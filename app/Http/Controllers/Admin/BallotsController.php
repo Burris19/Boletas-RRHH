@@ -8,7 +8,7 @@ use App\Repositories\PersonalDataRepo;
 use App\Repositories\FamilyDataRepo;
 use App\Repositories\EducationDataRepo;
 use App\Repositories\LaborDataRepo;
-
+use App\Repositories\BudgetDataRepo;
 
 
 class BallotsController extends CrudController {
@@ -19,19 +19,22 @@ class BallotsController extends CrudController {
     protected $familyDataRepo;
     protected $educationDataRepo;
     protected $laborDataRepo;
+    protected $budgetDataRepo;
 
 
     function __construct(BallotRepo $ballotRepo,
     					 PersonalDataRepo $personalDataRepo,
                          FamilyDataRepo $familyDataRepo,
                          EducationDataRepo $educationDataRepo,
-                         LaborDataRepo $laborDataRepo)
+                         LaborDataRepo $laborDataRepo,
+                         BudgetDataRepo $budgetDataRepo)
     {
         $this->repo = $ballotRepo;
         $this->personalDataRepo = $personalDataRepo;
         $this->familyDataRepo = $familyDataRepo;
         $this->educationDataRepo = $educationDataRepo;
         $this->laborDataRepo = $laborDataRepo;
+        $this->budgetDataRepo = $budgetDataRepo;
     }
 
        
@@ -185,6 +188,17 @@ class BallotsController extends CrudController {
                 $e++;
                 $dataLabor['id_record'] = $ballot->id;
                 $this->laborDataRepo->create($dataLabor);
+            }
+
+        // Presupuesto Mensual
+            $i = 1;
+            while ( $i < 24 ) {                               
+                $databudget['ingresos'] = $data['ingreso'.$i];                
+                $databudget['egresos'] = $data['egreso'.$i];                
+                $databudget['diferencia'] = $data['diferencia'.$i];
+                $databudget['id_record'] = $ballot->id;
+                $this->budgetDataRepo->create($databudget);
+                $i++;
             }
 
     }

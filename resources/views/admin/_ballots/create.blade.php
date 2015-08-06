@@ -1700,13 +1700,13 @@
                         <tr>
                           <th><label>{{ $description }}</label></th>
                           <th>
-                            <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="pf{{ $key + 1 }}" id="pf{{ $key + 1 }}">
+                            <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="ingreso{{ $key + 1 }}" id="pf{{ $key + 1 }}">
                           </th>
                           <th>
-                            <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="pf2{{ $key + 1 }}" id="pf2{{ $key + 1 }}">
+                            <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="egreso{{ $key + 1 }}" id="pf2{{ $key + 1 }}">
                           </th>
                           <th>
-                            <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="pf3{{ $key + 1 }}" id="pf3{{ $key + 1 }}"  disabled>
+                            <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="diferencia{{ $key + 1 }}" id="pf3{{ $key + 1 }}">
                           </th>                        
                         </tr>
                       @endforeach
