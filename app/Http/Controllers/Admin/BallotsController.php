@@ -9,6 +9,7 @@ use App\Repositories\FamilyDataRepo;
 use App\Repositories\EducationDataRepo;
 use App\Repositories\LaborDataRepo;
 use App\Repositories\BudgetDataRepo;
+use App\Repositories\HomeDataRepo;
 
 
 class BallotsController extends CrudController {
@@ -20,6 +21,7 @@ class BallotsController extends CrudController {
     protected $educationDataRepo;
     protected $laborDataRepo;
     protected $budgetDataRepo;
+    protected $homeDataRepo;
 
 
     function __construct(BallotRepo $ballotRepo,
@@ -27,7 +29,8 @@ class BallotsController extends CrudController {
                          FamilyDataRepo $familyDataRepo,
                          EducationDataRepo $educationDataRepo,
                          LaborDataRepo $laborDataRepo,
-                         BudgetDataRepo $budgetDataRepo)
+                         BudgetDataRepo $budgetDataRepo,
+                         HomeDataRepo $homeDataRepo)
     {
         $this->repo = $ballotRepo;
         $this->personalDataRepo = $personalDataRepo;
@@ -35,6 +38,7 @@ class BallotsController extends CrudController {
         $this->educationDataRepo = $educationDataRepo;
         $this->laborDataRepo = $laborDataRepo;
         $this->budgetDataRepo = $budgetDataRepo;
+        $this->homeDataRepo = $homeDataRepo;
     }
 
        
@@ -200,6 +204,11 @@ class BallotsController extends CrudController {
                 $this->budgetDataRepo->create($databudget);
                 $i++;
             }
+
+        // Redidencia 
+
+            $this->homeDataRepo->create($data);
+
 
     }
 

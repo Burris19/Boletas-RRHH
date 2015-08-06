@@ -1725,28 +1725,28 @@
                    <div class="row">
                       <div class="form-group col-xs-6">
                         <label>¿La vivienda es propia?</label>
-                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
+                        <select class="form-control col-xs-6" name = "hd1">
                           <option>Si</option>
                           <option>No</option>
                         </select>                          
                       </div>
                       <div class="form-group col-xs-6">
                         <label>¿Numero de habitacion?</label>
-                        <input type = "number" class = "form-control" id = "cr" name = "cr" placeholder = "Numero de habitaciones" required>                    
+                        <input type = "number" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" required>                    
                       </div>                                                                       
                   </div>
 
                   <div class="row">
                     <div class="form-group col-xs-6">
                         <label>¿Material con la que esta construida la vivienda?</label>
-                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
+                        <select class="form-control col-xs-6" name = "hd3">
                           <option>Lamina</option>
                           <option>Block</option>
                         </select>                          
                     </div>
                     <div class="form-group col-xs-6">
                         <label>¿Material del techo?</label>
-                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
+                        <select class="form-control col-xs-6" name = "hd4">
                           <option>Lamina</option>
                           <option>Terraza</option>
                         </select>                          
@@ -1756,7 +1756,7 @@
                   <div class="row">
                     <div class="form-group col-xs-6">
                         <label>¿Material del piso?</label>
-                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
+                        <select class="form-control col-xs-6" name = "hd5">
                           <option>Cerramico</option>
                           <option>Cemento</option>
                           <option>Tierra</option>
@@ -1764,7 +1764,7 @@
                     </div>
                     <div class="form-group col-xs-6">
                         <label>¿Posee vehiculo pripio?</label>
-                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
+                        <select class="form-control col-xs-6" name = "hd6">
                           <option>Si</option>
                           <option>No</option>
                         </select>                          
@@ -1775,7 +1775,7 @@
                   <div class="row">
                     <div class="form-group col-xs-6">
                         <label>¿Posee motocicleta pripia?</label>
-                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
+                        <select class="form-control col-xs-6" name = "hd7">
                           <option>Si</option>
                           <option>No</option>                          
                         </select>                          
