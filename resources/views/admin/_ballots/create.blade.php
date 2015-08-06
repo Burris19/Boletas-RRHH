@@ -1801,18 +1801,68 @@
                         <th >Fecha</th>                        
                       </tr>
                     </thead>
-                    <tbody>
-                      @foreach(config('presupuesto.salud') as $key => $description)
+                    <tbody>                      
                         <tr>
-                          <th><label>{{ $description }}</label></th>
+                          <th><label>¿Ha sufrido alguna Fractura?</label></th>
                           <th>
-                            <input type = "text" value="" class = "form-control" name="sl{{ $key + 1 }}" id="sl{{ $key + 1 }}" placeholder = "{{ $description }}">
+                            <select class="form-control col-xs-6" name="sa1" >
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>                            
                           </th>
                           <th>
-                            <input type = "text" value="" class = "form-control" name="sl{{ $key + 1 }}" id="sl{{ $key + 1 }}" placeholder = "{{ $description }}">
+                            <input type = "text" value="" class = "form-control" name="sa2">
                           </th>                       
                         </tr>
-                      @endforeach
+
+                        <tr>
+                          <th><label>¿Ha tenido alguna operacion?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name="sa3" >
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>                            
+                          </th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="sa4">
+                          </th>                       
+                        </tr>
+                          <tr>
+                          <th><label>¿Actualmente toma algun medicamento?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name="sa5" >
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>                            
+                          </th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="sa6">
+                          </th>                       
+                        </tr>
+                          <tr>
+                          <th><label>¿Utiliza anteojos?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name="sa7" >
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>                            
+                          </th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="sa8">
+                          </th>                       
+                        </tr>
+                          <tr>
+                          <th><label>¿Tiene algun tatuaje?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name="sa9" >
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>                            
+                          </th>
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="sa10">
+                          </th>                       
+                        </tr>
                     </tbody>
                   </table>
                 </div>
@@ -1828,21 +1878,76 @@
                         <th>Detalles</th>                        
                       </tr>
                     </thead>
-                    <tbody>
-                      @foreach(config('presupuesto.vicios') as $key => $description)
+                    <tbody>                      
                         <tr>
-                          <th><label>{{ $description }}</label></th>
+                          <th><label>¿Consume Alcohol?</label></th>
                           <th>
-                            <select class="form-control col-xs-6" id = "dp7" name = "dp7">
+                            <select class="form-control col-xs-6" name = "vi1">
                               <option>Si</option>
                               <option>No</option>
                             </select>
                           </th>                          
                           <th>
-                            <input type = "text" value="" class = "form-control" name="vc{{ $key + 1 }}" id="vc{{ $key + 1 }}" placeholder = "{{ $description }}">
+                            <input type = "text" value="" class = "form-control" name="vi2" >                            
                           </th> 
                         </tr>
-                      @endforeach
+
+
+                        <tr>
+                          <th><label>¿Fuma?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name = "vi3">
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>
+                          </th>                          
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="vi4" >                            
+                          </th> 
+                        </tr>
+
+
+                        <tr>
+                          <th><label>¿Consume Drogas?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name = "vi5">
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>
+                          </th>                          
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="vi6" >                            
+                          </th> 
+                        </tr>
+
+
+                        <tr>
+                          <th><label>¿Conoce las drogras Fisicamente?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name = "vi7">
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>
+                          </th>                          
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="vi8" >                            
+                          </th> 
+                        </tr>
+
+
+                        <tr>
+                          <th><label>¿Tiene algun tatuaje?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name = "vi9">
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>
+                          </th>                          
+                          <th>
+                            <input type = "text" value="" class = "form-control" name="vi10" >                            
+                          </th> 
+                        </tr>
+                    
                     </tbody>
                   </table>
                 </div>
