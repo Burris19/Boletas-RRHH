@@ -12,6 +12,7 @@ use App\Repositories\BudgetDataRepo;
 use App\Repositories\HomeDataRepo;
 use App\Repositories\SaludDataRepo;
 use App\Repositories\ViciosDataRepo;
+use App\Repositories\VecinosDataRepo;
 
 
 class BallotsController extends CrudController {
@@ -36,7 +37,8 @@ class BallotsController extends CrudController {
                          BudgetDataRepo $budgetDataRepo,
                          HomeDataRepo $homeDataRepo,
                          SaludDataRepo $saludDataRepo,
-                         ViciosDataRepo $viciosDataRepo)
+                         ViciosDataRepo $viciosDataRepo,
+                         VecinosDataRepo $vecinosDataRepo)
 
     {
         $this->repo = $ballotRepo;
@@ -48,6 +50,7 @@ class BallotsController extends CrudController {
         $this->homeDataRepo = $homeDataRepo;
         $this->saludDataRepo = $saludDataRepo;
         $this->viciosDataRepo = $viciosDataRepo;
+        $this->vecinosDataRepo = $vecinosDataRepo;
     }
 
        
@@ -221,7 +224,10 @@ class BallotsController extends CrudController {
             $this->saludDataRepo->create($data);
         
         // Vicios            
-            $this->viciosDataRepo->create($data);     
+            $this->viciosDataRepo->create($data); 
+
+        // Vecinos
+            $this->vecinosDataRepo->create($data);    
 
 
     }

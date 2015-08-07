@@ -1965,7 +1965,7 @@
                      <div class="row">
                         <div class="form-group col-xs-12">
                           <label>{{ $description }}</label>
-                          <input type = "text" class = "form-control" id = "vc{{ $key +1}}" name = "vc{{ $key + 1}}" placeholder = "{{ $description }}" required>                    
+                          <input type = "text" class = "form-control" name = "v{{ $key + 1}}" placeholder = "{{ $description }}" required>                    
                         </div>                                 
                       </div>
                   @endforeach
@@ -2037,7 +2037,7 @@
     conteo2++;
   });
 
-  $('[name = "next"]').click(function(){
+  $('[name = "finish"]').click(function(){
     var data = $('[name = "form-wizar"]').serialize();
   
       $.ajax({
