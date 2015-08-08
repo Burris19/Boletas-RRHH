@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
-
-		//$this->call('AdminTableSeeder');
-		//$this->call('RecordTableSeeder');
+		
+		$this->call('AdminTableSeeder');
+		
 	}
 
 }

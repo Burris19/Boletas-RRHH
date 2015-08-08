@@ -14,7 +14,7 @@ class CreateRecordsTable extends Migration {
 	{
 		Schema::create('records', function(Blueprint $table){
 			$table->increments('id');
-			$table->string('dp_name');
+			$table->string('url');
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();

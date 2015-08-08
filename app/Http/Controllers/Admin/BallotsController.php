@@ -1,7 +1,7 @@
 <?php
 
-
 namespace App\Http\Controllers\Admin;
+
 use Illuminate\Http\Request;
 use App\Repositories\BallotRepo;
 use App\Repositories\PersonalDataRepo;
@@ -16,7 +16,6 @@ use App\Repositories\VecinosDataRepo;
 
 
 class BallotsController extends CrudController {
-
 
     protected $module = '_ballots';
     protected $personalDataRepo;
@@ -61,19 +60,20 @@ class BallotsController extends CrudController {
 
     public function store(Request $request)
     {
+
         //Obtenemos todos los datos
     	$data = $request->all();
 
-        //return $data;
 
+        //return $data;
+        
     	//llenamos los campos vacios 
     	$data = array_map(function($item){
             return ($item == '' ? '-----' : $item);
         }, $data);    	
 
-        //Registramos el archivo
-        $ballot_data['dp_name'] = "Julian Hernandez";
-        $ballot_data['id_user'] = "1";
+        //Registramos el archivo        
+        $ballot_data['id_user'] = \Auth::id();
         $ballot = $this->repo->create($ballot_data);
 
         //Obtemos el id del archivo
@@ -229,7 +229,36 @@ class BallotsController extends CrudController {
         // Vecinos
             $this->vecinosDataRepo->create($data);    
 
+        // Generamos el reporte            
+        $folder = 'pdfs';
+        if (!is_dir($folder))
+        {
+            // Create directory            
+            $oldmask = umask(0);
+            mkdir($folder, 0777);
+            umask($oldmask);        
+        }
 
+        $ballot->url = $folder . '/' . $ballot->id . '.pdf';
+        $ballot->save();
+
+        $pdf_factory = \App::make('dompdf');
+        $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot->url);
+
+
+        return [
+            'message' => 'Boleta generada exitosamente',
+            'success' => true,
+            'id' =>  $ballot->id
+        ];
+
+    }
+
+    public function getPDF($id)
+    {
+        $pdf = $this->repo->findOrFail($id);
+        $file = file_get_contents(public_path() . '/' . $pdf->url);
+        return response($file,200)->header('Content-Type','application/pdf');   
     }
 
 }

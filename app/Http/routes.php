@@ -17,6 +17,7 @@ Route::get('home', 'HomeController@index');
 Route::group(['prefix'=>'/','namespace'=>'Admin'],function(){
     Route::resource('ballots','BallotsController');
     Route::resource('users','UsersController');
+    Route::get('pdf/{id}','BallotsController@getPDF');
 });
 
 Route::controllers([

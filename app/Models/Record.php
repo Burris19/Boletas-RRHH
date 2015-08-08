@@ -5,7 +5,7 @@ namespace App\Models;
 class Record extends BaseModel {
 
 	protected $table = 'records';
-	protected $fillable = ['dp_name','id_user'];
+	protected $fillable = ['url','id_user'];
 
 	public $relations =['user'];
 	

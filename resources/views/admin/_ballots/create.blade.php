@@ -86,10 +86,13 @@
                 </div>
                 <div class="row">
                   <!--Profesion -->  
+                  
                   <div class="form-group col-xs-6">
-                    <label>¿Cual es su numero de Nit?</label>
-                    <input type = "number" class = "form-control" id = "dp9" name = "dp9" placeholder = "Nit" required>                    
-                  </div>                  
+                    <label>¿Cual es su numero de NIT?</label>                    
+                    <input type = "text" class = "form-control" id = "dp9" name = "dp9" placeholder = "NIT" required>    
+                  </div>
+
+
                   <!--Profesion -->  
                   <div class="form-group col-xs-6">
                     <label>¿Posee licencia de conducir?</label>
@@ -2046,6 +2049,10 @@
       data: data,
       success: function(data) {
           console.info(data);
+          if(data.success) {
+            window.open('pdf/' + data.id,'_blank');
+            $('#page').load('ballots');
+          }
      
         }
       })
