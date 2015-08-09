@@ -2,11 +2,35 @@ $(function(){
 
     $('#btn-open-wizard').click(function(e) {
         e.preventDefault();
-        
-        $("#page").load("ballots/create");        
-
-
+        $("#page").load("ballots/create");
     });
+
+    $('.edit').click(function(e){
+        Helper.blockPage();
+        CRUD.show('#page',$(this).data('id'),'/edit',function() {
+            Helper.unblockPage();
+        });
+        e.preventDefault();
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
         

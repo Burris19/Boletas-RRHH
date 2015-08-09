@@ -13,7 +13,7 @@ use App\Repositories\HomeDataRepo;
 use App\Repositories\SaludDataRepo;
 use App\Repositories\ViciosDataRepo;
 use App\Repositories\VecinosDataRepo;
-
+use App\Models\FamilyData;
 
 class BallotsController extends CrudController {
 
@@ -56,6 +56,20 @@ class BallotsController extends CrudController {
     public function create()
     {
         return view($this->root . '/' . $this->module . '/create');
+    }
+
+    public function edit($id)
+    {
+        $dp = $this->personalDataRepo->findOrFail($id);
+        $dfp = FamilyData::whereRaw('tipo = ? and id_record = ?',['padre',$id])->get();
+        $dfm = FamilyData::whereRaw('tipo = ? and id_record = ?',['madre',$id])->get();
+        $dfe = FamilyData::whereRaw('tipo = ? and id_record = ?',['esposo',$id])->get();
+        $dfh = FamilyData::whereRaw('tipo = ? and id_record = ?',['hermano',$id])->get();
+
+
+
+
+        return view($this->root . '/' . $this->module . '/edit',compact('dp','dfp','dfm','dfe'));
     }
 
     public function store(Request $request)

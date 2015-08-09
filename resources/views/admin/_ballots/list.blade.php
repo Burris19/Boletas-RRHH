@@ -31,14 +31,17 @@
             <td>{{ $value->dp_name }}</td>
             <td>{{ $value->user->username }}</td>
             <td class="text-center">
-                <a href="{{ $value->id }}" data-toggle="tooltip" title="Descargar Imagen Boleta" class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>
-                <a href="{{ $value->id }}" data-toggle="tooltip" title="Descargar Imagen Boleta" class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>
+                <a href="#" data-id="{{ $value->id }}" data-toggle="tooltip" title="Editar" class="btn btn-effect-ripple btn-xs btn-success edit"><i class="fa fa-pencil"></i></a>
                 <a href="{{ $value->id }}" data-toggle="tooltip" title="Descargar Imagen Boleta" class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>
             </td>
          </tr>
     @endforeach
 @stop
-
+<script>
+    $(function(){
+        CRUD.url_base = 'ballots';
+    })
+</script>
 {!! Html::script('app/helpers/crud_operate.js') !!}
 {!! Html::script('app/admin/generate.js') !!}
 @stop
