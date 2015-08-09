@@ -14,6 +14,12 @@ use App\Repositories\SaludDataRepo;
 use App\Repositories\ViciosDataRepo;
 use App\Repositories\VecinosDataRepo;
 use App\Models\FamilyData;
+use App\Models\EducationData;
+use App\Models\BudgetData;
+use App\Models\VecinosData;
+use App\Models\ViciosData;
+use App\Models\SaludData;
+use App\Models\HomeData;
 
 class BallotsController extends CrudController {
 
@@ -65,11 +71,19 @@ class BallotsController extends CrudController {
         $dfm = FamilyData::whereRaw('tipo = ? and id_record = ?',['madre',$id])->get();
         $dfe = FamilyData::whereRaw('tipo = ? and id_record = ?',['esposo',$id])->get();
         $dfh = FamilyData::whereRaw('tipo = ? and id_record = ?',['hermano',$id])->get();
+        $dep = EducationData::whereRaw('tipo = ? and id_record = ?',['primaria',$id])->get();
+        $des = EducationData::whereRaw('tipo = ? and id_record = ?',['secundaria',$id])->get();
+        $ded = EducationData::whereRaw('tipo = ? and id_record = ?',['diversificado',$id])->get();
+        $deu = EducationData::whereRaw('tipo = ? and id_record = ?',['universidad',$id])->get();
+        $pf  = BudgetData::where('id_record',$id)->get();
+        $ho  = HomeData::where('id_record',$id)->get();
+        $sa  = SaludData::where('id_record',$id)->get();
+        $vi  = ViciosData::where('id_record',$id)->get();
+        $ve  = VecinosData::where('id_record',$id)->get();
 
 
 
-
-        return view($this->root . '/' . $this->module . '/edit',compact('dp','dfp','dfm','dfe'));
+        return view($this->root . '/' . $this->module . '/edit',compact('dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho'));
     }
 
     public function store(Request $request)

@@ -219,37 +219,37 @@
                   <!-- Nombres del padre --> 
                   <div class="form-group col-xs-6">
                     <label>Nombre de la madre</label>                    
-                    <input type="text" class="form-control" id="df9" name="df9" placeholder="Nombres" value="{{ $dfm[0]->nombre }}">
+                    <input type="text" class="form-control" id="df9" name="df9" placeholder="Nombres" >
                   </div>
                   <!-- Edad -->
                   <div class="form-group col-xs-6">
                     <label>Edad</label>                    
-                    <input type="number" class="form-control" id="df10" name="df10" placeholder="Edad" value="{{ $dfm[0]->edad }}">
+                    <input type="number" class="form-control" id="df10" name="df10" placeholder="Edad" >
                   </div>
                 </div>
                 <div class="row">
                   <!-- Originario de -->
                   <div class="form-group col-xs-6">
-                    <label>Originario de</label>                    
-                    <input type="text" class="form-control" id="df11" name="df11" placeholder="Originario de" value="{{ $dfm[0]->originario }}">
+                    <label>Originario de</label>
+                    <input type="text" class="form-control" id="df11" name="df11" placeholder="Originario de" >
                   </div>
 
                   <!-- Ingresos aproximados -->
                   <div class="form-group col-xs-6">
                     <label>Ingresos aproximados</label>                    
-                    <input type="number" class="form-control" id="df12" name="df12" placeholder="Ingresos aproximados" value="{{ $dfm[0]->ingresos }}">
+                    <input type="number" class="form-control" id="df12" name="df12" placeholder="Ingresos aproximados" >
                   </div>
                 </div>
                 <div class="row">                  
                   <!-- A que se dedica -->
                   <div class="form-group col-xs-6">
                     <label>A que se dedica</label>                    
-                    <input type="text" class="form-control" id="df13" name="df13" placeholder="A que se dedica" value="{{ $dfm[0]->profecion }}">
+                    <input type="text" class="form-control" id="df13" name="df13" placeholder="A que se dedica" >
                   </div>
                   <!-- Numero telefonico -->
                   <div class="form-group col-xs-6">
                     <label>Numero Telefonico</label>                    
-                    <input type="number" class="form-control" id="df14" name="df14" placeholder="Numero telefonico" value="{{ $dfm[0]->telefono }}">
+                    <input type="number" class="form-control" id="df14" name="df14" placeholder="Numero telefonico" >
                   </div>
                 </div>
                 <div class="row">
@@ -257,7 +257,7 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label>Direccion completa</label>                  
-                      <input type = "text" class = "form-control" id = "df15" name = "df15" placeholder = "Direccion completa" value="{{ $dfm[0]->direccion }}">
+                      <input type = "text" class = "form-control" id = "df15" name = "df15" placeholder = "Direccion completa" >
                     </div>
                   </div>
                 </div>
@@ -265,7 +265,7 @@
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
                     <label>Relacion con su madre</label>  
-                    <textarea  class="form-control" id="df16" name="df16" placeholder="Relación con su madre" rows="3"> $dfm[0]->relacion </textarea>
+                    <textarea  class="form-control" id="df16" name="df16" placeholder="Relación con su madre" rows="3"> </textarea>
                   </div>
                 </div>
                 <!-- Relacion con su esposo -->

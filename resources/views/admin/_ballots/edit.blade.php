@@ -720,17 +720,17 @@
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label>Establecimiento</label>
-                                <input type="text" class="form-control" id="de1" name="de1" placeholder="Nombre del establecimiento" required>
+                                <input type="text" class="form-control" id="de1" name="de1" placeholder="Nombre del establecimiento" value="{{ $dep[0]->establecimiento }}">
                             </div>
                             <!-- Edad -->
                             <div class="form-group col-xs-4">
                                 <label>Direccion</label>
-                                <input type="text" class="form-control" id="de2" name="de2" placeholder="Direccion del establecimiento" required>
+                                <input type="text" class="form-control" id="de2" name="de2" placeholder="Direccion del establecimiento" value="{{ $dep[0]->direccion }}">
                             </div>
                             <!-- Edad -->
                             <div class="form-group col-xs-2">
                                 <label>Fecha</label>
-                                <input type="text" class="form-control" id="de3" name="de3" placeholder="Rango fecha" required>
+                                <input type="text" class="form-control" id="de3" name="de3" placeholder="Rango fecha" value="{{ $dep[0]->fecha }}">
                             </div>
                         </div>
 
@@ -738,17 +738,17 @@
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label>Establecimiento</label>
-                                <input type="text" class="form-control" id="de4" name="de4" placeholder="Nombres del establecimiento" required>
+                                <input type="text" class="form-control" id="de4" name="de4" placeholder="Nombres del establecimiento" value="{{ $des[0]->establecimiento }}" >
                             </div>
                             <!-- Edad -->
                             <div class="form-group col-xs-4">
                                 <label>Direccion</label>
-                                <input type="text" class="form-control" id="de5" name="de5" placeholder="Direccion del establecimiento" required>
+                                <input type="text" class="form-control" id="de5" name="de5" placeholder="Direccion del establecimiento" value="{{ $des[0]->direccion }}" >
                             </div>
                             <!-- Edad -->
                             <div class="form-group col-xs-2">
                                 <label>Fecha</label>
-                                <input type="text" class="form-control" id="de6" name="de6" placeholder="Rango fecha" required>
+                                <input type="text" class="form-control" id="de6" name="de6" placeholder="Rango fecha" value="{{ $des[0]->fecha }}" >
                             </div>
                         </div>
 
@@ -757,23 +757,23 @@
                             <!-- Establecimiento-->
                             <div class="form-group col-xs-8">
                                 <label>Establecimiento</label>
-                                <input type="text" class="form-control" id="de7" name="de7" placeholder="Nombre del establecimiento" required>
+                                <input type="text" class="form-control" id="de7" name="de7" placeholder="Nombre del establecimiento" value="{{ $ded[0]->establecimiento }}" >
                             </div>
                             <!-- Edad -->
                             <div class="form-group col-xs-4">
                                 <label>Direccion</label>
-                                <input type="text" class="form-control" id="de8" name="de8" placeholder="Direccion del establecimiento" required>
+                                <input type="text" class="form-control" id="de8" name="de8" placeholder="Direccion del establecimiento" value="{{ $ded[0]->direccion }}" >
                             </div>
 
                             <div class="form-group col-xs-8">
                                 <label>Titulo</label>
-                                <input type="text" class="form-control" id="de9" name="de9" placeholder="Titulo adquirido" required>
+                                <input type="text" class="form-control" id="de9" name="de9" placeholder="Titulo adquirido" value="{{ $ded[0]->titulo }}" >
                             </div>
 
                             <!-- Edad -->
                             <div class="form-group col-xs-4">
                                 <label>Fecha</label>
-                                <input type="text" class="form-control" id="de10" name="de10" placeholder="Rango fecha" required>
+                                <input type="text" class="form-control" id="de10" name="de10" placeholder="Rango fecha" value="{{ $ded[0]->fecha }}" >
                             </div>
                         </div>
 
@@ -782,29 +782,29 @@
                             <!-- Establecimiento-->
                             <div class="form-group col-xs-8">
                                 <label>Establecimiento</label>
-                                <input type="text" class="form-control" id="de11" name="de11" placeholder="Nombre del establecimiento" required>
+                                <input type="text" class="form-control" id="de11" name="de11" placeholder="Nombre del establecimiento"  value="{{ $deu[0]->establecimiento }}" >
                             </div>
                             <!-- Edad -->
                             <div class="form-group col-xs-4">
                                 <label>Direccion</label>
-                                <input type="text" class="form-control" id="de12" name="de12" placeholder="Direccion del establecimiento" required>
+                                <input type="text" class="form-control" id="de12" name="de12" placeholder="Direccion del establecimiento" value="{{ $deu[0]->direccion }}" >
                             </div>
 
                             <div class="form-group col-xs-8">
                                 <label>Titulo</label>
-                                <input type="text" class="form-control" id="de13" name="de13" placeholder="Titulo educativo" required>
+                                <input type="text" class="form-control" id="de13" name="de13" placeholder="Titulo educativo" value="{{ $deu[0]->titulo }}" >
                             </div>
 
                             <!-- Edad -->
                             <div class="form-group col-xs-4">
                                 <label>Fecha</label>
-                                <input type="text" class="form-control" id="de14" name="de14" placeholder="Rango fecha" required>
+                                <input type="text" class="form-control" id="de14" name="de14" placeholder="Rango fecha" value="{{ $deu[0]->fecha }}" >
                             </div>
 
                             <!-- Observacion -->
                             <div class="form-group col-xs-12">
                                 <label>Observacion</label>
-                                <input type="text" class="form-control" id="de15" name="de15" placeholder="Rango fecha" required>
+                                <input type="text" class="form-control" id="de15" name="de15" placeholder="Rango fecha" value="{{ $deu[0]->observacion }}" >
                             </div>
 
                         </div>
@@ -1703,13 +1703,13 @@
                             <tr>
                                 <th><label>{{ $description }}</label></th>
                                 <th>
-                                    <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="ingreso{{ $key + 1 }}" id="pf{{ $key + 1 }}">
+                                    <input type = "number" value="{{$pf[$key]->ingresos}}" class = "form-control pf" style="text-align: center" name="ingreso{{ $key + 1 }}" id="pf{{ $key + 1 }}">
                                 </th>
                                 <th>
-                                    <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="egreso{{ $key + 1 }}" id="pf2{{ $key + 1 }}">
+                                    <input type = "number" value="{{$pf[$key]->egresos}}" class = "form-control pf" style="text-align: center" name="egreso{{ $key + 1 }}" id="pf2{{ $key + 1 }}">
                                 </th>
                                 <th>
-                                    <input type = "number" value="0" class = "form-control pf" style="text-align: center" name="diferencia{{ $key + 1 }}" id="pf3{{ $key + 1 }}">
+                                    <input type = "number" value="{{$pf[$key]->diferencia}}" class = "form-control pf" style="text-align: center" name="diferencia{{ $key + 1 }}" id="pf3{{ $key + 1 }}">
                                 </th>
                             </tr>
                         @endforeach
@@ -1728,60 +1728,37 @@
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label>¿La vivienda es propia?</label>
-                            <select class="form-control col-xs-6" name = "hd1">
-                                <option>Si</option>
-                                <option>No</option>
-                            </select>
+                            {!! Form::select( 'hd1', ['Si' => 'Si', 'No' => 'No'] , $ho[0]->hd1 , ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group col-xs-6">
                             <label>¿Numero de habitacion?</label>
                             <input type = "number" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" required>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label>¿Material con la que esta construida la vivienda?</label>
-                            <select class="form-control col-xs-6" name = "hd3">
-                                <option>Lamina</option>
-                                <option>Block</option>
-                            </select>
+                            {!! Form::select( 'hd3', ['Lamina' => 'Lamina', 'Block' => 'Block'] , $ho[0]->hd3 , ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group col-xs-6">
                             <label>¿Material del techo?</label>
-                            <select class="form-control col-xs-6" name = "hd4">
-                                <option>Lamina</option>
-                                <option>Terraza</option>
-                            </select>
+                            {!! Form::select( 'hd4', ['Lamina' => 'Lamina', 'Terraza' => 'Terraza'] , $ho[0]->hd4 , ['class' => 'form-control'] ) !!}
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label>¿Material del piso?</label>
-                            <select class="form-control col-xs-6" name = "hd5">
-                                <option>Cerramico</option>
-                                <option>Cemento</option>
-                                <option>Tierra</option>
-                            </select>
+                            {!! Form::select( 'hd5', ['Ceramico' => 'Ceramico', 'Cemento' => 'Cemento', 'Tierra' => 'Tierra' ] , $ho[0]->hd5 , ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group col-xs-6">
                             <label>¿Posee vehiculo pripio?</label>
-                            <select class="form-control col-xs-6" name = "hd6">
-                                <option>Si</option>
-                                <option>No</option>
-                            </select>
+                            {!! Form::select( 'hd6', ['Si' => 'Si', 'No' => 'No'] , $ho[0]->hd6 , ['class' => 'form-control'] ) !!}
                         </div>
                     </div>
-
-
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label>¿Posee motocicleta pripia?</label>
-                            <select class="form-control col-xs-6" name = "hd7">
-                                <option>Si</option>
-                                <option>No</option>
-                            </select>
+                            {!! Form::select( 'hd7', ['Si' => 'Si', 'No' => 'No'] , $ho[0]->hd7 , ['class' => 'form-control'] ) !!}
                         </div>
                     </div>
                 </div>
@@ -1808,62 +1785,47 @@
                         <tr>
                             <th><label>¿Ha sufrido alguna Fractura?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name="sa1" >
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'sa1', ['Si' => 'Si', 'No' => 'No'] , $sa[0]->sa1 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="sa2">
+                                {!! Form::text( 'sa2', $sa[0]->sa2 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
 
                         <tr>
                             <th><label>¿Ha tenido alguna operacion?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name="sa3" >
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'sa3', ['Si' => 'Si', 'No' => 'No'] , $sa[0]->sa3 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="sa4">
+                                {!! Form::text( 'sa4', $sa[0]->sa4,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
                         <tr>
                             <th><label>¿Actualmente toma algun medicamento?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name="sa5" >
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'sa5', ['Si' => 'Si', 'No' => 'No'] , $sa[0]->sa5 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="sa6">
+                                {!! Form::text( 'sa6', $sa[0]->sa6 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
                         <tr>
                             <th><label>¿Utiliza anteojos?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name="sa7" >
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'sa7', ['Si' => 'Si', 'No' => 'No'] , $sa[0]->sa7 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="sa8">
+                                {!! Form::text( 'sa8', $sa[0]->sa8 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
                         <tr>
                             <th><label>¿Tiene algun tatuaje?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name="sa9" >
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'sa9', ['Si' => 'Si', 'No' => 'No'] , $sa[0]->sa9 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="sa10">
+                                {!! Form::text( 'sa10', $sa[0]->sa10 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
                         </tbody>
@@ -1885,55 +1847,38 @@
                         <tr>
                             <th><label>¿Consume Alcohol?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name = "vi1">
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'vi1', ['Si' => 'Si', 'No' => 'No'] , $vi[0]->vi1 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="vi2" >
+                                {!! Form::text( 'vi2', $vi[0]->vi2 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
-
-
                         <tr>
                             <th><label>¿Fuma?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name = "vi3">
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'vi3', ['Si' => 'Si', 'No' => 'No'] , $vi[0]->vi3 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="vi4" >
+                                {!! Form::text( 'vi4', $vi[0]->vi4 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
-
-
                         <tr>
                             <th><label>¿Consume Drogas?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name = "vi5">
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'vi5', ['Si' => 'Si', 'No' => 'No'] , $vi[0]->vi5 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="vi6" >
+                                {!! Form::text( 'vi6', $vi[0]->vi6 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
-
 
                         <tr>
                             <th><label>¿Conoce las drogras Fisicamente?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name = "vi7">
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'vi7', ['Si' => 'Si', 'No' => 'No'] , $vi[0]->vi7 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="vi8" >
+                                {!! Form::text( 'vi8', $vi[0]->vi8 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
 
@@ -1941,13 +1886,10 @@
                         <tr>
                             <th><label>¿Tiene algun tatuaje?</label></th>
                             <th>
-                                <select class="form-control col-xs-6" name = "vi9">
-                                    <option>Si</option>
-                                    <option>No</option>
-                                </select>
+                                {!! Form::select( 'vi9', ['Si' => 'Si', 'No' => 'No'] , $vi[0]->vi9 , ['class' => 'form-control'] ) !!}
                             </th>
                             <th>
-                                <input type = "text" value="" class = "form-control" name="vi10" >
+                                {!! Form::text( 'vi10', $vi[0]->vi10 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
 
@@ -1965,10 +1907,11 @@
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="row">
                     @foreach(config('presupuesto.vecinos') as $key => $description)
+                        <?php $field = "v" . ($key + 1); ?>
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <label>{{ $description }}</label>
-                                <input type = "text" class = "form-control" name = "v{{ $key + 1}}" placeholder = "{{ $description }}" required>
+                                {!! Form::text( $field  ,$ve[0]->$field , ['class' => 'form-control'] ) !!}
                             </div>
                         </div>
                     @endforeach
