@@ -111,6 +111,7 @@ class CrudController extends Controller {
      * @param  Request $request
      * @return Response
      */
+
     public function update(Request $request, $id)
     {
         $record_old = $this->repo->findOrFail($id);

@@ -12,7 +12,8 @@
     @parent
 
     <div class="wizard-container">
-        <form action="" method="" name = "form-wizar">
+        <form action="ballots" method="POST" id = "form-edit" name = "form-wizar">
+            <input type="hidden" name="_method" value="PUT">
             <div class="card wizard-card ct-wizard-azzure" id="wizard">
                 <ul>
                     <li><a href="#about" data-toggle="tab">Personal</a></li>
@@ -31,52 +32,67 @@
                     <div class="tab-pane" id="about">
                         <div class="row">
                             <div class="col-sm-10 col-sm-offset-1">
+
+                                <div class="row">
+                                    <!-- Nombres -->
+                                    <div class="form-group col-xs-6">
+                                        <label>¿Puesto al que aplica?</label>
+                                        <input type="hidden" id = "numeroId" value="{{ $db->id }}">
+                                        <input type="text" class="form-control" name="puesto_empresa" placeholder="Puesto al que aplica" value="{{ $db->puesto }}">
+                                    </div>
+                                    <!-- pellidos -->
+                                    <div class="form-group col-xs-6">
+                                        <label>¿Empresa cliente?</label>
+                                        <input type="text" class="form-control" name="nombre_empresa" placeholder="Nombre de la empresa" value="{{ $db->empresa }}">
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <!-- Nombres -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su nombre?</label>
-                                        <input type="text" class="form-control" id="dp1" name="dp1" placeholder="Nombres" value="{{ $dp->dp1 }}">
+                                        <input type="text" class="form-control" id="dp1" name="dp1" placeholder="Nombres" value="{{ $dp[0]->dp1 }}">
                                     </div>
                                     <!-- pellidos -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cuales son sus apellido?</label>
-                                        <input type="text" class="form-control" id="dp2" name="dp2" placeholder="Apellidos" value="{{ $dp->dp2 }}">
+                                        <input type="text" class="form-control" id="dp2" name="dp2" placeholder="Apellidos" value="{{ $dp[0]->dp2 }}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <!--Telefono casa -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es el numero de su telefono de Casa?</label>
-                                        <input type = "number" class = "form-control" id = "dp3" name = "dp3" placeholder = "Teléfono de Casa" value="{{ $dp->dp3 }}">
+                                        <input type = "number" class = "form-control" id = "dp3" name = "dp3" placeholder = "Teléfono de Casa" value="{{ $dp[0]->dp3 }}">
                                     </div>
                                     <!-- Celular -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su numero de Celular?</label>
-                                        <input type = "number" class = "form-control" id = "dp4" name = "dp4" placeholder = "Teléfono Celular" value="{{ $dp->dp4 }}">
+                                        <input type = "number" class = "form-control" id = "dp4" name = "dp4" placeholder = "Teléfono Celular" value="{{ $dp[0]->dp4 }}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su edad?</label>
-                                        <input type = "number" class = "form-control" id = "dp5" name = "dp5" placeholder = "Edad" value="{{ $dp->dp5 }}">
+                                        <input type = "number" class = "form-control" id = "dp5" name = "dp5" placeholder = "Edad" value="{{ $dp[0]->dp5 }}">
                                     </div>
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su profesion?</label>
-                                        <input type = "text" class = "form-control" id = "dp6" name = "dp6" placeholder = "Profesion" value="{{ $dp->dp6 }}">
+                                        <input type = "text" class = "form-control" id = "dp6" name = "dp6" placeholder = "Profesion" value="{{ $dp[0]->dp6 }}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <!--Estado Civil -->
                                     <div class="form-group col-xs-6">
                                         <label>Elija su estado Civil</label>
-                                        {!! Form::select( 'dp7', ['Casado' => 'Casado', 'Soltero' => 'Soltero', 'Divorciado' => 'Divorciado' , 'Viudo' => 'Viudo'] , $dp->dp7 , ['class' => 'form-control'] ) !!}
+                                        {!! Form::select( 'dp7', ['Casado' => 'Casado', 'Soltero' => 'Soltero', 'Divorciado' => 'Divorciado' , 'Viudo' => 'Viudo'] , $dp[0]->dp7 , ['class' => 'form-control'] ) !!}
                                     </div>
                                     <!-- DPI -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su numero de DPI?</label>
-                                        <input type = "number" class = "form-control" id = "dp8" name = "dp8" placeholder = "DPI" value="{{ $dp->dp8 }}">
+                                        <input type = "number" class = "form-control" id = "dp8" name = "dp8" placeholder = "DPI" value="{{ $dp[0]->dp8 }}">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -84,14 +100,14 @@
 
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su numero de NIT?</label>
-                                        <input type = "text" class = "form-control" id = "dp9" name = "dp9" placeholder = "NIT" value="{{ $dp->dp9 }}">
+                                        <input type = "text" class = "form-control" id = "dp9" name = "dp9" placeholder = "NIT" value="{{ $dp[0]->dp9 }}">
                                     </div>
 
 
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Posee licencia de conducir?</label>
-                                        {!! Form::select( 'dp10', ['Si' => 'Si', 'No' => 'No'] , $dp->dp10 , ['class' => 'form-control'] ) !!}
+                                        {!! Form::select( 'dp10', ['Si' => 'Si', 'No' => 'No'] , $dp[0]->dp10 , ['class' => 'form-control'] ) !!}
                                     </div>
                                 </div>
 
@@ -99,24 +115,24 @@
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Que tipo de licencia posee?</label>
-                                        {!! Form::select( 'dp11', ['Tipo A' => 'Tipo A', 'Tipo B' => 'Tipo B', 'Tipo C' => 'Tipo C' , 'Tipo M' => 'Tipo M', 'Tipo M' => 'Tipo M'] , $dp->dp11 , ['class' => 'form-control'] ) !!}
+                                        {!! Form::select( 'dp11', ['Tipo A' => 'Tipo A', 'Tipo B' => 'Tipo B', 'Tipo C' => 'Tipo C' , 'Tipo M' => 'Tipo M', 'Tipo M' => 'Tipo M'] , $dp[0]->dp11 , ['class' => 'form-control'] ) !!}
                                     </div>
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su Numero de licencia?</label>
-                                        <input type = "number" class="form-control" placeholder = "Numero de licencia" id = "dp12" name = "dp12" value="{{ $dp->dp12 }}">
+                                        <input type = "number" class="form-control" placeholder = "Numero de licencia" id = "dp12" name = "dp12" value="{{ $dp[0]->dp12 }}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su religion?</label>
-                                        <input type = "text" class = "form-control" id = "dp13" name = "dp13" placeholder = "Religion" value="{{ $dp->dp13 }}">
+                                        <input type = "text" class = "form-control" id = "dp13" name = "dp13" placeholder = "Religion" value="{{ $dp[0]->dp13 }}">
                                     </div>
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Cual es su tipo de sangre?</label>
-                                        <input type = "text" class = "form-control" id = "dp14" name = "dp14" placeholder = "Tipo de sangre" value="{{ $dp->dp14 }}">
+                                        <input type = "text" class = "form-control" id = "dp14" name = "dp14" placeholder = "Tipo de sangre" value="{{ $dp[0]->dp14 }}">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -124,7 +140,7 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>¿Cual es la direccion donde vive ?</label>
-                                            <input type = "text" class = "form-control" id = "dp15" name = "dp15" placeholder = "Direccion completa" value="{{ $dp->dp15 }}">
+                                            <input type = "text" class = "form-control" id = "dp15" name = "dp15" placeholder = "Direccion completa" value="{{ $dp[0]->dp15 }}">
                                         </div>
                                     </div>
                                 </div>
@@ -139,22 +155,11 @@
                                     </div>
                                 </div>
                                 <div id="lista">
-                                    @if($dp->dp15 === "------")
-
-                                    @else
-
-                                    @endif
-
+                                        @if($dp[0]->dp16 === "")
+                                        @else
+                                        <img class="img-thumbnail"  style="width: 25%;" src="{{ $dp[0]->dp16 }}" >
+                                        @endif
                                 </div>
-
-
-
-
-
-
-
-
-
 
                             </div>
                         </div>
@@ -509,7 +514,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Observacion</label>
-                                        {!! Form::text( 'df47', $dfh[4]->observacion ,  ['class' => 'form-control'] ) !!}
+                                        {!! Form::text( 'df48', $dfh[4]->observacion ,  ['class' => 'form-control'] ) !!}
                                     </div>
                                 </div>
 
@@ -1684,7 +1689,7 @@
     <div class="wizard-footer">
         <div class="pull-right">
             <input type='button' class='btn btn-next btn-fill btn-info btn-wd btn-sm' name='next' value='Siguiente' />
-            <input type='button' class='btn btn-finish btn-fill btn-info btn-wd btn-sm' name='finish' value='Confirmar' />
+            <input type='button' class='btn btn-finish btn-fill btn-info btn-wd btn-sm' name='update' value='Confirmar Cambios' />
         </div>
         <div class="pull-left">
             <input type='button' class='btn btn-previous btn-fill btn-info btn-wd btn-sm' name='previous' value='Atras' />
@@ -1741,26 +1746,31 @@
             conteo2++;
         });
 
-        $('[name = "finish"]').click(function(){
-            var data = $('[name = "form-wizar"]').serialize();
 
-            $.ajax({
-                type: 'POST',
-                url: 'ballots',
-                data: data,
-                success: function(data) {
-                    console.info(data);
-                    if(data.success) {
-                        window.open('pdf/' + data.id,'_blank');
-                        $('#page').load('ballots');
-                    }
+        function archivo(evt) {
+            var files = evt.target.files; // FileList object
 
+            // Obtenemos la imagen del campo "file".
+            for (var i = 0, f; f = files[i]; i++) {
+                //Solo admitimos imágenes.
+                if (!f.type.match('image.*')) {
+                    continue;
                 }
-            })
 
+                var reader = new FileReader();
 
-        });
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                        // Insertamos la imagen
+                        document.getElementById("lista").innerHTML = ['<img class="img-thumbnail"  style="width: 25%;" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                    };
+                })(f);
 
+                reader.readAsDataURL(f);
+            }
+        }
+
+        document.getElementById('files').addEventListener('change', archivo, false);
 
 
 

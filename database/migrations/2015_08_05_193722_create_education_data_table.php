@@ -13,6 +13,7 @@ class CreateEducationDataTable extends Migration {
 	public function up()
 	{
 		Schema::create('educationData',function(Blueprint $table){
+			$table->increments('id');
 			$table->string('establecimiento');
 			$table->string('direccion');
 			$table->string('fecha');

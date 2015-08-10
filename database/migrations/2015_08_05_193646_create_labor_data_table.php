@@ -13,6 +13,7 @@ class CreateLaborDataTable extends Migration {
 	public function up()
 	{
 		Schema::create('laborData',function(Blueprint $table){
+			$table->increments('id');
 			$table->string('empresa');
 			$table->string('direccion');
 			$table->string('telefono');

@@ -26,9 +26,9 @@
         <tr>
             <td class="text-center">{{ $key + 1 }}</td>
             <td>{{ date('d/m/Y',strtotime($value->created_at)) }}</td>
-            <td>{{ $value->dp_name }}</td>
-            <td>{{ $value->dp_name }}</td>
-            <td>{{ $value->dp_name }}</td>
+            <td>{{ $value->nombre }}</td>
+            <td>{{ $value->empresa }}</td>
+            <td>{{ $value->puesto }}</td>
             <td>{{ $value->user->username }}</td>
             <td class="text-center">
                 <a href="#" data-id="{{ $value->id }}" data-toggle="tooltip" title="Editar" class="btn btn-effect-ripple btn-xs btn-success edit"><i class="fa fa-pencil"></i></a>
