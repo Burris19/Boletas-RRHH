@@ -50,15 +50,15 @@ class BallotsController extends CrudController {
 
     {
         $this->repo = $ballotRepo;
-        $this->personalDataRepo = $personalDataRepo;
-        $this->familyDataRepo = $familyDataRepo;
-        $this->educationDataRepo = $educationDataRepo;
-        $this->laborDataRepo = $laborDataRepo;
-        $this->budgetDataRepo = $budgetDataRepo;
-        $this->homeDataRepo = $homeDataRepo;
-        $this->saludDataRepo = $saludDataRepo;
-        $this->viciosDataRepo = $viciosDataRepo;
-        $this->vecinosDataRepo = $vecinosDataRepo;
+        $this->personalDataRepo   = $personalDataRepo;
+        $this->familyDataRepo     = $familyDataRepo;
+        $this->educationDataRepo  = $educationDataRepo;
+        $this->laborDataRepo      = $laborDataRepo;
+        $this->budgetDataRepo     = $budgetDataRepo;
+        $this->homeDataRepo       = $homeDataRepo;
+        $this->saludDataRepo      = $saludDataRepo;
+        $this->viciosDataRepo     = $viciosDataRepo;
+        $this->vecinosDataRepo    = $vecinosDataRepo;
     }
 
 
@@ -426,7 +426,6 @@ class BallotsController extends CrudController {
         $dataEducation->id_record       = $id;
         $dataEducation->save();
 
-
         //Educacion Secundatia
         $dataEducation = EducationData::whereRaw('tipo = ? and id_record = ?',['secundaria',$id])->first();
         $dataEducation = $this->educationDataRepo->update($dataEducation, $data);
@@ -437,77 +436,104 @@ class BallotsController extends CrudController {
         $dataEducation->id_record = $id;
         $dataEducation->save();
 
-
-        /*
-        $ded = EducationData::whereRaw('tipo = ? and id_record = ?',['diversificado',$id])->get();
-        $deu = EducationData::whereRaw('tipo = ? and id_record = ?',['universidad',$id])->get();
-
         //Educacion diversificado
-        $dataEducation['establecimiento'] = $data['de7'];
-        $dataEducation['direccion'] = $data['de8'];
-        $dataEducation['fecha'] = $data['de10'];
-        $dataEducation['titulo'] = $data['de9'];
-        $dataEducation['tipo'] = 'diversificado';
-        $dataEducation['id_record'] = $ballot->id;
-        $this->educationDataRepo->update($dataEducation);
+        $dataEducation = EducationData::whereRaw('tipo = ? and id_record = ?',['diversificado',$id])->first();
+        $dataEducation = $this->educationDataRepo->update($dataEducation, $data);
+        $dataEducation->establecimiento = $data['de7'];
+        $dataEducation->direccion       = $data['de8'];
+        $dataEducation->fecha           = $data['de10'];
+        $dataEducation->titulo          = $data['de9'];
+        $dataEducation->tipo            = 'diversificado';
+        $dataEducation->id_record       = $id;
+        $dataEducation->save();
 
         //Educacion Universidad
-        $dataEducation['establecimiento'] = $data['de11'];
-        $dataEducation['direccion'] = $data['de12'];
-        $dataEducation['fecha'] = $data['de14'];
-        $dataEducation['titulo'] = $data['de13'];
-        $dataEducation['observacion'] = $data['de15'];
-        $dataEducation['tipo'] = 'universidad';
-        $dataEducation['id_record'] = $ballot->id;
-        $this->educationDataRepo->update($dataEducation);
-
+        $dataEducation = EducationData::whereRaw('tipo = ? and id_record = ?',['universidad',$id])->first();
+        $dataEducation->establecimiento = $data['de11'];
+        $dataEducation->direccion       = $data['de12'];
+        $dataEducation->fecha           = $data['de14'];
+        $dataEducation->titulo          = $data['de13'];
+        $dataEducation->observacion     = $data['de15'];
+        $dataEducation->tipo            = 'universidad';
+        $dataEducation->id_record       = $id;
+        $dataEducation->save();
 
         //Informacion Laboral
+        $dataLabor  = LaborData::where('id_record',$id)->get();
+        $indice = 0;
         $e = 1;
-        while ( $e < 122) {
-            $dataLabor['empresa'] = $data['dl'.$e];
+        while ( $e < 111) {
+            $dataLabor[$indice]->empresa = $data['dl'.$e];
             $e++;
-            $dataLabor['direccion'] = $data['dl'.$e];
+            $dataLabor[$indice]->direccion = $data['dl'.$e];
             $e++;
-            $dataLabor['telefono'] = $data['dl'.$e];
+            $dataLabor[$indice]->telefono = $data['dl'.$e];
             $e++;
-            $dataLabor['puesto'] = $data['dl'.$e];
+            $dataLabor[$indice]->puesto = $data['dl'.$e];
             $e++;
-            $dataLabor['jefe_inmediato'] = $data['dl'.$e];
+            $dataLabor[$indice]->jefe_inmediato = $data['dl'.$e];
             $e++;
-            $dataLabor['puesto_jefe_inmediato'] = $data['dl'.$e];
+            $dataLabor[$indice]->puesto_jefe_inmediato = $data['dl'.$e];
             $e++;
-            $dataLabor['fecha_inicio'] = $data['dl'.$e];
+            $dataLabor[$indice]->fecha_inicio = $data['dl'.$e];
             $e++;
-            $dataLabor['fecha_retiro'] = $data['dl'.$e];
+            $dataLabor[$indice]->fecha_retiro = $data['dl'.$e];
             $e++;
-            $dataLabor['ultimo_salario'] = $data['dl'.$e];
+            $dataLabor[$indice]->ultimo_salario = $data['dl'.$e];
             $e++;
-            $dataLabor['motivo_despido'] = $data['dl'.$e];
+            $dataLabor[$indice]->motivo_despido = $data['dl'.$e];
             $e++;
-            $dataLabor['referencia_obtenida'] = $data['dl'.$e];
+            $dataLabor[$indice]->referencia_obtenida = $data['dl'.$e];
             $e++;
-            $dataLabor['id_record'] = $ballot->id;
-            $this->laborDataRepo->update($dataLabor);
+            $dataLabor[$indice]->id_record = $id;
+            $dataLabor[$indice]->save();
+            $indice++;
         }
 
         // Presupuesto Mensual
+        $databudget = BudgetData::where('id_record',$id)->get();
+        $indice = 0 ;
         $i = 1;
         while ( $i < 24 ) {
-            $databudget['ingresos'] = $data['ingreso'.$i];
-            $databudget['egresos'] = $data['egreso'.$i];
-            $databudget['diferencia'] = $data['diferencia'.$i];
-            $databudget['id_record'] = $ballot->id;
-            $this->budgetDataRepo->update($databudget);
+            $databudget[$indice]->ingresos    = $data['ingreso'.$i];
+            $databudget[$indice]->egresos     = $data['egreso'.$i];
+            $databudget[$indice]->diferencia  = $data['diferencia'.$i];
+            $databudget[$indice]->id_record   = $id;
+            $databudget[$indice]->save();
+            $indice++;
             $i++;
         }
 
         // Redidencia
-        $this->homeDataRepo->update($data);
+        $dataHome = HomeData::where('id_record',$id)->first();
+        $dataHome = $this->homeDataRepo->update($dataHome, $data);
+        $dataHome->hd1   = $data['hd1'];
+        $dataHome->hd2   = $data['hd2'];
+        $dataHome->hd3   = $data['hd3'];
+        $dataHome->hd4   = $data['hd4'];
+        $dataHome->hd5   = $data['hd5'];
+        $dataHome->hd6   = $data['hd6'];
+        $dataHome->hd7   = $data['hd7'];
+        $dataHome->id_record = $id;
+        $dataHome->save();
 
         // Salud
-        $this->saludDataRepo->update($data);
+        $dataSalud = SaludData::where('id_record',$id)->first();
+        $dataSalud = $this->saludDataRepo->update($dataSalud, $data);
+        $dataSalud->sa1   = $data['sa1'];
+        $dataSalud->sa2   = $data['sa2'];
+        $dataSalud->sa3   = $data['sa3'];
+        $dataSalud->sa4   = $data['sa4'];
+        $dataSalud->sa5   = $data['sa5'];
+        $dataSalud->sa6   = $data['sa6'];
+        $dataSalud->sa7   = $data['sa7'];
+        $dataSalud->sa8   = $data['sa8'];
+        $dataSalud->sa9   = $data['sa9'];
+        $dataSalud->sa10  = $data['sa10'];
+        $dataSalud->id_record = $id;
+        $dataSalud->save();
 
+/*
         // Vicios
         $this->viciosDataRepo->update($data);
 

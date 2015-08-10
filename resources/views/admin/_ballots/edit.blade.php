@@ -991,7 +991,7 @@
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <label>Referencia objtenida Empresa</label>
-                                <textarea  class="form-control" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[0]->referencia_obtenida }}</textarea>
+                                <textarea  class="form-control" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[2]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -1495,7 +1495,7 @@
                         </div>
                         <div class="form-group col-xs-6">
                             <label>¿Numero de habitacion?</label>
-                            <input type = "number" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" required>
+                            <input type = "number" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" value = "{{ $ho[0]->hd2 }}" >
                         </div>
                     </div>
                     <div class="row">
