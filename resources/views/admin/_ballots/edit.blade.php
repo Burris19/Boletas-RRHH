@@ -71,12 +71,7 @@
                                     <!--Estado Civil -->
                                     <div class="form-group col-xs-6">
                                         <label>Elija su estado Civil</label>
-                                        <select class="form-control col-xs-6" id = "dp7" name = "dp7">
-                                            <option>Casado</option>
-                                            <option>Soltero</option>
-                                            <option>Divorciado</option>
-                                            <option>Viudo</option>
-                                        </select>
+                                        {!! Form::select( 'dp7', ['Casado' => 'Casado', 'Soltero' => 'Soltero', 'Divorciado' => 'Divorciado' , 'Viudo' => 'Viudo'] , $dp->dp7 , ['class' => 'form-control'] ) !!}
                                     </div>
                                     <!-- DPI -->
                                     <div class="form-group col-xs-6">
@@ -96,10 +91,7 @@
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Posee licencia de conducir?</label>
-                                        <select class="form-control col-xs-6" id = "dp10" name = "dp10">
-                                            <option>Si</option>
-                                            <option>No</option>
-                                        </select>
+                                        {!! Form::select( 'dp10', ['Si' => 'Si', 'No' => 'No'] , $dp->dp10 , ['class' => 'form-control'] ) !!}
                                     </div>
                                 </div>
 
@@ -107,13 +99,7 @@
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Que tipo de licencia posee?</label>
-                                        <select class="form-control col-xs-6" id = "dp11" name = "dp11" >
-                                            <option>Tipo A</option>
-                                            <option>Tipo B</option>
-                                            <option>Tipo C</option>
-                                            <option>Tipo M</option>
-                                            <option>Tipo E</option>
-                                        </select>
+                                        {!! Form::select( 'dp11', ['Tipo A' => 'Tipo A', 'Tipo B' => 'Tipo B', 'Tipo C' => 'Tipo C' , 'Tipo M' => 'Tipo M', 'Tipo M' => 'Tipo M'] , $dp->dp11 , ['class' => 'form-control'] ) !!}
                                     </div>
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
@@ -124,7 +110,7 @@
                                 <div class="row">
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
-                                        <label>Elija su Religion</label>
+                                        <label>¿Cual es su religion?</label>
                                         <input type = "text" class = "form-control" id = "dp13" name = "dp13" placeholder = "Religion" value="{{ $dp->dp13 }}">
                                     </div>
                                     <!--Profesion -->
@@ -208,7 +194,7 @@
                                 </div>
                                 <div class="row">
                                     <!--Telefono casa -->
-                                    <div class="form-group col-xs-12"
+                                    <div class="form-group col-xs-12">
                                     <label>Relacion con su Padre</label>
                                     <textarea  class="form-control" id="df8" name="df8" placeholder="Relación con su padre" rows="3" >{{ $dfp[0]->relacion }}</textarea>
                                 </div>
@@ -316,386 +302,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Informacion de los hermanos -->
-                        <p class="bg-primary info-text">Informacion sobre Hermanos</p>
-
-
-                        <div class="row">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df24" name="df24" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df25" name="df25" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df26" name="df26" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df27" name="df27" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df28" name = "df28" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row bro1" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df29" name="df29" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df30" name="df30" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro1" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df31" name="df31" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df32" name="df32" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro1" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df33" name = "df33" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row bro2" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df34" name="df34" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df35" name="df35" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro2" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df36" name="df36" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df37" name="df37" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro2" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df38" name = "df38" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row bro3" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df39" name="df39" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df40" name="df40" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro3" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df41" name="df41" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df42" name="df42" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro3" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df43" name = "df43" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row bro4" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df44" name="df44" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df45" name="df45" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro4" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df46" name="df46" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df47" name="df47" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro4" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df48" name = "df48" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row bro5" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df49" name="df49" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df50" name="df50" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro5" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df51" name="df51" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df52" name="df52" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro5" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df53" name = "df53" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row bro6" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df54" name="df54" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df55" name="df55" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro6" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df56" name="df56" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df57" name="df57" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro6" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df58" name = "df58" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row bro7" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df59" name="df59" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df60" name="df60" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro7" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df61" name="df61" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df62" name="df62" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro7" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df63" name = "df63" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row bro8" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df64" name="df64" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df65" name="df65" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro8" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df66" name="df66" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df67" name="df67" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro8" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df68" name = "df68" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row bro9" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df69" name="df69" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df70" name="df70" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro9" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df71" name="df71" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df72" name="df72" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro9" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df73" name = "df73" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row bro10" style="display: none">
-                            <!-- Nombres del esposo -->
-                            <div class="form-group col-xs-6">
-                                <label>Nombre completo</label>
-                                <input type="text" class="form-control" id="df74" name="df74" placeholder="Nombres" required>
-                            </div>
-                            <!-- Edad -->
-                            <div class="form-group col-xs-6">
-                                <label>Edad</label>
-                                <input type="number" class="form-control" id="df75" name="df75" placeholder="Edad" required>
-                            </div>
-                        </div>
-                        <div class="row bro10" style="display: none">
-                            <!-- A que se dedica -->
-                            <div class="form-group col-xs-6">
-                                <label>A que se dedica</label>
-                                <input type="text" class="form-control" id="df76" name="df76" placeholder="A que se dedica" required>
-                            </div>
-                            <!-- Numero telefonico -->
-                            <div class="form-group col-xs-6">
-                                <label>Numero Telefonico</label>
-                                <input type="number" class="form-control" id="df77" name="df77" placeholder="Numero telefonico" required>
-                            </div>
-                        </div>
-                        <div class="row bro10" style="display:none" >
-                            <!-- Observaciones -->
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Observacion</label>
-                                    <input type = "text" class = "form-control" id = "df78" name = "df78" placeholder = "Direccion completa" required>
-                                </div>
-                            </div>
-                        </div>
-                        <input type='button' class='btn btn-fill btn-danger btn-wd btn-sm' id="addBrother" value='Agregar' />
 
                         <!-- Informacion Hijos -->
                         <p class="bg-primary info-text">Informacion sobre Hijos</p>
@@ -704,10 +310,375 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Numero de hijos</label>
-                                    <input type = "number" class = "form-control" id = "df79" name = "df79" placeholder = "Numero de hijos" required>
+                                    {!! Form::text( 'df79', $dfp[0]->hijos ,  ['class' => 'form-control'] ) !!}
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Informacion de los hermanos -->
+                        <p class="bg-primary info-text">Informacion sobre Hermanos</p>
+                            <!-- Primer Hermano -->
+                            <div class="row">
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df24', $dfh[0]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df25', $dfh[0]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df26', $dfh[0]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df27', $dfh[0]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df28', $dfh[0]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Segundo  Hermano -->
+                            <hr  class="bro1" @if( $dfh[1]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro1" @if( $dfh[1]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df29', $dfh[1]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df30', $dfh[1]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro1" @if( $dfh[1]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df31', $dfh[1]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df32', $dfh[1]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro1" @if( $dfh[1]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df33', $dfh[1]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Tercer  Hermano -->
+                            <hr  class="bro2" @if( $dfh[2]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro2" @if( $dfh[2]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df34', $dfh[2]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df35', $dfh[2]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro2" @if( $dfh[2]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df36', $dfh[2]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df37', $dfh[2]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro2" @if( $dfh[2]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df38', $dfh[2]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Cuarto  Hermano -->
+                            <hr  class="bro3" @if( $dfh[3]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro3" @if( $dfh[3]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df39', $dfh[3]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df40', $dfh[3]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro3" @if( $dfh[3]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df41', $dfh[3]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df42', $dfh[3]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro3" @if( $dfh[3]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df43', $dfh[3]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Quinto  Hermano -->
+                            <hr  class="bro4" @if( $dfh[4]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro4" @if( $dfh[4]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df44', $dfh[4]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df45', $dfh[4]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro4" @if( $dfh[4]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df46', $dfh[4]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df47', $dfh[4]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro4" @if( $dfh[4]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df47', $dfh[4]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Sexto  Hermano -->
+                            <hr  class="bro5" @if( $dfh[5]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro5" @if( $dfh[5]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df49', $dfh[5]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df50', $dfh[5]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro5" @if( $dfh[5]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df51', $dfh[5]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df52', $dfh[5]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro5" @if( $dfh[5]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df53', $dfh[5]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Septimo  Hermano -->
+                            <hr  class="bro6" @if( $dfh[6]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro6" @if( $dfh[6]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df54', $dfh[6]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df55', $dfh[6]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro6" @if( $dfh[6]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df56', $dfh[6]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df57', $dfh[6]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro6" @if( $dfh[6]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df58', $dfh[6]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Octavo  Hermano -->
+                            <hr  class="bro7" @if( $dfh[7]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro7" @if( $dfh[7]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df59', $dfh[7]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df60', $dfh[7]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro7" @if( $dfh[7]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df61', $dfh[7]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df62', $dfh[7]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro7" @if( $dfh[7]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df63', $dfh[7]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Noveno  Hermano -->
+                            <hr  class="bro8" @if( $dfh[8]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro8" @if( $dfh[8]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df64', $dfh[8]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df65', $dfh[8]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro8" @if( $dfh[8]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df66', $dfh[8]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df67', $dfh[8]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro8" @if( $dfh[8]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df68', $dfh[8]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Decimo  Hermano -->
+                            <hr  class="bro9" @if( $dfh[9]->nombre === '-----' )  style="display: none"  @endif  >
+                            <div class="row bro9" @if( $dfh[9]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Nombres del esposo -->
+                                <div class="form-group col-xs-6">
+                                    <label>Nombre completo</label>
+                                    {!! Form::text( 'df69', $dfh[9]->nombre ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Edad -->
+                                <div class="form-group col-xs-6">
+                                    <label>Edad</label>
+                                    {!! Form::number( 'df70', $dfh[9]->edad ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro9" @if( $dfh[9]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- A que se dedica -->
+                                <div class="form-group col-xs-6">
+                                    <label>A que se dedica</label>
+                                    {!! Form::text( 'df71', $dfh[9]->profecion ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                                <!-- Numero telefonico -->
+                                <div class="form-group col-xs-6">
+                                    <label>Numero Telefonico</label>
+                                    {!! Form::number( 'df72', $dfh[9]->telefono ,  ['class' => 'form-control'] ) !!}
+                                </div>
+                            </div>
+                            <div class="row bro9" @if( $dfh[9]->nombre === '-----' )  style="display: none"  @endif  >
+                                <!-- Observaciones -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        {!! Form::text( 'df73', $dfh[9]->observacion ,  ['class' => 'form-control'] ) !!}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <input type='button' class='btn btn-fill btn-danger btn-wd btn-sm' id="addBrother" value='Agregar'>
+                            <hr>
+
                     </div>
                 </div>
             </div>
@@ -815,875 +786,643 @@
 
             <!-- Informacion Laboral -->
             <div class="tab-pane" id="laboral">
-
+                <!-- Primera Empresa -->
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl1', $dl[0]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl2', $dl[0]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl3', $dl[0]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl4', $dl[0]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl5', $dl[0]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl6', $dl[0]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl7', $dl[0]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl8', $dl[0]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl9', $dl[0]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl10" placeholder="Motivo de terio" rows="3" required>{{ $dl[0]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl11" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[0]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Segunda Empresa -->
+                <div class="row lab1"  @if( $dl[1]->empresa === '-----' )  style="display: none"  @endif >
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl12', $dl[1]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl13', $dl[1]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl14', $dl[1]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl15', $dl[1]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl16', $dl[1]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl17', $dl[1]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl18', $dl[1]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl19', $dl[1]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl20', $dl[1]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl21" placeholder="Motivo de terio" rows="3" required>{{ $dl[1]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl22" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[1]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tercera Empresa -->
+                <div class="row lab2" @if( $dl[2]->empresa === '-----' )  style="display: none"  @endif >
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl23', $dl[2]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl24', $dl[2]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl25', $dl[2]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl26', $dl[2]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl27', $dl[2]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl28', $dl[2]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl29', $dl[2]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl30', $dl[2]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl31', $dl[2]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl32" placeholder="Motivo de terio" rows="3" required>{{ $dl[2]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[0]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cuarta Empresa  -->
+                <div class="row lab3" @if( $dl[3]->empresa === '-----' )  style="display: none"  @endif >
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl34', $dl[3]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl35', $dl[3]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl36', $dl[3]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl37', $dl[3]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl38', $dl[3]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl39', $dl[3]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl40', $dl[3]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl41', $dl[3]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl42', $dl[3]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl43" placeholder="Motivo de terio" rows="3" required>{{ $dl[3]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl44" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[3]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quinta Empresa  -->
+                <div class="row lab4" @if( $dl[4]->empresa === '-----' )  style="display: none"  @endif>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl45', $dl[4]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl46', $dl[4]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl47', $dl[4]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl48', $dl[4]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl49', $dl[4]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl50', $dl[4]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl51', $dl[4]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl52', $dl[4]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl53', $dl[4]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl54" placeholder="Motivo de terio" rows="3" required>{{ $dl[4]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl55" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[4]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sexta Empresa   -->
+                <div class="row lab5" @if( $dl[5]->empresa === '-----' )  style="display: none"  @endif>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl56', $dl[5]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl57', $dl[5]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl58', $dl[5]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl59', $dl[5]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl60', $dl[5]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl61', $dl[5]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl62', $dl[5]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl63', $dl[5]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl64', $dl[5]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl65" placeholder="Motivo de terio" rows="3" required>{{ $dl[5]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl66" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[5]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Septima Empresa -->
+                <div class="row lab6" @if( $dl[6]->empresa === '-----' )  style="display: none"  @endif>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl67', $dl[6]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl68', $dl[6]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl69', $dl[6]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl70', $dl[6]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl71', $dl[6]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl72', $dl[6]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl73', $dl[6]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl74', $dl[6]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl75', $dl[6]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl76" placeholder="Motivo de terio" rows="3" required>{{ $dl[6]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl77" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[6]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Octava Empresa  -->
+                <div class="row lab7" @if( $dl[7]->empresa === '-----' )  style="display: none"  @endif >
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl78', $dl[7]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl79', $dl[7]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl80', $dl[7]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl81', $dl[7]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl82', $dl[7]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl83', $dl[7]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl84', $dl[7]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl85', $dl[7]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl86', $dl[7]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl87" placeholder="Motivo de terio" rows="3" required>{{ $dl[7]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl88" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[7]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Novena Empresa  -->
+                <div class="row lab8" @if( $dl[8]->empresa === '-----' )  style="display: none"  @endif>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl89', $dl[8]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl90', $dl[8]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl91', $dl[8]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl92', $dl[8]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl93', $dl[8]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl94', $dl[8]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl95', $dl[8]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl96', $dl[8]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl97', $dl[8]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl98" placeholder="Motivo de terio" rows="3" required>{{ $dl[8]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl99" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[8]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decima Empresa  -->
+                <div class="row lab9" @if( $dl[9]->empresa === '-----' )  style="display: none"  @endif>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Empresa</label>
+                                {!! Form::text( 'dl100', $dl[9]->empresa ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Direccion</label>
+                                {!! Form::text( 'dl101', $dl[9]->direccion ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Telefono</label>
+                                {!! Form::number( 'dl102', $dl[9]->telefono ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto</label>
+                                {!! Form::text( 'dl103', $dl[9]->puesto ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Jefe Inmediato</label>
+                                {!! Form::text( 'dl104', $dl[9]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Puesto del Jefe inmediato</label>
+                                {!! Form::text( 'dl105', $dl[9]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Fecha inicio</label>
+                                {!! Form::text( 'dl106', $dl[9]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Fecha de Salida</label>
+                                {!! Form::text( 'dl107', $dl[9]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label>Ultimo salario</label>
+                                {!! Form::number( 'dl108', $dl[9]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Motivo de retiro</label>
+                                <textarea  class="form-control" name="dl109" placeholder="Motivo de terio" rows="3" required>{{ $dl[9]->motivo_despido }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Referencia objtenida Empresa</label>
+                                <textarea  class="form-control" name="dl110" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[9]->referencia_obtenida }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Boton Agregar -->
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
                         <div class="row">
-                            <!-- Empresa  -->
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                <input type = "text" class = "form-control" id = "dl1" name = "dl1" placeholder = "Nombre de la empresa" required>
-                            </div>
-                            <!-- Direccion empresa  -->
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                <input type = "text" class = "form-control" id = "dl2" name = "dl2" placeholder = "Direccion de la empresa" required>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Telefono  -->
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                <input type = "number" class = "form-control" id = "dl3" name = "dl3" placeholder = "Numero telefonico de la empresa" required>
-                            </div>
-                            <!-- Cargo empresa  -->
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                <input type = "text" class = "form-control" id = "dl4" name = "dl4" placeholder = "Puesto que desempeño" required>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Jefe Inmediato  -->
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                <input type = "text" class = "form-control" id = "dl5" name = "dl5" placeholder = "Nombre del jefe inmediato" required>
-                            </div>
-                            <!-- Direccion empresa  -->
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                <input type = "text" class = "form-control" id = "dl6" name = "dl6" placeholder = "Puesto del Jefe inmediato" required>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Fecha de inicio  -->
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                <input type = "text" class = "form-control" id = "dl7" name = "dl7" placeholder = "Fecha de inicio de labores" required>
-                            </div>
-                            <!-- Fecha de salida  -->
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                <input type = "text" class = "form-control" id = "dl8" name = "dl8" placeholder = "Fecha de salida de la empresa" required>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Ultimo Salario  -->
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                <input type = "number" class = "form-control" id = "dl9" name = "dl9" placeholder = "Ultimo salario" required>
-                            </div>
-                            <!-- Motivo de retiro  -->
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" id="dl10" name="dl10" placeholder="Motivo de terio" rows="3" required></textarea>
-                            </div>
-                        </div>
-
-                        <div class="row">
                             <!--Telefono casa -->
-                            <div class="form-group col-xs-12"
-                            <label>Referencia objtenida Empresa</label>
-                            <textarea  class="form-control" id="dl11" name="dl11" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
+                            <div class="form-group col-xs-12">
+                                <input type='button' class='btn btn-fill btn-danger btn-wd btn-sm' id="addLab" value='Agregar' />
+                            </div>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row lab1" style="display: none">
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="row">
-                        <!-- Empresa  -->
-                        <div class="form-group col-xs-6">
-                            <label>Empresa</label>
-                            <input type = "text" class = "form-control" id = "dl12" name = "dl12" placeholder = "Nombre de la empresa" required>
-                        </div>
-                        <!-- Direccion empresa  -->
-                        <div class="form-group col-xs-6">
-                            <label>Direccion</label>
-                            <input type = "text" class = "form-control" id = "dl13" name = "dl13" placeholder = "Direccion de la empresa" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Telefono  -->
-                        <div class="form-group col-xs-6">
-                            <label>Telefono</label>
-                            <input type = "number" class = "form-control" id = "dl14" name = "dl14" placeholder = "Numero telefonico de la empresa" required>
-                        </div>
-                        <!-- Cargo empresa  -->
-                        <div class="form-group col-xs-6">
-                            <label>Puesto</label>
-                            <input type = "text" class = "form-control" id = "dl15" name = "dl15" placeholder = "Puesto que desempeño" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Jefe Inmediato  -->
-                        <div class="form-group col-xs-6">
-                            <label>Jefe Inmediato</label>
-                            <input type = "text" class = "form-control" id = "dl16" name = "dl16" placeholder = "Nombre del jefe inmediato" required>
-                        </div>
-                        <!-- Direccion empresa  -->
-                        <div class="form-group col-xs-6">
-                            <label>Puesto del Jefe inmediato</label>
-                            <input type = "text" class = "form-control" id = "dl17" name = "dl17" placeholder = "Puesto del Jefe inmediato" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Fecha de inicio  -->
-                        <div class="form-group col-xs-6">
-                            <label>Fecha inicio</label>
-                            <input type = "text" class = "form-control" id = "dl18" name = "dl18" placeholder = "Fecha de inicio de labores" required>
-                        </div>
-                        <!-- Fecha de salida  -->
-                        <div class="form-group col-xs-6">
-                            <label>Fecha de Salida</label>
-                            <input type = "text" class = "form-control" id = "dl19" name = "dl19" placeholder = "Fecha de salida de la empresa" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Ultimo Salario  -->
-                        <div class="form-group col-xs-6">
-                            <label>Ultimo salario</label>
-                            <input type = "number" class = "form-control" id = "dl20" name = "dl20" placeholder = "Ultimo salario" required>
-                        </div>
-                        <!-- Motivo de retiro  -->
-                        <div class="form-group col-xs-6">
-                            <label>Motivo de retiro</label>
-                            <textarea  class="form-control" id="dl21" name="dl21" placeholder="Motivo de terio" rows="3" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!--Telefono casa -->
-                        <div class="form-group col-xs-12"
-                        <label>Referencia objtenida Empresa</label>
-                        <textarea  class="form-control" id="dl22" name="dl22" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
+                        <hr>
                     </div>
                 </div>
 
             </div>
-    </div>
 
-    <div class="row lab2" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl23" name = "dl23" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl24" name = "dl24" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
 
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl25" name = "dl25" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl26" name = "dl26" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
 
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl27" name = "dl27" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl28" name = "dl28" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl29" name = "dl29" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl30" name = "dl30" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl31" name = "dl31" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl32" name="dl32" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl33" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab3" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl34" name = "dl34" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl35" name = "dl35" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl36" name = "dl36" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl37" name = "dl37" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl38" name = "dl38" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl39" name = "dl39" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl40" name = "dl40" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl41" name = "dl41" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl42" name = "dl42" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl43" name="dl43" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl44" name="dl44" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab4" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl45" name = "dl45" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl46" name = "dl46" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl47" name = "dl47" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl48" name = "dl48" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl49" name = "dl49" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl50" name = "dl50" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl51" name = "dl51" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl52" name = "dl52" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl53" name = "dl53" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl54" name="dl54" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl55" name="dl55" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab5" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl56" name = "dl56" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl57" name = "dl57" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl58" name = "dl58" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl59" name = "dl59" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl60" name = "dl60" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl61" name = "dl61" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl62" name = "dl62" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl63" name = "dl63" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl64" name = "dl64" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl65" name="dl65" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl66" name="dl66" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab6" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl67" name = "dl67" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl68" name = "dl68" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl69" name = "dl69" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl70" name = "dl70" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl71" name = "dl71" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl72" name = "dl72" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl73" name = "dl73" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl74" name = "dl74" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl75" name = "dl75" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl76" name="dl76" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl77" name="dl77" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab7" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl78" name = "dl78" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl79" name = "dl79" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl80" name = "dl80" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl81" name = "dl81" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl82" name = "dl82" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl83" name = "dl83" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl84" name = "dl84" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl85" name = "dl85" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl86" name = "dl86" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl87" name="dl87" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl88" name="dl88" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab8" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl89" name = "dl89" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl90" name = "dl90" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl91" name = "dl91" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl92" name = "dl92" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl93" name = "dl93" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl94" name = "dl94" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl95" name = "dl95" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl96" name = "dl96" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl97" name = "dl97" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl98" name="dl98" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl99" name="dl99" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab9" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl100" name = "dl100" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl101" name = "dl101" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl102" name = "dl102" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl103" name = "dl103" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl104" name = "dl104" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl105" name = "dl105" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl106" name = "dl106" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl107" name = "dl107" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl108" name = "dl108" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl109" name="dl109" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl110" name="dl110" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-    <div class="row lab10" style="display: none">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!-- Empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl111" name = "dl111" placeholder = "Nombre de la empresa" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl112" name = "dl112" placeholder = "Direccion de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Telefono  -->
-                <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl113" name = "dl113" placeholder = "Numero telefonico de la empresa" required>
-                </div>
-                <!-- Cargo empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl114" name = "dl114" placeholder = "Puesto que desempeño" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Jefe Inmediato  -->
-                <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl115" name = "dl115" placeholder = "Nombre del jefe inmediato" required>
-                </div>
-                <!-- Direccion empresa  -->
-                <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl116" name = "dl116" placeholder = "Puesto del Jefe inmediato" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Fecha de inicio  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl117" name = "dl117" placeholder = "Fecha de inicio de labores" required>
-                </div>
-                <!-- Fecha de salida  -->
-                <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl118" name = "dl118" placeholder = "Fecha de salida de la empresa" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Ultimo Salario  -->
-                <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl119" name = "dl119" placeholder = "Ultimo salario" required>
-                </div>
-                <!-- Motivo de retiro  -->
-                <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl120" name="dl120" placeholder="Motivo de terio" rows="3" required></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12"
-                <label>Referencia objtenida Empresa</label>
-                <textarea  class="form-control" id="dl121" name="dl121" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-            </div>
-        </div>
-
-    </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-                <!--Telefono casa -->
-                <div class="form-group col-xs-12">
-                    <input type='button' class='btn btn-fill btn-danger btn-wd btn-sm' id="addLab" value='Agregar' />
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
     <!-- Presupuesto Familiar -->
     <div class="tab-pane" id="presupuesto">
         <div class="row">

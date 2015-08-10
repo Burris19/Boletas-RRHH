@@ -20,6 +20,7 @@ use App\Models\VecinosData;
 use App\Models\ViciosData;
 use App\Models\SaludData;
 use App\Models\HomeData;
+use App\Models\LaborData;
 
 class BallotsController extends CrudController {
 
@@ -75,15 +76,13 @@ class BallotsController extends CrudController {
         $des = EducationData::whereRaw('tipo = ? and id_record = ?',['secundaria',$id])->get();
         $ded = EducationData::whereRaw('tipo = ? and id_record = ?',['diversificado',$id])->get();
         $deu = EducationData::whereRaw('tipo = ? and id_record = ?',['universidad',$id])->get();
+        $dl  = LaborData::where('id_record',$id)->get();
         $pf  = BudgetData::where('id_record',$id)->get();
         $ho  = HomeData::where('id_record',$id)->get();
         $sa  = SaludData::where('id_record',$id)->get();
         $vi  = ViciosData::where('id_record',$id)->get();
         $ve  = VecinosData::where('id_record',$id)->get();
-
-
-
-        return view($this->root . '/' . $this->module . '/edit',compact('dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho'));
+        return view($this->root . '/' . $this->module . '/edit',compact('dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho','dl'));
     }
 
     public function store(Request $request)
