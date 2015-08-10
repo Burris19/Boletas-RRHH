@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Helpers\UploadX;
 use App\Repositories\BallotRepo;
 use App\Repositories\PersonalDataRepo;
 use App\Repositories\FamilyDataRepo;
@@ -87,17 +88,22 @@ class BallotsController extends CrudController {
 
     public function store(Request $request)
     {
+        $data = $request->all();
+        //var_dump($data);
 
-        //Obtenemos todos los datos
-    	$data = $request->all();
 
+        // Upload new image
+        if($request->hasFile('dp16')) {
+            $image = UploadX::uploadFile($request->file('dp16'),'pictures', time());
+            $data['dp16'] = $image['url'];
+        }else{
 
-        //return $data;
-        
-    	//llenamos los campos vacios 
+        }
+
+        //llenamos los campos vacios
     	$data = array_map(function($item){
             return ($item == '' ? '-----' : $item);
-        }, $data);    	
+        }, $data);
 
         //Registramos el archivo        
         $ballot_data['id_user'] = \Auth::id();
@@ -105,6 +111,15 @@ class BallotsController extends CrudController {
 
         //Obtemos el id del archivo
         $data['id_record'] = $ballot->id;
+
+
+        // Upload new image
+        if($request->hasFile('dp16')) {
+            $image = UploadX::uploadFile($request->file('dp16'),'pictures', $ballot->id);
+            $data['dp16'] = $image['url'];
+        }else{
+
+        }
 
         //Guardamos en la tabla datos personales
         $dataPersonal = $this->personalDataRepo->create($data);
@@ -272,12 +287,12 @@ class BallotsController extends CrudController {
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot->url);
 
-
         return [
             'message' => 'Boleta generada exitosamente',
             'success' => true,
             'id' =>  $ballot->id
         ];
+
 
     }
 

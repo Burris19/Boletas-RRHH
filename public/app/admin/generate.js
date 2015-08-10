@@ -7,11 +7,27 @@ $(function(){
 
     $('.edit').click(function(e){
         Helper.blockPage();
+
         CRUD.show('#page',$(this).data('id'),'/edit',function() {
             Helper.unblockPage();
         });
         e.preventDefault();
     })
+
+    $('[name = "finish"]').click(function(){
+        $('[name = "finish"]').prop('disabled',true);
+        CRUD.action('#form-create', function(response){
+            $('[name = "finish"]').prop('disabled',false);
+            window.open('pdf/' + response.id,'_blank');
+            $('#page').load('ballots');
+
+        });
+    });
+
+
+
+
+
 
 
 

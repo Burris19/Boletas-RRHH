@@ -128,15 +128,34 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-sm-12">
                                     <div class="picture-container">
                                         <div class="picture">
                                             <img src="wizar/imagenes/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                                            <input type="file" id="wizard-picture dp16" name = "dp16" >
+                                            <input type="file" id="files" name="dp16" />
                                         </div>
                                         <h6>Seleccionar Foto</h6>
                                     </div>
                                 </div>
+                                <div id="lista">
+                                    @if($dp->dp15 === "------")
+
+                                    @else
+
+                                    @endif
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>

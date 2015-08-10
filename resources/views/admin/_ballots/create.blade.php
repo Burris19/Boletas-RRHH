@@ -12,7 +12,7 @@
     @parent
   
     <div class="wizard-container"> 
-      <form action="" method="" name = "form-wizar">
+      <form action="ballots" method="POST" name = "form-wizar" id = "form-create" >
         <div class="card wizard-card ct-wizard-azzure" id="wizard">
           <ul>
             <li><a href="#about" data-toggle="tab">Personal</a></li>
@@ -142,15 +142,18 @@
                     </div>
                   </div>
                 </div>
+
+
                 <div class="col-sm-12">
                   <div class="picture-container">
                     <div class="picture">
-                      <img src="wizar/imagenes/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                      <input type="file" id="wizard-picture dp16" name = "dp16" >
+                        <img src="wizar/imagenes/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                        <input type="file" id="files" name="dp16" />
                     </div>
                     <h6>Seleccionar Foto</h6>
                   </div>
                 </div>
+                <div id="lista"></div>
               </div>
             </div>
           </div>
@@ -1933,7 +1936,7 @@
                             </select>
                           </th>                          
                           <th>
-                            <input type = "text" value="" class = "form-control" name="vi8" >                            
+                            <input type = "text" value="" class = "form-control" name="vi8" >
                           </th> 
                         </tr>
 
@@ -2040,29 +2043,33 @@
     conteo2++;
   });
 
-  $('[name = "finish"]').click(function(){
-    var data = $('[name = "form-wizar"]').serialize();
-  
-      $.ajax({
-      type: 'POST',
-      url: 'ballots',
-      data: data,
-      success: function(data) {
-          console.info(data);
-          if(data.success) {
-            window.open('pdf/' + data.id,'_blank');
-            $('#page').load('ballots');
-          }
-     
+
+
+
+    function archivo(evt) {
+      var files = evt.target.files; // FileList object
+
+      // Obtenemos la imagen del campo "file".
+      for (var i = 0, f; f = files[i]; i++) {
+        //Solo admitimos imágenes.
+        if (!f.type.match('image.*')) {
+          continue;
         }
-      })
 
+        var reader = new FileReader();
 
-  });
+        reader.onload = (function(theFile) {
+          return function(e) {
+            // Insertamos la imagen
+            document.getElementById("lista").innerHTML = ['<img class="img-thumbnail"  style="width: 25%;" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+          };
+        })(f);
 
+        reader.readAsDataURL(f);
+      }
+    }
 
-
-
+    document.getElementById('files').addEventListener('change', archivo, false);
 
 </script>
 
@@ -2073,6 +2080,7 @@
 
 {!! Html::script('wizar/js/jquery.bootstrap.wizard.js') !!}
 {!! Html::script('wizar/js/wizard.js') !!}
+{!! Html::script('wizar/js/ajaxupload-v1.2.js') !!}
 
 
 @stop
