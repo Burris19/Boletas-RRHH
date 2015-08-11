@@ -36,7 +36,6 @@ class BallotsController extends CrudController {
     protected $saludDataRepo;
     protected $viciosDataRepo;
 
-
     function __construct(BallotRepo $ballotRepo,
     					 PersonalDataRepo $personalDataRepo,
                          FamilyDataRepo $familyDataRepo,
@@ -61,12 +60,10 @@ class BallotsController extends CrudController {
         $this->vecinosDataRepo    = $vecinosDataRepo;
     }
 
-
     public function create()
     {
         return view($this->root . '/' . $this->module . '/create');
     }
-
     public function edit($id)
     {
         $db  = $this->repo->findOrFail($id);
@@ -91,7 +88,6 @@ class BallotsController extends CrudController {
         $ve  = VecinosData::where('id_record',$id)->get();
         return view($this->root . '/' . $this->module . '/edit',compact('db','dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho','dl'));
     }
-
     public function store(Request $request)
     {
         $data = $request->all();
@@ -279,7 +275,7 @@ class BallotsController extends CrudController {
             umask($oldmask);
         }
 
-        $ballot->url = $folder . '/' . $ballot->id . '.pdf';
+        $ballot->url = $folder . '/' . time() . '.pdf';
         $ballot->save();
 
         $pdf_factory = \App::make('dompdf');
@@ -293,14 +289,12 @@ class BallotsController extends CrudController {
 
 
     }
-
     public function getPDF($id)
     {
         $pdf = $this->repo->findOrFail($id);
         $file = file_get_contents(public_path() . '/' . $pdf->url);
         return response($file,200)->header('Content-Type','application/pdf');
     }
-
     public function update(Request $request, $id)
     {
         $data = $request->all();
@@ -533,12 +527,36 @@ class BallotsController extends CrudController {
         $dataSalud->id_record = $id;
         $dataSalud->save();
 
-/*
         // Vicios
-        $this->viciosDataRepo->update($data);
+        $dataVicios = ViciosData::where('id_record',$id)->first();
+        $dataVicios = $this->viciosDataRepo->update($dataVicios,$data);
+        $dataVicios->vi1   = $data['vi1'];
+        $dataVicios->vi2   = $data['vi2'];
+        $dataVicios->vi3   = $data['vi3'];
+        $dataVicios->vi4   = $data['vi4'];
+        $dataVicios->vi5   = $data['vi5'];
+        $dataVicios->vi6   = $data['vi6'];
+        $dataVicios->vi7   = $data['vi7'];
+        $dataVicios->vi8   = $data['vi8'];
+        $dataVicios->vi9   = $data['vi9'];
+        $dataVicios->vi10  = $data['vi10'];
+        $dataVicios->id_record = $id;
+        $dataVicios->save();
 
         // Vecinos
-        $this->vecinosDataRepo->update($data);
+        $dataVecinos = VecinosData::where('id_record',$id)->first();
+        $dataVecinos = $this->vecinosDataRepo->update($dataVecinos,$data);
+        $dataVecinos->v1   = $data['v1'];
+        $dataVecinos->v2   = $data['v2'];
+        $dataVecinos->v3   = $data['v3'];
+        $dataVecinos->v4   = $data['v4'];
+        $dataVecinos->v5   = $data['v5'];
+        $dataVecinos->v6   = $data['v6'];
+        $dataVecinos->v7   = $data['v7'];
+        $dataVecinos->v8   = $data['v8'];
+        $dataVecinos->v9   = $data['v9'];
+        $dataVecinos->id_record = $id;
+        $dataVecinos->save();
 
         // Generamos el reporte
         $folder = 'pdfs';
@@ -550,12 +568,12 @@ class BallotsController extends CrudController {
             umask($oldmask);
         }
 
-        $ballot->url = $folder . '/' . $ballot->id . '.pdf';
-        $ballot->save();
+        $ballot_data->url = $folder . '/' . time() . '.pdf';
+        $ballot_data->save();
 
         $pdf_factory = \App::make('dompdf');
-        $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot->url);
-*/
+        $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot_data->url);
+
         return [
             'message' => 'Boleta generada exitosamente',
             'success' => true,
@@ -563,6 +581,4 @@ class BallotsController extends CrudController {
         ];
 
     }
-
-
 }

@@ -1497,8 +1497,8 @@
                             <label>¿Numero de habitacion?</label>
                             <input type = "number" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" value = "{{ $ho[0]->hd2 }}" >
                         </div>
-                    </div>
                     <div class="row">
+                    </div>
                         <div class="form-group col-xs-6">
                             <label>¿Material con la que esta construida la vivienda?</label>
                             {!! Form::select( 'hd3', ['Lamina' => 'Lamina', 'Block' => 'Block'] , $ho[0]->hd3 , ['class' => 'form-control'] ) !!}

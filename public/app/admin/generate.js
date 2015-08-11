@@ -39,8 +39,8 @@ $(function(){
                     processData: false,
                     type: form.prop('method'),
                     success: function(response){
-                        console.log(response);
-
+                      window.open('pdf/' + response.id,'_blank');
+                      $('#page').load('ballots');
                     },
                     error: function(xhr,ajaxOptions,thrownError){
                         console.log(xhr.status);
