@@ -5,7 +5,7 @@
 @stop
 
 @section('buttons')
-    <a href="#" id = "btn-open-wizard" class="btn btn-effect-ripple btn-important" >Nuevo Registro</a>
+    <a href="#" id = "btn-open-wizard" class="btn btn-next btn-fill btn-info btn-wd btn-sm" >Nuevo Registro</a>
 @stop
 
 @section('list-content')
@@ -17,7 +17,7 @@
     <th>Persona</th>
     <th>Empresa</th>
     <th>Puesto</th>
-    <th>Usuario</th>    
+    <th>Usuario</th>
     <th class="text-center" style="width: 75px;"><i class="fa fa-flash"></i></th>
 @stop
 

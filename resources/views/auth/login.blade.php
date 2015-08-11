@@ -49,7 +49,7 @@
         <div id="login-container">
             <!-- Login Header -->
             <h1 class="h2 text-light text-center push-top-bottom animation-slideDown">
-                <strong>Ministerio de Salud Pública y Asistencia Social</strong>
+                <strong>Recursos Humanos SERH</strong>
             </h1>
             <!-- END Login Header -->
 

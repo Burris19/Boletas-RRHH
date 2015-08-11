@@ -5,7 +5,7 @@
 @stop
 
 @section('buttons')
-    <a href="#" id="btn-cancelar" class="btn btn-effect-ripple btn-important" >Cancelar</a>
+    <a href="#" id="btn-cancelar" class="btn btn-next btn-fill btn-danger btn-wd btn-sm" >Cancelar</a>
 @stop
 
 @section('list-content')

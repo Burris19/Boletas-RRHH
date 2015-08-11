@@ -91,6 +91,7 @@ class BallotsController extends CrudController {
     public function store(Request $request)
     {
         $data = $request->all();
+        //return $data;
 
         // Upload new image
         if($request->hasFile('dp16')) {
@@ -265,6 +266,8 @@ class BallotsController extends CrudController {
         // Vecinos
             $this->vecinosDataRepo->create($data);
 
+
+        //return $data;
         // Generamos el reporte
         $folder = 'pdfs';
         if (!is_dir($folder))
@@ -277,6 +280,9 @@ class BallotsController extends CrudController {
 
         $ballot->url = $folder . '/' . time() . '.pdf';
         $ballot->save();
+
+        //return $data;
+
 
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot->url);
@@ -294,6 +300,7 @@ class BallotsController extends CrudController {
         $pdf = $this->repo->findOrFail($id);
         $file = file_get_contents(public_path() . '/' . $pdf->url);
         return response($file,200)->header('Content-Type','application/pdf');
+
     }
     public function update(Request $request, $id)
     {
