@@ -97,8 +97,9 @@ class BallotsController extends CrudController {
         if($request->hasFile('dp16')) {
             $image = UploadX::uploadFile($request->file('dp16'),'pictures', time());
             $data['dp16'] = $image['url'];
-        }else{
 
+        }else{
+            $data['dp16'] = "";
         }
 
         //llenamos los campos vacios

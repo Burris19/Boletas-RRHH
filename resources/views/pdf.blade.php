@@ -39,9 +39,7 @@ body{
 	width: 200px;
 }
 
-
 /* fin Encabrzado*/
-
 
 /*Datos personales*/
 .input input {
@@ -413,18 +411,15 @@ display: inline-block;
 	font-size: 12px;
 }
 .datos-educativos{
-	padding-top: 415px;
-	height: 100px;
-
+	padding-top: 260px;
+	height: 100px
 }
 .datos-hermanos{
 	padding-top: 372px;
-
-
 }
 
 .datos-laborales{
-	margin-top: 90px;
+	margin-top: 95px;
 }
 
 .cuerpo-datos-hermanos {
@@ -469,7 +464,7 @@ display: inline-block;
 	margin-top: 3px;
 }
 .datos-medicos{
-padding-top: 112px;
+padding-top: 170px;
 }
 
 .cuerpo-datos-medicos{
@@ -492,6 +487,10 @@ table strong
 	margin-left: 30px;
 }
 
+.imgg{
+	display: block;
+	background-color: red;
+}
 
 
 </style>
@@ -503,13 +502,18 @@ table strong
 <!-- ***********Inicio Encabezado********** -->
 	<div class="encabezado">
 		<div class="logo">
-			<img src="../../templates/pdf/logo.JPG">
+			<img src="logo.gif">
 		</div>
 		<div class="Titulo">
 			<h4>Estudios Socieconomicos</h4>
 		</div>
 		<div class="foto">
 			<div class="Fotografia">
+				@if( $data['dp16'] === '-----' )
+						vacio
+				@else
+					<img src="{{ $data['dp16'] }}" alt="" class="imgg"/>
+				@endif
 			</div>
 		</div>
 	</div>
@@ -873,6 +877,7 @@ table strong
 	  </div>
 	</div>
 	<!-- Informacion educativa -->
+
 	<div class="datos-educativos">
 	  <div class="TitulodatosPersonales">
 	  <div class="titulos-encabezados">
@@ -1568,27 +1573,32 @@ table strong
 				<td><strong>Nombre:</strong></td>
 				<td >{{ $data['v1'] }}</td>
 				<td><strong>Edad:</strong></td>
-				<td>{{ $data['v2'] }}</td>
+				<td>{{ $data['v3'] }}</td>
 			</tr>
 			<tr>
 				<td><strong>Cuanto tiempo tiene de conocerlo:</strong></td>
-				<td>{{ $data['v3'] }}</td>
+				<td>{{ $data['v4'] }}</td>
 				<td><strong>Cuanto tiempo tiene de vivir el candidato en esa casa:</strong></td>
-				<td >{{ $data['v4'] }}</td>
+				<td >{{ $data['v5'] }}</td>
 			</tr>
+      <tr>
+        <td><strong>Direccion</strong></td>
+        <td colspan="3">{{ $data['v2'] }}</td>
+
+      </tr>
 			<tr>
 				<td><strong>¿Usted sabe si fuma?</strong></td>
-				<td>{{ $data['v5'] }}</td>
-				<td><strong>¿Usted sabe si consume bebidas alcoholicas?</strong></td>
 				<td>{{ $data['v6'] }}</td>
-			</tr>
-			<tr>
-				<td><strong>¿Usted sabe si es un vecino tranquilo que no pelea con la gente?</strong></td>
+				<td><strong>¿Usted sabe si consume bebidas alcoholicas?</strong></td>
 				<td colspan="3">{{ $data['v7'] }}</td>
 			</tr>
 			<tr>
-				<td><strong>¿Usted lo recomienda como persona?</strong></td>
+				<td><strong>¿Usted sabe si es un vecino tranquilo que no pelea con la gente?</strong></td>
 				<td colspan="3">{{ $data['v8'] }}</td>
+			</tr>
+			<tr>
+				<td><strong>¿Usted lo recomienda como persona?</strong></td>
+				<td colspan="3">{{ $data['v9'] }}</td>
 			</tr>
 		</table>
 	</div>
