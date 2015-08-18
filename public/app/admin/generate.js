@@ -1,8 +1,8 @@
 $(function(){
 
-    $('#btn-open-wizard').click(function(e) {
-        e.preventDefault();
+    $('#btn-open-wizard').click(function(e) {        
         $("#page").load("ballots/create");
+
     });
 
     $('.edit').click(function(e){

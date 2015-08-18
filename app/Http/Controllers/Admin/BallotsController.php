@@ -309,10 +309,17 @@ class BallotsController extends CrudController {
 
         // Upload new image
         if($request->hasFile('dp16')) {
+            $dataPersonal = PersonalData::where('id_record',$id)->first();
+            $foto = $dataPersonal->dp16;
+            if ($foto != '-----') {
+                unlink($foto);
+            }            
             $image = UploadX::uploadFile($request->file('dp16'),'pictures', time());
             $data['dp16'] = $image['url'];
         }else{
-
+          $dataPersonal = PersonalData::where('id_record',$id)->first();
+          $foto = $dataPersonal->dp16;
+          $data['dp16'] = $foto;
         }
 
         //llenamos los campos vacios

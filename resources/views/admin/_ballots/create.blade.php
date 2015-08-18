@@ -4,7 +4,7 @@
     Nuevo Registro
 @stop
 
-@section('buttons')    
+@section('buttons')
     <a href="#" id="btn-cancelar" class="btn btn-next btn-fill btn-danger btn-wd btn-sm" >Cancelar</a>
 @stop
 
@@ -60,7 +60,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-6">
-                    <label>¿Cual es el numero de su telefono de Casa?</label>
+                    <label>¿Cual es el numero del telefono de su casa?</label>
                     <input type = "number" class = "form-control" id = "dp3" name = "dp3" placeholder = "Teléfono de Casa" required>
                   </div>
                   <!-- Celular -->
@@ -138,7 +138,7 @@
                 <div class="row">
                   <!--Profesion -->
                   <div class="form-group col-xs-6">
-                    <label>Elija su Religion</label>
+                    <label>¿Cual es su religion?</label>
                     <input type = "text" class = "form-control" id = "dp13" name = "dp13" placeholder = "Religion" required>
                   </div>
                   <!--Profesion -->
@@ -332,6 +332,21 @@
                     </div>
                   </div>
                 </div>
+                <!-- Informacion Hijos -->
+                <p class="bg-primary info-text">Informacion sobre Hijos</p>
+                <div class="row">
+                  <!-- Numero de Hijos -->
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label>Numero de hijos</label>
+                      <input type = "number" class = "form-control" id = "df79" name = "df79" placeholder = "Numero de hijos" required>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
                 <!-- Informacion de los hermanos -->
                 <p class="bg-primary info-text">Informacion sobre Hermanos</p>
 
@@ -712,18 +727,7 @@
                     </div>
                   </div>
                 <input type='button' class='btn btn-fill btn-danger btn-wd btn-sm' id="addBrother" value='Agregar' />
-
-                <!-- Informacion Hijos -->
-                <p class="bg-primary info-text">Informacion sobre Hijos</p>
-                <div class="row">
-                  <!-- Numero de Hijos -->
-                  <div class="col-sm-12">
-                    <div class="form-group">
-                      <label>Numero de hijos</label>
-                      <input type = "number" class = "form-control" id = "df79" name = "df79" placeholder = "Numero de hijos" required>
-                    </div>
-                  </div>
-                </div>
+                <hr>
               </div>
             </div>
           </div>

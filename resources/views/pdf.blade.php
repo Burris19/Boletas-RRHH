@@ -22,7 +22,7 @@ body{
 	width: 100%;
 }
 
-
+/*
 .Fotografia{
 	border: solid black;
 	width: 110px;
@@ -30,7 +30,7 @@ body{
 	float: right;
 	border-bottom: -25px;
 }
-
+*/
 .Puesto{
 	float:right;
 	border: solid;
@@ -318,27 +318,29 @@ margin-top: -25px;
 }
 
 .encabezado{
-
 	margin-top: -25px;
 	height: 100px;
 	}
+
 .encabezado img{
 	height: 75px;
-	width: 150px;
-
+	width: 100px;
 }
 .logo{
 display: inline-block;
+width: 20%;
 }
 .Titulo{
 display: inline-block;
-
+width: 55%;
 }
 .foto{
-
 	display: inline-block;
+	width: 20%;
+	padding-left:  59px;
 }
 
+/*
 .foto div{
 	border: solid;
 	background-image: url("../../templates/pdf/imagen.jpg");
@@ -357,11 +359,9 @@ display: inline-block;
 	margin-top: -70px;
 	padding-left: -19%
 }
-.Titulo h4{
-	padding-left: -70%;
-	padding-top: -45px;
-	font-size:35px;
-}
+
+*/
+
 
 .tabla-hermanos{
 
@@ -478,8 +478,7 @@ padding-top: 20px;
 
 }
 
-table strong
-{
+.table strong {
 	font-size: 13px;
 }
 
@@ -505,16 +504,14 @@ table strong
 			<img src="logo.gif">
 		</div>
 		<div class="Titulo">
-			<h4>Estudios Socieconomicos</h4>
+			<h2>Estudios Socioeconomicos</h2>
 		</div>
 		<div class="foto">
-			<div class="Fotografia">
 				@if( $data['dp16'] === '-----' )
-						vacio
+
 				@else
 					<img src="{{ $data['dp16'] }}" alt="" class="imgg"/>
 				@endif
-			</div>
 		</div>
 	</div>
 <!-- ***********Fin Encabezado********** -->
@@ -1590,7 +1587,7 @@ table strong
 				<td><strong>¿Usted sabe si fuma?</strong></td>
 				<td>{{ $data['v6'] }}</td>
 				<td><strong>¿Usted sabe si consume bebidas alcoholicas?</strong></td>
-				<td colspan="3">{{ $data['v7'] }}</td>
+				<td>{{ $data['v7'] }}</td>
 			</tr>
 			<tr>
 				<td><strong>¿Usted sabe si es un vecino tranquilo que no pelea con la gente?</strong></td>

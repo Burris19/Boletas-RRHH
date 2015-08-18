@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <!--Telefono casa -->
                                     <div class="form-group col-xs-6">
-                                        <label>¿Cual es el numero de su telefono de Casa?</label>
+                                        <label>¿Cual es el numero del telefono de su casa?</label>
                                         <input type = "number" class = "form-control" id = "dp3" name = "dp3" placeholder = "Teléfono de Casa" value="{{ $dp[0]->dp3 }}">
                                     </div>
                                     <!-- Celular -->
@@ -155,7 +155,7 @@
                                     </div>
                                 </div>
                                 <div id="lista">
-                                        @if($dp[0]->dp16 === "")
+                                        @if($dp[0]->dp16 === "-----")
                                         @else
                                         <img class="img-thumbnail"  style="width: 25%;" src="{{ $dp[0]->dp16 }}" >
                                         @endif
