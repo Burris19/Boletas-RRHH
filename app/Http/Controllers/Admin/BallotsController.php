@@ -15,6 +15,7 @@ use App\Repositories\HomeDataRepo;
 use App\Repositories\SaludDataRepo;
 use App\Repositories\ViciosDataRepo;
 use App\Repositories\VecinosDataRepo;
+use App\Repositories\FilesDataRepo;
 use App\Models\FamilyData;
 use App\Models\EducationData;
 use App\Models\BudgetData;
@@ -35,6 +36,7 @@ class BallotsController extends CrudController {
     protected $homeDataRepo;
     protected $saludDataRepo;
     protected $viciosDataRepo;
+    protected $filesDataRepo;
 
     function __construct(BallotRepo $ballotRepo,
     					 PersonalDataRepo $personalDataRepo,
@@ -45,7 +47,8 @@ class BallotsController extends CrudController {
                          HomeDataRepo $homeDataRepo,
                          SaludDataRepo $saludDataRepo,
                          ViciosDataRepo $viciosDataRepo,
-                         VecinosDataRepo $vecinosDataRepo)
+                         VecinosDataRepo $vecinosDataRepo,
+                         FilesDataRepo $filesDataRepo)
 
     {
         $this->repo = $ballotRepo;
@@ -58,6 +61,7 @@ class BallotsController extends CrudController {
         $this->saludDataRepo      = $saludDataRepo;
         $this->viciosDataRepo     = $viciosDataRepo;
         $this->vecinosDataRepo    = $vecinosDataRepo;
+        $this->filesDataRepo      = $filesDataRepo;
     }
 
     public function create()
@@ -93,13 +97,15 @@ class BallotsController extends CrudController {
         $data = $request->all();
         //return $data;
 
-        // Upload new image
-        if($request->hasFile('dp16')) {
-            $image = UploadX::uploadFile($request->file('dp16'),'pictures', time());
-            $data['dp16'] = $image['url'];
+        for($i = 1 ; $i<= 9; $i++)
+        {
+            if($request->hasFile('input'.$i)) {
+                $image = UploadX::uploadFile($request->file('input'.$i),'pictures', time());
+                $data['input'.$i] = $image['url'];
 
-        }else{
-            $data['dp16'] = "";
+            }else{
+                $data['input'.$i] = "";
+            }
         }
 
         //llenamos los campos vacios
@@ -134,6 +140,18 @@ class BallotsController extends CrudController {
         $dataPadre['hijos'] = $data['df79'];
         $dataPadre['id_record'] = $ballot->id;
         $dataPadre = $this->familyDataRepo->create($dataPadre);
+
+
+
+        //Guardamos en la tabla archivos
+        for($i = 1 ; $i <= 9; $i++)
+        {
+            $datafiles['description'] = 'descripcion';
+            $datafiles['url'] = $data['input'.$i];
+            $dataPadre['id_record'] = $ballot->id;
+            $this->filesDataRepo->create($datafiles);
+        }
+
 
 
         //Guardar la informacion sobre la madre

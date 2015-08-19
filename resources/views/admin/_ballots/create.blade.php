@@ -2004,11 +2004,12 @@
                   <tbody>
                     @foreach(config('presupuesto.archivos') as $key => $description )
                       <?php $field = "img".($key+1) ?>
+                      <?php $name = "input".($key+1) ?>
                       <tr>
                         <th>{{ $description }}</th>
                         <th style="text-align:center; width: 40px;">
                           <div style="background-image: url('cargar.png'); background-repeat: no-repeat; background-position: center center; " title="Seleccionar archivo desde su PC">
-                            <input type="file" style="outline: none; opacity: 0;" id="{{ $field }}"/>
+                            <input type="file" style="outline: none; opacity: 0;" id="{{ $field }}" name="{{ $name }}"/>
                           </div>
                         </th>
                         <th style="text-align:center;" ><img src="default.png" id="mm{{ $field }}" width='50' height='50' ></th>
