@@ -64,8 +64,18 @@ return [
 		'¿Usted sabe si es un vecino tranquilo que no pelea con la gente?',
 		'¿Usted lo recomienda como persona?'
 
+	],
+
+	'archivos' => [
+		'Foto Frontal',
+		'Foto lateral izquierda',
+		'Foto lateral derecha',
+		'Huellas diguitales',
+		'Escritura',
+		'Casa frontal',
+		'Casa lateral izquierda',
+		'Casa lateral derecha'
+
 	]
-
-
 
 ];
