@@ -7,7 +7,7 @@ use App\Repositories\Base\BaseRepo;
 
 class BudgetDataRepo extends BaseRepo {
 
-	public function getmodel()
+	public function getModel()
 	{
 		return new BudgetData();
 	}
