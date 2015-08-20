@@ -24,7 +24,7 @@
                     <li><a href="#residencia" data-toggle="tab">Residencia</a></li>
                     <li><a href="#salud" data-toggle="tab">Salud</a></li>
                     <li><a href="#vecinos" data-toggle="tab">Vecinos</a></li>
-
+                    <li><a href="#archivos" data-toggle="tab">Archivos</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -145,21 +145,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12">
-                                    <div class="picture-container">
-                                        <div class="picture">
-                                            <img src="wizar/imagenes/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                                            <input type="file" id="files" name="dp16" />
-                                        </div>
-                                        <h6>Seleccionar Foto</h6>
-                                    </div>
-                                </div>
-                                <div id="lista">
-                                        @if($dp[0]->dp16 === "-----")
-                                        @else
-                                        <img class="img-thumbnail"  style="width: 25%;" src="{{ $dp[0]->dp16 }}" >
-                                        @endif
-                                </div>
 
                             </div>
                         </div>
@@ -1683,6 +1668,48 @@
         </div>
     </div>
 
+    <!-- pagina pra subir archivos -->
+    <div class="tab-pane" id = "archivos">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="row">
+                    <div class="row">
+                        <div class="form-group col-xs-12" id = "content-file">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Descripcion</th>
+                                    <th style="width: 40px; text-align:center;">Seleccionar archivo</th>
+                                    <th style="text-align:center;" >Vista Previa</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach(config('presupuesto.archivos') as $key => $description )
+                                    <?php $field = "img".($key+1) ?>
+                                    <?php $name = "input".($key+1) ?>
+                                    <tr>
+                                        <th>{{ $description }}</th>
+                                        <th style="text-align:center; width: 40px;">
+                                            <div style="background-image: url('cargar.png'); background-repeat: no-repeat; background-position: center center; " title="Seleccionar archivo desde su PC">
+                                                <input type="file" style="outline: none; opacity: 0;" id="{{ $field }}" name="{{ $name }}"/>
+                                            </div>
+                                        </th>
+                                        @if( $da[$key]->url === "-----")
+                                            <th style="text-align:center;" ><img src="default.png" id="mm{{ $field }}" width='50' height='50' ></th>
+                                        @else
+                                            <th style="text-align:center;" ><img src="{{ $da[$key]->url }}" id="mm{{ $field }}" width='50' height='50' ></th>
+                                        @endif
+
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Pie de pagina-->
@@ -1746,33 +1773,27 @@
             conteo2++;
         });
 
-
+        var theParent = document.querySelector("#content-file");
+        theParent.addEventListener('change',archivo, false);
         function archivo(evt) {
+            var id = evt.target.id;
             var files = evt.target.files; // FileList object
-
             // Obtenemos la imagen del campo "file".
             for (var i = 0, f; f = files[i]; i++) {
                 //Solo admitimos imágenes.
                 if (!f.type.match('image.*')) {
                     continue;
                 }
-
                 var reader = new FileReader();
-
                 reader.onload = (function(theFile) {
                     return function(e) {
                         // Insertamos la imagen
-                        document.getElementById("lista").innerHTML = ['<img class="img-thumbnail"  style="width: 25%;" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                        $("#mm"+ id).attr("src", e.target.result);
                     };
                 })(f);
-
                 reader.readAsDataURL(f);
             }
         }
-
-        document.getElementById('files').addEventListener('change', archivo, false);
-
-
 
 
     </script>

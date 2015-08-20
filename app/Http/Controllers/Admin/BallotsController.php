@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Models\PersonalData;
 use Illuminate\Http\Request;
 use App\Helpers\UploadX;
@@ -24,6 +23,7 @@ use App\Models\ViciosData;
 use App\Models\SaludData;
 use App\Models\HomeData;
 use App\Models\LaborData;
+use app\Models\FileData;
 
 class BallotsController extends CrudController {
 
@@ -80,13 +80,14 @@ class BallotsController extends CrudController {
         $des = EducationData::whereRaw('tipo = ? and id_record = ?',['secundaria',$id])->get();
         $ded = EducationData::whereRaw('tipo = ? and id_record = ?',['diversificado',$id])->get();
         $deu = EducationData::whereRaw('tipo = ? and id_record = ?',['universidad',$id])->get();
+        $da  = FileData::where('id_record',$id)->get();
         $dl  = LaborData::where('id_record',$id)->get();
         $pf  = BudgetData::where('id_record',$id)->get();
         $ho  = HomeData::where('id_record',$id)->get();
         $sa  = SaludData::where('id_record',$id)->get();
         $vi  = ViciosData::where('id_record',$id)->get();
         $ve  = VecinosData::where('id_record',$id)->get();
-        return view($this->root . '/' . $this->module . '/edit',compact('db','dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho','dl'));
+        return view($this->root . '/' . $this->module . '/edit',compact('db','dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho','dl','da'));
     }
 
 
@@ -138,8 +139,6 @@ class BallotsController extends CrudController {
         $dataPadre['id_record'] = $ballot->id;
         $dataPadre = $this->familyDataRepo->create($dataPadre);
 
-
-
         //Guardamos en la tabla archivos
         for($i = 1 ; $i <= 9; $i++)
         {            
@@ -147,9 +146,6 @@ class BallotsController extends CrudController {
             $datafiles['id_record'] = $ballot->id;
             $this->filesDataRepo->create($datafiles);
         }
-
-
-
         //Guardar la informacion sobre la madre
         $dataMadre['tipo'] = 'madre';
         $dataMadre['nombre'] = $data['df9'];
@@ -321,25 +317,30 @@ class BallotsController extends CrudController {
     {
         $data = $request->all();
 
-        // Upload new image
-        if($request->hasFile('dp16')) {
-            $dataPersonal = PersonalData::where('id_record',$id)->first();
-            $foto = $dataPersonal->dp16;
-            if ($foto != '-----') {
-                unlink($foto);
-            }            
-            $image = UploadX::uploadFile($request->file('dp16'),'pictures', time());
-            $data['dp16'] = $image['url'];
-        }else{
-          $dataPersonal = PersonalData::where('id_record',$id)->first();
-          $foto = $dataPersonal->dp16;
-          $data['dp16'] = $foto;
+        $datafile = FileData::where('id_record',$id)->get();
+
+
+        for($i = 1 ; $i <= 9 ; $i++ )
+        {
+            // Upload new image
+            if($request->hasFile('input'.$i)) {
+                $foto = $datafile[$i-1]->url;
+                if ($foto != '-----') {
+                    unlink($foto);
+                }
+                $image = UploadX::uploadFile($request->file('input'.$i),'pictures', time());
+                $data['input'.$i] = $image['url'];
+            }else{
+                $foto = $datafile[$i-1]->url;
+                $data['input'.$i] = $foto;
+            }
         }
 
         //llenamos los campos vacios
         $data = array_map(function($item){
             return ($item == '' ? '-----' : $item);
         }, $data);
+
 
         //Guardo en el repo
         $ballot_data = $this->repo->findOrFail($id);
@@ -368,9 +369,22 @@ class BallotsController extends CrudController {
         $dataPersonal->dp13 = $data['dp13'];
         $dataPersonal->dp14 = $data['dp14'];
         $dataPersonal->dp15 = $data['dp15'];
-        //$dataPersonal->dp16 = $data['dp16'];
         $dataPersonal->id_record = $id;
         $dataPersonal->save();
+
+
+        //Guardamos en la tabla archivos
+        $datafile = FileData::where('id_record',$id)->get();
+        $i = 1 ;
+        $indice = 0;
+        while($i < 9)
+        {
+            $datafile[$indice]->url = $data['input'.$i];
+            $datafile[$indice]->id_record = $id;
+            $datafile[$indice]->save();
+            $i++;
+            $indice++;
+        }
 
         //Guardar en la tabla datos familiares
         //Guardar la informacion sobre el padre
@@ -599,6 +613,8 @@ class BallotsController extends CrudController {
 
         $ballot_data->url = $folder . '/' . time() . '.pdf';
         $ballot_data->save();
+
+        $data['dp16'] = "-----";
 
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot_data->url);

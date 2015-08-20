@@ -24,7 +24,6 @@
             <li><a href="#salud" data-toggle="tab">Salud</a></li>
             <li><a href="#vecinos" data-toggle="tab">Vecinos</a></li>
             <li><a href="#archivos" data-toggle="tab">Archivos</a></li>
-
           </ul>
 
         <div class="tab-content">
