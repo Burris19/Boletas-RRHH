@@ -13,8 +13,7 @@ class CreateFilesTable extends Migration {
 	public function up()
 	{
 		Schema::create('files',function(Blueprint $table){
-			$table->increments('id');
-			$table->string('description');
+			$table->increments('id');			
 			$table->string('url');
 			$table->integer('id_record')->unsigned();
 			$table->foreign('id_record')->references('id')->on('records');

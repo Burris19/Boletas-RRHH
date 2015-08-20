@@ -7,10 +7,10 @@
  */
 namespace App\Models;
 
-class fileData extends BaseModel {
+class FileData extends BaseModel {
 
-    protected $table = 'files';
-    protected $fillable = ['description','url','id_record'];
+	protected $table = 'files';    
+    protected $fillable = ['url','id_record'];
 
     public $relations = ['record'];
 

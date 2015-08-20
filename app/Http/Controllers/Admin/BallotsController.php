@@ -72,10 +72,6 @@ class BallotsController extends CrudController {
     {
         $db  = $this->repo->findOrFail($id);
         $dp = PersonalData::where('id_record',$id)->get();
-         /*
-        $dp  = $this->personalDataRepo->findOrFail($id);
-        */
-        //return $dp;
         $dfp = FamilyData::whereRaw('tipo = ? and id_record = ?',['padre',$id])->get();
         $dfm = FamilyData::whereRaw('tipo = ? and id_record = ?',['madre',$id])->get();
         $dfe = FamilyData::whereRaw('tipo = ? and id_record = ?',['esposo',$id])->get();
@@ -92,11 +88,12 @@ class BallotsController extends CrudController {
         $ve  = VecinosData::where('id_record',$id)->get();
         return view($this->root . '/' . $this->module . '/edit',compact('db','dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho','dl'));
     }
+
+
     public function store(Request $request)
     {
         $data = $request->all();
-        //return $data;
-
+        
         for($i = 1 ; $i<= 9; $i++)
         {
             if($request->hasFile('input'.$i)) {
@@ -145,10 +142,9 @@ class BallotsController extends CrudController {
 
         //Guardamos en la tabla archivos
         for($i = 1 ; $i <= 9; $i++)
-        {
-            $datafiles['description'] = 'descripcion';
+        {            
             $datafiles['url'] = $data['input'.$i];
-            $dataPadre['id_record'] = $ballot->id;
+            $datafiles['id_record'] = $ballot->id;
             $this->filesDataRepo->create($datafiles);
         }
 
@@ -302,7 +298,7 @@ class BallotsController extends CrudController {
 
         //return $data;
 
-
+        $data['dp16'] = "-----";
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot->url);
 

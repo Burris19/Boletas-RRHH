@@ -14,6 +14,6 @@ class FilesDataRepo extends BaseRepo {
 
     public function getModel()
     {
-        return new FileData;
+        return new FileData();
     }
 }
