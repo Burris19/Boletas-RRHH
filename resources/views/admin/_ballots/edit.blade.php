@@ -1796,6 +1796,10 @@
         }
 
 
+//        setTimeout(function(){
+//            Helper.unblockPage();
+//        }, 1500);
+
     </script>
 
 
@@ -1805,6 +1809,7 @@
 
     {!! Html::script('wizar/js/jquery.bootstrap.wizard.js') !!}
     {!! Html::script('wizar/js/wizard.js') !!}
+
 
 
 @stop
