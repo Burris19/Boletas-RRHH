@@ -1735,8 +1735,6 @@
             $("#page").load("ballots");
         });
 
-
-
         function calcularTotal(){
             var total = 0;
             for (var i = 1 ; i <= 23; i++) {
@@ -1751,28 +1749,22 @@
                 else {
                     resultado.css("background","white");
                 }
-
-
                 resultado.val(total);
             };
 
         };
 
         $(".pf").focusout(calcularTotal);
-
-
         var conteo = 1;
         $("#addBrother").click(function(e){
             $(".bro" + conteo).css("display","block");
             conteo++;
         });
-
         var conteo2 = 1;
         $("#addLab").click(function(e){
             $(".lab" + conteo2).css("display","block");
             conteo2++;
         });
-
         var theParent = document.querySelector("#content-file");
         theParent.addEventListener('change',archivo, false);
         function archivo(evt) {
@@ -1795,21 +1787,9 @@
             }
         }
 
-
-//        setTimeout(function(){
-//            Helper.unblockPage();
-//        }, 1500);
-
     </script>
-
-
-    {!! Html::script('app/helpers/crud_operate.js') !!}
     {!! Html::script('app/admin/generate.js') !!}
-
-
+    {!! Html::script('app/helpers/crud_operate.js') !!}
     {!! Html::script('wizar/js/jquery.bootstrap.wizard.js') !!}
     {!! Html::script('wizar/js/wizard.js') !!}
-
-
-
 @stop

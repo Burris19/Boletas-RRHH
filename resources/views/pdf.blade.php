@@ -1601,6 +1601,23 @@ padding-top: 20px;
 	</div>
 </div>
 
+<div class="imagePhoto">
+	<div class="photoLeft">
+		
+	</div>
+	<div class="photoCenter">
+
+	</div>
+	<div class="photoRight">
+
+	</div>
+
+
+</div>
+
+
+
+
 
 
 
