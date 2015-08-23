@@ -94,11 +94,13 @@ class BallotsController extends CrudController {
     public function store(Request $request)
     {
         $data = $request->all();
-        
+
+      //  return $data;
+
         for($i = 1 ; $i<= 9; $i++)
         {
             if($request->hasFile('input'.$i)) {
-                $image = UploadX::uploadFile($request->file('input'.$i),'pictures', time());
+                $image = UploadX::uploadFile($request->file('input'.$i),'pictures', $i.time());
                 $data['input'.$i] = $image['url'];
 
             }else{
@@ -106,10 +108,13 @@ class BallotsController extends CrudController {
             }
         }
 
+
+
         //llenamos los campos vacios
     	$data = array_map(function($item){
             return ($item == '' ? '-----' : $item);
         }, $data);
+
 
         //Registramos el archivo
         $ballot_data['id_user'] = \Auth::id();
@@ -141,7 +146,7 @@ class BallotsController extends CrudController {
 
         //Guardamos en la tabla archivos
         for($i = 1 ; $i <= 9; $i++)
-        {            
+        {
             $datafiles['url'] = $data['input'.$i];
             $datafiles['id_record'] = $ballot->id;
             $this->filesDataRepo->create($datafiles);
@@ -316,6 +321,7 @@ class BallotsController extends CrudController {
     public function update(Request $request, $id)
     {
         $data = $request->all();
+        $data['id_record'] = $id;
 
         $datafile = FileData::where('id_record',$id)->get();
 
