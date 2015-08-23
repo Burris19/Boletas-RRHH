@@ -420,7 +420,7 @@
 			<img src="logo.gif">
 		</div>
 		<div class="Titulo">
-			<h2>Estudios Socioeconomicos</h2>
+			<h2>Estudio Socioeconomico</h2>
 		</div>
 		<div class="foto">
 				@if( $data['input1'] === '-----' )
@@ -435,7 +435,7 @@
 	<div class="codigo">
 			<div class="Izquierda">
 				<div>
-					<div class="label"><strong>Codigo:</strong></div>
+					<div class="label"><strong>Código:</strong></div>
 					<div class="input"><input type = "text" value = "{{ $data['id_record'] }}"></div>
 				</div>
 				<div>
@@ -445,7 +445,7 @@
 			</div>
 			<div class="Derecho">
 				<div>
-					<div class="label"><strong>Puesto al que aplica:</strong></div>
+					<div class="label"><strong>Puesto al qué aplica:</strong></div>
 					<div class="input"><input type = "text" value = "{{ $data['puesto_empresa']}}"></div>
 				</div>
 			</div>
@@ -479,7 +479,7 @@
 	        </div>
 
 	        <div>
-	            <div class="label"><strong>Estado Civil:</strong></div>
+	            <div class="label"><strong>Estado civil:</strong></div>
 	            <div class="input"><input type = "text" value = "{{ $data['dp7'] }}"></div>
 	        </div>
 
@@ -570,7 +570,7 @@
 		<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df6'] }}"></div>
 		</div>
 		<div>
-		<div class="label-datos-familiares"><strong>A que se dedica:</strong></div>
+		<div class="label-datos-familiares"><strong>A qué se dedica:</strong></div>
 		<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df5'] }}"></div>
 		</div>
 		<div>
@@ -620,7 +620,7 @@
 		</div>
 
 		<div>
-		<div class="label-datos-familiares"><strong>A que se dedica:</strong></div>
+		<div class="label-datos-familiares"><strong>A qué se dedica:</strong></div>
 		<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df13'] }}"></div>
 		</div>
 
@@ -671,7 +671,7 @@
 		</div>
 		<div class="footer-relacion">
 		<div>
-		<div class="label" id="input-direccion"><strong>A que se dedica:</strong></div>
+		<div class="label" id="input-direccion"><strong>A qué se dedica:</strong></div>
 		<div class="input3" id="label-direccion"><input type = "text" value = "{{ $data['df21'] }}"></div>
 		</div>
 		</div>
@@ -802,7 +802,7 @@
 	  <tr>
 	  <td><strong>Nivel</strong></td>
 	  <td><strong>Establecimiento</strong></td>
-	  <td><strong>Direccion</strong></td>
+	  <td><strong>Dirección</strong></td>
 	  <td><strong>Fecha</strong></td>
 	  <td><strong>Titulo</strong></td>
 	  </tr>
@@ -1260,7 +1260,7 @@
           <td>{{ $data['diferencia3'] }}</td>
         </tr>
         <tr>
-        <td>Alimentacion:</td>
+        <td>Alimentación:</td>
           <td>{{ $data['ingreso4'] }}</td>
           <td>{{ $data['egreso4'] }}</td>
           <td>{{ $data['diferencia4'] }}</td>
@@ -1495,7 +1495,7 @@
 				<td >{{ $data['v5'] }}</td>
 			</tr>
       <tr>
-        <td><strong>Direccion</strong></td>
+        <td><strong>Dirección</strong></td>
         <td colspan="3">{{ $data['v2'] }}</td>
 
       </tr>
@@ -1506,7 +1506,7 @@
 				<td>{{ $data['v7'] }}</td>
 			</tr>
 			<tr>
-				<td><strong>¿Usted sabe si es un vecino tranquilo que no pelea con la gente?</strong></td>
+				<td><strong>¿Usted sabe si es un vecino tranquilo qué no pelea con la gente?</strong></td>
 				<td colspan="3">{{ $data['v8'] }}</td>
 			</tr>
 			<tr>
