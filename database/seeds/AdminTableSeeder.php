@@ -13,9 +13,9 @@ class AdminTableSeeder extends Seeder {
 	{
 		DB::table('users')->insert(array(
             'username' => 'admin',
-						'name' => 'Julian Hernandez',
-						'job' => 'Administrador',
-            'password' => \Hash::make('admin'),
+			'name' => 'Ingrid Jeanette Consenza Vargas',
+			'job' => 'Encargada de Reclutamiento',
+            'password' => \Hash::make('recruitment2015'),
             'type' => 'administrator'
 		));
 	}

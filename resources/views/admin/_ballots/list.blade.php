@@ -29,7 +29,7 @@
             <td>{{ $value->nombre }}</td>
             <td>{{ $value->empresa }}</td>
             <td>{{ $value->puesto }}</td>
-            <td>{{ $value->user->username }}</td>
+            <td>{{ $value->user->name }}</td>
             <td class="text-center">
                 <a href="#" data-id="{{ $value->id }}" data-toggle="tooltip" title="Editar" class="btn btn-effect-ripple btn-xs btn-success edit"><i class="fa fa-pencil"></i></a>
                 <a href="{{ action('Admin\BallotsController@getPDF', $value->id) }}" target="_blank" data-toggle="tooltip" title="Descargar PDF" class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>

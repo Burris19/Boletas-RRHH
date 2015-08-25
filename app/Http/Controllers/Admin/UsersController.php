@@ -60,8 +60,8 @@ class UsersController extends CrudController {
             return FormX::make()
                 ->input('username','Usuario:','Usuario')
                 ->input('password','Contraseña:','Contraseña','','password')
-                ->input('name','Nombre compelto','Nombre completo')
-                ->input('job','Puesto laboral','Puesto laboral')
+                ->input('name','Nombre Completo','Nombre completo')
+                ->input('job','Puesto Laboral','Puesto laboral')
                 ->select('type','Tipo:',$type);
         }
     }

@@ -14,6 +14,8 @@
 @section('list-content-columns')
     <th class="text-center" style="width: 50px;">#</th>
     <th>Usuario</th>
+    <th>Nombre</th>
+    <th>Puesto</th>
     <th>Tipo</th>
     <th class="text-center" style="width: 75px;"><i class="fa fa-flash"></i></th>
 @stop
@@ -23,6 +25,8 @@
         <tr>
             <td class="text-center">{{ $key + 1 }}</td>
             <td>{{ $value->username }}</td>
+            <td>{{ $value->name }}</td>
+            <td>{{ $value->job }}</td>
             <td>{{ $value->type }}</td>
             <td class="text-center">
                 <a href="#" data-id="{{ $value->id }}" data-toggle="tooltip" title="Editar" class="btn btn-effect-ripple btn-xs btn-success edit"><i class="fa fa-pencil"></i></a>
