@@ -851,7 +851,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl11" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[0]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -913,7 +913,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl22" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[1]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -975,7 +975,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[2]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -1037,7 +1037,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl44" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[3]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -1099,7 +1099,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl55" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[4]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -1161,7 +1161,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl66" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[5]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -1223,7 +1223,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl77" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[6]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -1285,7 +1285,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl88" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[7]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -1347,7 +1347,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl99" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[8]->referencia_obtenida }}</textarea>
                             </div>
                         </div>
@@ -1409,7 +1409,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <label>Referencia objtenida Empresa</label>
+                                <label>Referencia obtenida de la empresa</label>
                                 <textarea  class="form-control" name="dl110" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[9]->referencia_obtenida }}</textarea>
                             </div>
                         </div>

@@ -371,28 +371,28 @@
 		/**	Anexos */
 
 		.imagePhoto {
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			display: inline-block;
-			height: 200px;
+			height: 220px;
 			margin: auto;
 			width: 100%;
 		}
 		.photoLeft{
 			display: inline-block;
 			float: left;
-			height: 200px;
+			height: 220px;
 			width: 33%;
 		}
 		.photoCenter{
 			display: inline-block;
 			float: left;
-			height: 200px;
+			height: 220px;
 			width: 33%;
 		}
 		.photoRight{
 			display: inline-block;
 			float: left;
-			height: 200px;
+			height: 220px;
 			width: 33%;
 		}
 		.imgPhoto{
@@ -407,6 +407,26 @@
 		.footprints img {
 			height: 425px;
 			width: 100%;
+		}
+
+		.firm {
+			height: 300px;
+			width: 100%;
+		}
+
+		.firmDetail {
+			border-top: 1px solid black;
+			height: 100px;
+			margin:150px auto;
+			text-align: center;
+			width: 50%;
+		}
+
+		.space{
+			height: 220px;
+		}
+		.space2{
+			height: 300px;
 		}
 	</style>
 </head>
@@ -1516,6 +1536,18 @@
 		</table>
 	</div>
 </div>
+
+<br>
+<div class="firm">
+	<div class="firmDetail">
+		<p>{{ $data['name'] }}</p>
+		<p>{{ $data['job'] }}</p>
+	</div>
+</div>
+<div class="space">
+
+</div>
+
 <h1>Anexos</h1>
 <h3>Fotos Personales</h3>
 <br>
@@ -1544,6 +1576,9 @@
 	</div>
 </div>
 <br>
+<div class="space2">
+
+</div>
 <h3>Huellas Digitales</h3>
 <div class="footprints">
 	<img src="{{ $data['input4']}}" alt="" />

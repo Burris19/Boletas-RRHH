@@ -114,7 +114,7 @@ var CRUD = function(){
             });
         },
         show: function(div,url,action,callback){
-            var url =this.url_base + '/' + url +  action;
+            var url = this.url_base + '/' + url + '/' +  action;
             console.log(url);
             $(div).load(url,callback);
         }

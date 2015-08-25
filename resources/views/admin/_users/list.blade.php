@@ -40,11 +40,15 @@
         CRUD.url_base = 'users';
         Helper.rules = {
             'username':{ required : true },
-            'password'  : { required  : true }
+            'password'  : { required  : true },
+            'name'    :{ required : true } ,
+            'job'     :{ required : true },
         };
         Helper.messages = {
             'username':{ required : 'Debe ingresar un usuario' },
-            'password' : { required : 'Debe ingresar una contraseña' }
+            'password' : { required : 'Debe ingresar una contraseña' },
+            'name' : { required : 'Debe ingresar un nombre' },
+            'job' : { required : 'Debe ingresar el cargo' }
         }
         Helper.validate('#form-create');
     })

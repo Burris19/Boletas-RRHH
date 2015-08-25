@@ -16,6 +16,8 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('username')->unique();
+			$table->string('name');
+			$table->string('job');
 			$table->string('password', 60);
 			$table->enum('type',['administrator','user']);
 			$table->rememberToken();

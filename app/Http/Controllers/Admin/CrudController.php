@@ -78,7 +78,7 @@ class CrudController extends Controller {
      */
     public function show(Request $request, $id)
     {
-        $action = $request->get('action');
+        $action = $request->get('action');        
         $data = $this->repo->findOrFail($id);
         if($action=='delete')
         {
@@ -101,7 +101,7 @@ class CrudController extends Controller {
     {
         $data = $this->repo->findOrFail($id);
         $fields = $this->fields($data);
-        return View::make($this->root . '/' . $this->module . '/edit',compact('data','fields'));
+        return view($this->root . '/' . $this->module . '/edit',compact('data','fields'));
     }
 
     /**

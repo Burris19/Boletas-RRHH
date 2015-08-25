@@ -895,7 +895,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl11" name="dl11" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -973,7 +973,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl22" name="dl22" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1051,7 +1051,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl33" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1129,7 +1129,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl44" name="dl44" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1207,7 +1207,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl55" name="dl55" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1285,7 +1285,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl66" name="dl66" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1363,7 +1363,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl77" name="dl77" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1441,7 +1441,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl88" name="dl88" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1519,7 +1519,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl99" name="dl99" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1597,7 +1597,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl110" name="dl110" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>
@@ -1675,7 +1675,7 @@
                 <div class="row">
                   <!--Telefono casa -->
                   <div class="form-group col-xs-12"
-                    <label>Referencia objtenida Empresa</label>
+                    <label>Referencia obtenida de la empresa</label>
                     <textarea  class="form-control" id="dl121" name="dl121" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
                   </div>
                 </div>

@@ -33,6 +33,12 @@ class UsersController extends CrudController {
         );
     }
 
+    public function showDelete($id)
+    {
+        $data = $this->repo->findOrFail($id);
+        return view($this->root . '/' . $this->module . '/delete',compact('data'));
+    }
+
     public function fields($data = null)
     {
         $type = array(
@@ -43,15 +49,20 @@ class UsersController extends CrudController {
         if($data)
         {
             return FormX::make()
-                ->input('username','Usuario:','Usuario',$data->username)
+                ->input('username','Usuario:','',$data->username)
+                ->input('name','Nombre Completo:','',$data->name)
+                ->input('job','Puesto Laboral:','',$data->job)
                 ->select('type','Tipo:',$type,$data->type);
+
         }
         else
         {
             return FormX::make()
                 ->input('username','Usuario:','Usuario')
                 ->input('password','Contraseña:','Contraseña','','password')
-                ->select('type','Tipo:',$type);;
+                ->input('name','Nombre compelto','Nombre completo')
+                ->input('job','Puesto laboral','Puesto laboral')
+                ->select('type','Tipo:',$type);
         }
     }
 

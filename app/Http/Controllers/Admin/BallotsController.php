@@ -94,29 +94,25 @@ class BallotsController extends CrudController {
     public function store(Request $request)
     {
         $data = $request->all();
-
-      //  return $data;
-
         for($i = 1 ; $i<= 9; $i++)
         {
             if($request->hasFile('input'.$i)) {
                 $image = UploadX::uploadFile($request->file('input'.$i),'pictures', $i.time());
                 $data['input'.$i] = $image['url'];
-
             }else{
                 $data['input'.$i] = "";
             }
         }
 
-
-
         //llenamos los campos vacios
-    	$data = array_map(function($item){
+    	  $data = array_map(function($item){
             return ($item == '' ? '-----' : $item);
         }, $data);
 
 
         //Registramos el archivo
+        $data['name'] = \Auth::user()->name;
+        $data['job'] = \Auth::user()->job;
         $ballot_data['id_user'] = \Auth::id();
         $ballot_data['puesto'] = $data['puesto_empresa'];
         $ballot_data['empresa'] = $data['nombre_empresa'];
@@ -334,7 +330,7 @@ class BallotsController extends CrudController {
                 if ($foto != '-----') {
                     unlink($foto);
                 }
-                $image = UploadX::uploadFile($request->file('input'.$i),'pictures', time());
+                $image = UploadX::uploadFile($request->file('input'.$i),'pictures', $i . time());
                 $data['input'.$i] = $image['url'];
             }else{
                 $foto = $datafile[$i-1]->url;
@@ -349,6 +345,8 @@ class BallotsController extends CrudController {
 
 
         //Guardo en el repo
+        $data['name'] = \Auth::user()->name;
+        $data['job'] = \Auth::user()->job;
         $ballot_data = $this->repo->findOrFail($id);
         $ballot_data = $this->repo->update($ballot_data, $data);
         $ballot_data->id_user = \Auth::id();
