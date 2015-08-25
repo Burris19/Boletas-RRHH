@@ -97,7 +97,7 @@ trait AuthenticateUsers {
 	 */
 	protected function getFailedLoginMessage()
 	{
-		return 'These credentials do not match our records.';
+		return 'Las credenciales no coinciden con nuestros registros.';
 	}
 
 	/**
@@ -134,7 +134,7 @@ trait AuthenticateUsers {
 	 */
 	public function loginPath()
 	{
-		return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
+		return property_exists($this, 'loginPath') ? $this->loginPath : '/login';
 	}
 
 }
