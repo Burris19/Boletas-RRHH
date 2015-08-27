@@ -137,6 +137,8 @@ class BallotsController extends CrudController {
         $dataPadre['direccion'] = $data['df7'];
         $dataPadre['relacion'] = $data['df8'];
         $dataPadre['hijos'] = $data['df79'];
+        $dataPadre['familiares_presos'] = $data['df80'];
+        $dataPadre['descripcion_familiares_presos'] = $data['df81'];
         $dataPadre['id_record'] = $ballot->id;
         $dataPadre = $this->familyDataRepo->create($dataPadre);
 
@@ -404,6 +406,8 @@ class BallotsController extends CrudController {
         $dataPadre->direccion = $data['df7'];
         $dataPadre->relacion = $data['df8'];
         $dataPadre->hijos = $data['df79'];
+        $dataPadre->familiares_presos = $data['df80'];
+        $dataPadre->descripcion_familiares_presos = $data['df81'];
         $dataPadre->id_record = $id;
         $dataPadre->save();
 
@@ -569,8 +573,6 @@ class BallotsController extends CrudController {
         $dataSalud->sa6   = $data['sa6'];
         $dataSalud->sa7   = $data['sa7'];
         $dataSalud->sa8   = $data['sa8'];
-        $dataSalud->sa9   = $data['sa9'];
-        $dataSalud->sa10  = $data['sa10'];
         $dataSalud->id_record = $id;
         $dataSalud->save();
 
@@ -587,6 +589,8 @@ class BallotsController extends CrudController {
         $dataVicios->vi8   = $data['vi8'];
         $dataVicios->vi9   = $data['vi9'];
         $dataVicios->vi10  = $data['vi10'];
+        $dataVicios->vi11  = $data['vi11'];
+        $dataVicios->vi12  = $data['vi12'];
         $dataVicios->id_record = $id;
         $dataVicios->save();
 

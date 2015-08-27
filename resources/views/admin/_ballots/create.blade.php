@@ -120,6 +120,7 @@
                   <div class="form-group col-xs-6">
                     <label>¿Que tipo de licencia posee?</label>
                     <select class="form-control col-xs-6" id = "dp11" name = "dp11">
+                      <option>Ninguna</option>
                       <option>Tipo A</option>
                       <option>Tipo B</option>
                       <option>Tipo C</option>
@@ -274,11 +275,11 @@
                   </div>
                 </div>
                 <!-- Relacion con su esposo -->
-                <p class="bg-primary info-text">Informacion del esposo</p>
+                <p class="bg-primary info-text">Informacion del cónyuge</p>
                 <div class="row">
                   <!-- Nombres del esposo -->
                   <div class="form-group col-xs-6">
-                    <label>Nombre del esposo</label>
+                    <label>Nombre del cónyuge</label>
                     <input type="text" class="form-control" id="df17" name="df17" placeholder="Nombres" required>
                   </div>
                   <!-- Edad -->
@@ -322,19 +323,29 @@
                   </div>
                 </div>
                 <!-- Informacion Hijos -->
-                <p class="bg-primary info-text">Informacion sobre Hijos</p>
+                <p class="bg-primary info-text">Informacion adicional</p>
                 <div class="row">
                   <!-- Numero de Hijos -->
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label>Numero de hijos</label>
-                      <input type = "number" class = "form-control" id = "df79" name = "df79" placeholder = "Numero de hijos" required>
+                      <input type = "number" class = "form-control" name = "df79" placeholder = "Numero de hijos" required>
                     </div>
                   </div>
                 </div>
 
-
-
+                <div class="row">
+                   <div class="form-group col-xs-6">
+                     <label>¿Tiene o tuvo un familiar privado de su libertad ?</label>
+                     <select class="form-control col-xs-6" name = "df80">
+                       <option>Si</option>
+                       <option>No</option>
+                     </select>
+                   </div>
+                   <div class="form-group col-xs-6">
+                     <textarea name="df81" class = "form-control" rows="4" cols="40"></textarea>
+                   </div>
+               </div>
 
                 <!-- Informacion de los hermanos -->
                 <p class="bg-primary info-text">Informacion sobre Hermanos</p>
@@ -1863,18 +1874,6 @@
                             <input type = "text" value="" class = "form-control" name="sa8">
                           </th>
                         </tr>
-                          <tr>
-                          <th><label>¿Tiene algun tatuaje?</label></th>
-                          <th>
-                            <select class="form-control col-xs-6" name="sa9" >
-                              <option>Si</option>
-                              <option>No</option>
-                            </select>
-                          </th>
-                          <th>
-                            <input type = "text" value="" class = "form-control" name="sa10">
-                          </th>
-                        </tr>
                     </tbody>
                   </table>
                 </div>
@@ -1945,8 +1944,6 @@
                             <input type = "text" value="" class = "form-control" name="vi8" >
                           </th>
                         </tr>
-
-
                         <tr>
                           <th><label>¿Tiene algun tatuaje?</label></th>
                           <th>
@@ -1959,7 +1956,18 @@
                             <input type = "text" value="" class = "form-control" name="vi10" >
                           </th>
                         </tr>
-
+                        <tr>
+                          <th><label>¿Usted  tiene o ha tenido alguna demanda o problemas Legal?</label></th>
+                          <th>
+                            <select class="form-control col-xs-6" name = "vi11">
+                              <option>Si</option>
+                              <option>No</option>
+                            </select>
+                          </th>
+                          <th>
+                            <textarea name="vi12" rows="4" cols="40" class="form-control col-xs-6"></textarea>
+                          </th>
+                        </tr>
                     </tbody>
                   </table>
                 </div>

@@ -115,7 +115,7 @@
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
                                         <label>¿Que tipo de licencia posee?</label>
-                                        {!! Form::select( 'dp11', ['Tipo A' => 'Tipo A', 'Tipo B' => 'Tipo B', 'Tipo C' => 'Tipo C' , 'Tipo M' => 'Tipo M', 'Tipo M' => 'Tipo M'] , $dp[0]->dp11 , ['class' => 'form-control'] ) !!}
+                                        {!! Form::select( 'dp11', [ 'Ninguna' => 'Ninguna','Tipo A' => 'Tipo A', 'Tipo B' => 'Tipo B', 'Tipo C' => 'Tipo C' , 'Tipo M' => 'Tipo M', 'Tipo M' => 'Tipo M'] , $dp[0]->dp11 , ['class' => 'form-control'] ) !!}
                                     </div>
                                     <!--Profesion -->
                                     <div class="form-group col-xs-6">
@@ -264,11 +264,11 @@
                             </div>
                         </div>
                         <!-- Relacion con su esposo -->
-                        <p class="bg-primary info-text">Informacion del esposo</p>
+                        <p class="bg-primary info-text">Información del cónyuge</p>
                         <div class="row">
                             <!-- Nombres del esposo -->
                             <div class="form-group col-xs-6">
-                                <label>Nombre del esposo</label>
+                                <label>Nombre del cónyuge</label>
                                 <input type="text" class="form-control" id="df17" name="df17" placeholder="Nombres" value="{{ $dfe[0]->nombre }}" >
                             </div>
                             <!-- Edad -->
@@ -313,7 +313,7 @@
                         </div>
 
                         <!-- Informacion Hijos -->
-                        <p class="bg-primary info-text">Informacion sobre Hijos</p>
+                        <p class="bg-primary info-text">Informacion adicional</p>
                         <div class="row">
                             <!-- Numero de Hijos -->
                             <div class="col-sm-12">
@@ -323,6 +323,16 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                           <div class="form-group col-xs-6">
+                             <label>¿Tiene o tuvo un familiar privado de su libertad ?</label>
+                             {!! Form::select( 'df80', ['Si' => 'Si', 'No' => 'No'] , $dfp[0]->familiares_presos , ['class' => 'form-control'] ) !!}
+                           </div>
+                           <div class="form-group col-xs-6">
+                               {!! Form::textarea( 'df81', $dfp[0]->descripcion_familiares_presos ,  ['class' => 'form-control', 'rows' => 4, 'cols' => 40 ] ) !!}
+                           </div>
+                       </div>
 
                         <!-- Informacion de los hermanos -->
                         <p class="bg-primary info-text">Informacion sobre Hermanos</p>
@@ -1558,6 +1568,7 @@
                                 {!! Form::text( 'sa6', $sa[0]->sa6 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
+
                         <tr>
                             <th><label>¿Utiliza anteojos?</label></th>
                             <th>
@@ -1565,15 +1576,6 @@
                             </th>
                             <th>
                                 {!! Form::text( 'sa8', $sa[0]->sa8 ,  ['class' => 'form-control'] ) !!}
-                            </th>
-                        </tr>
-                        <tr>
-                            <th><label>¿Tiene algun tatuaje?</label></th>
-                            <th>
-                                {!! Form::select( 'sa9', ['Si' => 'Si', 'No' => 'No'] , $sa[0]->sa9 , ['class' => 'form-control'] ) !!}
-                            </th>
-                            <th>
-                                {!! Form::text( 'sa10', $sa[0]->sa10 ,  ['class' => 'form-control'] ) !!}
                             </th>
                         </tr>
                         </tbody>
@@ -1638,6 +1640,16 @@
                             </th>
                             <th>
                                 {!! Form::text( 'vi10', $vi[0]->vi10 ,  ['class' => 'form-control'] ) !!}
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th><label>¿Usted  tiene o ha tenido alguna demanda o problemas Legal?</label></th>
+                            <th>
+                                {!! Form::select( 'vi11', ['Si' => 'Si', 'No' => 'No'] , $vi[0]->vi11 , ['class' => 'form-control'] ) !!}
+                            </th>
+                            <th>
+                                {!! Form::textarea( 'vi12', $vi[0]->vi12 ,  ['class' => 'form-control', 'rows' => 4, 'cols' => 40 ] ) !!}
                             </th>
                         </tr>
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
 	'inputs' => [
@@ -70,7 +70,7 @@ return [
 		'Foto Frontal',
 		'Foto lateral izquierda',
 		'Foto lateral derecha',
-		'Huellas diguitales',
+		'Huellas grafotecnia',
 		'Escritura',
 		'Casa frontal',
 		'Casa lateral izquierda',

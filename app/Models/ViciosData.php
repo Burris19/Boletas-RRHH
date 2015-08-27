@@ -5,7 +5,21 @@ namespace App\Models;
 class ViciosData extends BaseModel {
 
 	protected $table = 'viciosData';
-	protected $fillable = ['vi1','vi2','vi3','vi4','vi5','vi6','vi7','vi8','vi9','vi10','id_record'];
+	protected $fillable = [
+			'vi1',
+			'vi2',
+			'vi3',
+			'vi4',
+			'vi5',
+			'vi6',
+			'vi7',
+			'vi8',
+			'vi9',
+			'vi10',
+			'vi11',
+			'vi12',
+			'id_record'
+		];
 
 	public $relations = ['record'];
 
