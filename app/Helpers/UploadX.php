@@ -44,4 +44,4 @@ class UploadX {
         return File::delete($url);
     }
 
-} 
+}

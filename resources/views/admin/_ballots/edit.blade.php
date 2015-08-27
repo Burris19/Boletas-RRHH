@@ -874,8 +874,8 @@
                         </div>
 
                         <div class="form-group col-xs-6">
-                          <label>Puesto desempeñado</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->puesto_desempeñado }}" placeholder = "Puesto desempeñado" required>
+                          <label>Nombre y Puesto</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->nombre_puesto }}" placeholder = "Puesto desempeñado" required>
                         </div>
 
                       </div>
@@ -883,13 +883,13 @@
                       <div class="row">
 
                         <div class="form-group col-xs-6">
-                          <label>Fortalezas laborales</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fortalezas_laborales }}" placeholder = "Fortalezas laborales" required>
+                          <label>Fecha en la que laboró</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fechas_en_las_que_laboro }}" placeholder = "Fortalezas laborales" required>
                         </div>
 
                         <div class="form-group col-xs-6">
-                          <label>Áreas de mejora</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->areas_de_mejora }}" placeholder = "Área de mejora" required>
+                          <label>Puesto que desempeño</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->puesto_que_desempeño }}" placeholder = "Área de mejora" required>
                         </div>
 
                       </div>
@@ -897,28 +897,29 @@
                       <div class="row">
 
                         <div class="form-group col-xs-6">
-                          <label>Le aparecen llamadas de atención</label>
+                          <label>Tiene llamadas de atencion</label>
                           <?php $name = 'dl' . $contador++ ?>
-                          {!! Form::select( $name, ['Si' => 'Si', 'No' => 'No'] , $dl[$indice]->le_aparecen_llamadas_de_atencion , ['class' => 'form-control'] ) !!}
+                          {!! Form::select( $name, ['Si' => 'Si', 'No' => 'No'] , $dl[$indice]->tiene_llamadas_de_atencion , ['class' => 'form-control'] ) !!}
                         </div>
-
-                        <div class="form-group col-xs-6">
-                          <label>Fechas en las que laboró</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fechas_en_las_que_laboro }}" placeholder = "2015/01/01 al 2015/12/31" required>
-                        </div>
-
-                      </div>
-
-                      <div class="row">
 
                         <div class="form-group col-xs-6">
                           <label>Motivo del retiro</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->motivo_del_retiro }}" placeholder = "Motivo del retiro" required>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->motivo_del_retiro }}" placeholder = "2015/01/01 al 2015/12/31" required>
+                        </div>
+
+                      </div>
+                      <hr>
+
+                      <div class="row">
+
+                        <div class="form-group col-xs-6">
+                          <label>Jefe Inmediato</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->jefe_inmediato2 }}" placeholder = "Motivo del retiro" required>
                         </div>
 
                         <div class="form-group col-xs-6">
-                          <label>Quien cofirma</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->quien_cofirma }}" placeholder = "Quien confirma" required>
+                          <label>Nombre y Puesto</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->nombre_y_puesto }}" placeholder = "Quien confirma" required>
                         </div>
                       </div>
 
@@ -926,19 +927,19 @@
 
                         <div class="form-group col-xs-6">
                           <label>Mencione como fue su desempeño</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->mencione_como_fue_su_desempeno }}" placeholder = "Mencione como fue su desempeño" required>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->desenpeño }}" placeholder = "Mencione como fue su desempeño" required>
                         </div>
                         <!-- Motivo de retiro  -->
                         <div class="form-group col-xs-6">
-                          <label>Fortaleza laboral</label>
-                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fortaleza_laboral2 }}" placeholder = "Fortaleza laboral" required>
+                          <label>Cual fue su fortaleza laboral</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fortaleza_laborales }}" placeholder = "Fortaleza laboral" required>
                         </div>
                       </div>
 
                       <div class="row">
 
                         <div class="form-group col-xs-6">
-                          <label>Área de mejora</label>
+                          <label>Qué áreas debe de mejora</label>
                           <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->area_de_mejora2 }}" placeholder = "Área de mejora" required>
                         </div>
 
@@ -1023,8 +1024,8 @@
                             {!! Form::select( 'hd1', ['Si' => 'Si', 'No' => 'No'] , $ho[0]->hd1 , ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group col-xs-6">
-                            <label>¿Numero de habitacion?</label>
-                            <input type = "number" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" value = "{{ $ho[0]->hd2 }}" >
+                            <label>Numero de habitaciones / de cuantos niveles es su casa</label>
+                            <input type = "text" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" value = "{{ $ho[0]->hd2 }}" >
                         </div>
                     <div class="row">
                     </div>
@@ -1320,21 +1321,32 @@
         theParent.addEventListener('change',archivo, false);
         function archivo(evt) {
             var id = evt.target.id;
+            var indice = id.substring(3,4);
             var files = evt.target.files; // FileList object
             // Obtenemos la imagen del campo "file".
             for (var i = 0, f; f = files[i]; i++) {
-                //Solo admitimos imágenes.
-                if (!f.type.match('image.*')) {
-                    continue;
+
+              if ( indice <= 6)
+              {
+                  if (!f.type.match('image.*')) {
+                    alert("Solamente imagenes se aceptan");
+                  }
+                  else {
+                      var reader = new FileReader();
+                      reader.onload = (function(theFile) {
+                        return function(e) {
+                          // Insertamos la imagen
+                          $("#mm"+ id).attr("src", e.target.result);
+                        };
+                      })(f);
+                      reader.readAsDataURL(f);
+                  }
+              }else {
+                if (!f.type.match('pdf.*')) {
+                  alert("Debe seleccionar un PDF");
                 }
-                var reader = new FileReader();
-                reader.onload = (function(theFile) {
-                    return function(e) {
-                        // Insertamos la imagen
-                        $("#mm"+ id).attr("src", e.target.result);
-                    };
-                })(f);
-                reader.readAsDataURL(f);
+              }
+
             }
         }
 

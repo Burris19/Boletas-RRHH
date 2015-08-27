@@ -900,69 +900,56 @@
                     </div>
 
                     <div class="row">
-                      <!--Telefono casa -->
                       <div class="form-group col-xs-12">
-                        <h4>Referencia obtenidad de la empresa</h4>
+                        <h4>Referencia obtenida de la empresa</h4>
                         <hr>
                       </div>
                     </div>
 
-
                     <div class="row">
-
                       <div class="form-group col-xs-6">
                         <label>Departamento que confirma</label>
                         <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Departamento que confirma" required>
                       </div>
-
                       <div class="form-group col-xs-6">
-                        <label>Puesto desempeñado</label>
-                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Puesto desempeñado" required>
+                        <label>Nombre y Puesto</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Nombre y Puesto" required>
                       </div>
-
                     </div>
 
                     <div class="row">
-
                       <div class="form-group col-xs-6">
-                        <label>Fortalezas laborales</label>
-                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Fortalezas laborales" required>
+                        <label>Fecha en la que laboró</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "2015/01/01 al 2015/12/31" required>
                       </div>
-
                       <div class="form-group col-xs-6">
-                        <label>Áreas de mejora</label>
-                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Área de mejora" required>
+                        <label>Puesto que desempeño</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Puesto que desempeñoñ" required>
                       </div>
-
                     </div>
 
                     <div class="row">
-
                       <div class="form-group col-xs-6">
-                        <label>Le aparecen llamadas de atención</label>
+                        <label>Tiene llamadas de atencion</label>
                         <select class="form-control col-xs-6" name = "dl{{$contador++}}">
                           <option>Si</option>
                           <option>No</option>
                         </select>
                       </div>
-
-                      <div class="form-group col-xs-6">
-                        <label>Fechas en las que laboró</label>
-                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "2015/01/01 al 2015/12/31" required>
-                      </div>
-
-                    </div>
-
-                    <div class="row">
-
                       <div class="form-group col-xs-6">
                         <label>Motivo del retiro</label>
                         <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Motivo del retiro" required>
                       </div>
-
+                    </div>
+                    <hr>
+                    <div class="row">
                       <div class="form-group col-xs-6">
-                        <label>Quien cofirma</label>
-                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Quien confirma" required>
+                        <label>Jefe Inmediato</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Jefe inmediato">
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label>Nombre y Puesto</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Nombre y puesto">
                       </div>
                     </div>
 
@@ -974,18 +961,16 @@
                       </div>
                       <!-- Motivo de retiro  -->
                       <div class="form-group col-xs-6">
-                        <label>Fortaleza laboral</label>
+                        <label>Cual fue su fortaleza laboral</label>
                         <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Fortaleza laboral" required>
                       </div>
                     </div>
 
                     <div class="row">
-
                       <div class="form-group col-xs-6">
-                        <label>Área de mejora</label>
+                        <label>Qué áreas debe de mejora</label>
                         <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Área de mejora" required>
                       </div>
-
                       <div class="form-group col-xs-6">
                         <label>Como fueron sus relaciones interpersonales</label>
                         <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Como fueron sus relaciones interpersonales" required>
@@ -1065,8 +1050,8 @@
                         </select>
                       </div>
                       <div class="form-group col-xs-6">
-                        <label>¿Numero de habitacion?</label>
-                        <input type = "number" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" required>
+                        <label>Numero de habitaciones / de cuantos niveles es su casa</label>
+                        <input type = "text" class = "form-control" name = "hd2" placeholder = "Numero de habitaciones" required>
                       </div>
                   </div>
 
@@ -1412,23 +1397,34 @@
     var theParent = document.querySelector("#content-file");
     theParent.addEventListener('change',archivo, false);
     function archivo(evt) {
-      var id = evt.target.id;
-      var files = evt.target.files; // FileList object
-      // Obtenemos la imagen del campo "file".
-      for (var i = 0, f; f = files[i]; i++) {
-        //Solo admitimos imágenes.
-        if (!f.type.match('image.*')) {
-          continue;
+        var id = evt.target.id;
+        var indice = id.substring(3,4);
+        var files = evt.target.files; // FileList object
+        // Obtenemos la imagen del campo "file".
+        for (var i = 0, f; f = files[i]; i++) {
+
+          if ( indice <= 6)
+          {
+              if (!f.type.match('image.*')) {
+                alert("Solamente imagenes se aceptan");
+              }
+              else {
+                  var reader = new FileReader();
+                  reader.onload = (function(theFile) {
+                    return function(e) {
+                      // Insertamos la imagen
+                      $("#mm"+ id).attr("src", e.target.result);
+                    };
+                  })(f);
+                  reader.readAsDataURL(f);
+              }
+          }else {
+            if (!f.type.match('pdf.*')) {
+              alert("Debe seleccionar un PDF");
+            }
+          }
+
         }
-        var reader = new FileReader();
-        reader.onload = (function(theFile) {
-          return function(e) {
-            // Insertamos la imagen
-            $("#mm"+ id).attr("src", e.target.result);
-          };
-        })(f);
-        reader.readAsDataURL(f);
-      }
     }
 
 </script>

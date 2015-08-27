@@ -24,6 +24,7 @@ use App\Models\SaludData;
 use App\Models\HomeData;
 use App\Models\LaborData;
 use app\Models\FileData;
+use Imagick;
 
 class BallotsController extends CrudController {
 
@@ -95,7 +96,7 @@ class BallotsController extends CrudController {
     public function store(Request $request)
     {
         $data = $request->all();
-        for($i = 1 ; $i<= 9; $i++)
+        for($i = 1 ; $i<=9 ; $i++)
         {
             if($request->hasFile('input'.$i)) {
                 $image = UploadX::uploadFile($request->file('input'.$i),'pictures', $i.time());
@@ -104,6 +105,33 @@ class BallotsController extends CrudController {
                 $data['input'.$i] = "";
             }
         }
+
+        for ($i=7; $i <=8 ; $i++) {
+            $key = 'input'.$i;
+            if($request->hasFile($key)) {
+                // Create a instance for imagick with the url of PDF
+                $im = new Imagick();
+                $im->setResolution(144, 144);
+                $im->readImage($data[$key] . '[0]');
+                $im->setImageFormat('png');
+
+                // Set the url of the image converted
+
+                $url = 'pictures/' . $i . time() . '.png';
+
+                // Put the image in the public folder
+                file_put_contents($url, $im);
+
+                // Remove the PDF uploaded
+                UploadX::deleteFile($data[$key]);
+
+                // Set the new url for the image
+                $data[$key] = $url;
+            }else{
+                $data[$key] = "";
+            }
+        }
+
 
         //llenamos los campos vacios
     	  $data = array_map(function($item){
@@ -242,20 +270,22 @@ class BallotsController extends CrudController {
                 $dataLabor['fecha_retiro']                                = $data['dl'.$e++];
                 $dataLabor['ultimo_salario']                              = $data['dl'.$e++];
                 $dataLabor['motivo_despido']                              = $data['dl'.$e++];
+
                 $dataLabor['departamento_que_confirma']                   = $data['dl'.$e++];
-                $dataLabor['puesto_desempeñado']                          = $data['dl'.$e++];
-                $dataLabor['fortalezas_laborales']                        = $data['dl'.$e++];
-                $dataLabor['areas_de_mejora']                             = $data['dl'.$e++];
-                $dataLabor['le_aparecen_llamadas_de_atencion']            = $data['dl'.$e++];
+                $dataLabor['nombre_puesto']                               = $data['dl'.$e++];
                 $dataLabor['fechas_en_las_que_laboro']                    = $data['dl'.$e++];
+                $dataLabor['puesto_que_desempeño']                        = $data['dl'.$e++];
+                $dataLabor['tiene_llamadas_de_atencion']                  = $data['dl'.$e++];
                 $dataLabor['motivo_del_retiro']                           = $data['dl'.$e++];
-                $dataLabor['quien_cofirma']                               = $data['dl'.$e++];
-                $dataLabor['mencione_como_fue_su_desempeno']              = $data['dl'.$e++];
-                $dataLabor['fortaleza_laboral2']                          = $data['dl'.$e++];
+                $dataLabor['jefe_inmediato2']                              = $data['dl'.$e++];
+                $dataLabor['nombre_y_puesto']                             = $data['dl'.$e++];
+                $dataLabor['desenpeño']                                   = $data['dl'.$e++];
+                $dataLabor['fortaleza_laborales']                         = $data['dl'.$e++];
                 $dataLabor['area_de_mejora2']                             = $data['dl'.$e++];
                 $dataLabor['como_fueron_sus_relaciones_interpersonales']  = $data['dl'.$e++];
                 $dataLabor['motivo_de_retiro2']                           = $data['dl'.$e++];
                 $dataLabor['id_record'] = $ballot->id;
+
                 $this->laborDataRepo->create($dataLabor);
             }
 
@@ -347,21 +377,38 @@ class BallotsController extends CrudController {
         $data['id_record'] = $id;
 
         $datafile = FileData::where('id_record',$id)->get();
-
-
         for($i = 1 ; $i <= 9 ; $i++ )
         {
             // Upload new image
             if($request->hasFile('input'.$i)) {
                 $foto = $datafile[$i-1]->url;
-                if ($foto != '-----') {
-                    unlink($foto);
-                }
                 $image = UploadX::uploadFile($request->file('input'.$i),'pictures', $i . time());
                 $data['input'.$i] = $image['url'];
-            }else{
-                $foto = $datafile[$i-1]->url;
-                $data['input'.$i] = $foto;
+            } else {
+                $data['input'.$i] = '';
+            }
+        }
+
+        for ($i=7; $i <=8 ; $i++) {
+            $key = 'input'.$i;
+            if($request->hasFile($key)) {
+                // Create a instance for imagick with the url of PDF
+                $im = new Imagick();
+                $im->setResolution(144, 144);
+                $im->readImage($data[$key] . '[0]');
+                $im->setImageFormat('png');
+
+                // Set the url of the image converted
+                $url = 'pictures/' . $i . time() . '.png';
+
+                // Put the image in the public folder
+                file_put_contents($url, $im);
+
+                // Remove the PDF uploaded
+                UploadX::deleteFile($data[$key]);
+
+                // Set the new url for the image
+                $data[$key] = $url;
             }
         }
 
@@ -369,7 +416,6 @@ class BallotsController extends CrudController {
         $data = array_map(function($item){
             return ($item == '' ? '-----' : $item);
         }, $data);
-
 
         //Guardo en el repo
         $data['name'] = \Auth::user()->name;
@@ -408,9 +454,14 @@ class BallotsController extends CrudController {
         $datafile = FileData::where('id_record',$id)->get();
         $i = 1 ;
         $indice = 0;
-        while($i < 9)
+        while($i <= 9)
         {
-            $datafile[$indice]->url = $data['input'.$i];
+            $url = $data['input'.$i];
+            if ($datafile[$indice]->url != $url && $url!='-----' ) {
+              UploadX::deleteFile($datafile[$indice]->url);
+              $datafile[$indice]->url =  $data['input'.$i];
+            }
+
             $datafile[$indice]->id_record = $id;
             $datafile[$indice]->save();
             $i++;
@@ -545,15 +596,15 @@ class BallotsController extends CrudController {
             $dataLabor[$indice]->motivo_despido = $data['dl'.$e++];
 
             $dataLabor[$indice]->departamento_que_confirma = $data['dl'.$e++];
-            $dataLabor[$indice]->puesto_desempeñado = $data['dl'.$e++];
-            $dataLabor[$indice]->fortalezas_laborales = $data['dl'.$e++];
-            $dataLabor[$indice]->areas_de_mejora = $data['dl'.$e++];
-            $dataLabor[$indice]->le_aparecen_llamadas_de_atencion = $data['dl'.$e++];
+            $dataLabor[$indice]->nombre_puesto = $data['dl'.$e++];
             $dataLabor[$indice]->fechas_en_las_que_laboro = $data['dl'.$e++];
-            $dataLabor[$indice]->motivo_del_retiro = $data['dl'.$e++];            
-            $dataLabor[$indice]->quien_cofirma = $data['dl'.$e++];
-            $dataLabor[$indice]->mencione_como_fue_su_desempeno = $data['dl'.$e++];
-            $dataLabor[$indice]->fortaleza_laboral2 = $data['dl'.$e++];
+            $dataLabor[$indice]->puesto_que_desempeño = $data['dl'.$e++];
+            $dataLabor[$indice]->tiene_llamadas_de_atencion = $data['dl'.$e++];
+            $dataLabor[$indice]->motivo_del_retiro = $data['dl'.$e++];
+            $dataLabor[$indice]->jefe_inmediato2 = $data['dl'.$e++];
+            $dataLabor[$indice]->nombre_y_puesto = $data['dl'.$e++];
+            $dataLabor[$indice]->desenpeño = $data['dl'.$e++];
+            $dataLabor[$indice]->fortaleza_laborales = $data['dl'.$e++];
             $dataLabor[$indice]->area_de_mejora2 = $data['dl'.$e++];
             $dataLabor[$indice]->como_fueron_sus_relaciones_interpersonales = $data['dl'.$e++];
             $dataLabor[$indice]->motivo_de_retiro2 = $data['dl'.$e++];

@@ -24,21 +24,24 @@ class CreateLaborDataTable extends Migration {
 				$table->string('fecha_retiro');
 				$table->string('ultimo_salario');
 				$table->string('motivo_despido');
+
 				$table->string('departamento_que_confirma');
-				$table->string('puesto_desempeñado');
-				$table->string('fortalezas_laborales');
-				$table->string('areas_de_mejora');
-				$table->string('le_aparecen_llamadas_de_atencion');
+				$table->string('nombre_puesto');
 				$table->string('fechas_en_las_que_laboro');
+				$table->string('puesto_que_desempeño');
+				$table->string('tiene_llamadas_de_atencion');
 				$table->string('motivo_del_retiro');
-				$table->string('quien_cofirma');
-				$table->string('mencione_como_fue_su_desempeno');
-				$table->string('fortaleza_laboral2');
+				$table->string('jefe_inmediato2');
+				$table->string('nombre_y_puesto');
+				$table->string('desenpeño');
+				$table->string('fortaleza_laborales');
 				$table->string('area_de_mejora2');
 				$table->string('como_fueron_sus_relaciones_interpersonales');
 				$table->string('motivo_de_retiro2');
+
 				$table->integer('id_record')->unsigned();
 				$table->foreign('id_record')->references('id')->on('records');
+
         $table->timestamps();
 		});
 	}

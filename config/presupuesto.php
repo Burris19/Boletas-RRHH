@@ -70,11 +70,12 @@ return [
 		'Foto Frontal',
 		'Foto lateral izquierda',
 		'Foto lateral derecha',
-		'Huellas grafotecnia',
-		'Escritura',
 		'Casa frontal',
 		'Casa lateral izquierda',
-		'Casa lateral derecha'
+		'Casa lateral derecha',
+		'Huellas grafotecnia',
+		'Escritura',
+		'Pdf Infornet'
 
 	]
 
