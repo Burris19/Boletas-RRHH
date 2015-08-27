@@ -371,6 +371,20 @@ class BallotsController extends CrudController {
         return response($file,200)->header('Content-Type','application/pdf');
 
     }
+
+    public function getInfor($id)
+    {
+        $da  = FileData::where('id_record',$id)->get();
+        $url = $da[8]->url;
+        $file = file_get_contents(public_path() . '/' . $url);
+        return response($file,200)->header('Content-Type','application/pdf');
+    }
+
+
+
+
+
+
     public function update(Request $request, $id)
     {
         $data = $request->all();

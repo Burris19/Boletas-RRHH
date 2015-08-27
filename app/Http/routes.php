@@ -19,6 +19,7 @@ Route::group(['prefix'=>'/','namespace'=>'Admin'],function(){
     Route::resource('users','UsersController');
     Route::resource('users/{id}/delete','UsersController@showDelete');
     Route::get('pdf/{id}','BallotsController@getPDF');
+    Route::get('infor/{id}','BallotsController@getInfor');
 
 });
 
