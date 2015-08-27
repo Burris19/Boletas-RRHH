@@ -836,863 +836,173 @@
           <!-- Informacion Laboral -->
           <div class="tab-pane" id="laboral">
 
-            <div class="row">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl1" name = "dl1" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl2" name = "dl2" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl3" name = "dl3" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl4" name = "dl4" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl5" name = "dl5" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl6" name = "dl6" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl7" name = "dl7" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl8" name = "dl8" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl9" name = "dl9" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl10" name="dl10" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl11" name="dl11" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab1" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl12" name = "dl12" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl13" name = "dl13" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl14" name = "dl14" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl15" name = "dl15" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl16" name = "dl16" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl17" name = "dl17" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl18" name = "dl18" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl19" name = "dl19" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl20" name = "dl20" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl21" name="dl21" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl22" name="dl22" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab2" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl23" name = "dl23" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl24" name = "dl24" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl25" name = "dl25" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl26" name = "dl26" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl27" name = "dl27" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl28" name = "dl28" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl29" name = "dl29" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl30" name = "dl30" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl31" name = "dl31" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl32" name="dl32" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl33" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab3" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl34" name = "dl34" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl35" name = "dl35" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl36" name = "dl36" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl37" name = "dl37" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl38" name = "dl38" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl39" name = "dl39" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl40" name = "dl40" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl41" name = "dl41" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl42" name = "dl42" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl43" name="dl43" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl44" name="dl44" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab4" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl45" name = "dl45" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl46" name = "dl46" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl47" name = "dl47" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl48" name = "dl48" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl49" name = "dl49" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl50" name = "dl50" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl51" name = "dl51" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl52" name = "dl52" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl53" name = "dl53" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl54" name="dl54" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl55" name="dl55" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab5" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl56" name = "dl56" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl57" name = "dl57" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl58" name = "dl58" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl59" name = "dl59" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl60" name = "dl60" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl61" name = "dl61" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl62" name = "dl62" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl63" name = "dl63" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl64" name = "dl64" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl65" name="dl65" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl66" name="dl66" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab6" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl67" name = "dl67" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl68" name = "dl68" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl69" name = "dl69" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl70" name = "dl70" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl71" name = "dl71" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl72" name = "dl72" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl73" name = "dl73" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl74" name = "dl74" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl75" name = "dl75" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl76" name="dl76" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl77" name="dl77" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab7" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl78" name = "dl78" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl79" name = "dl79" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl80" name = "dl80" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl81" name = "dl81" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl82" name = "dl82" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl83" name = "dl83" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl84" name = "dl84" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl85" name = "dl85" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl86" name = "dl86" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl87" name="dl87" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl88" name="dl88" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab8" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl89" name = "dl89" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl90" name = "dl90" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
 
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl91" name = "dl91" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl92" name = "dl92" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl93" name = "dl93" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl94" name = "dl94" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl95" name = "dl95" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl96" name = "dl96" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl97" name = "dl97" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl98" name="dl98" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl99" name="dl99" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab9" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl100" name = "dl100" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl101" name = "dl101" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl102" name = "dl102" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl103" name = "dl103" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl104" name = "dl104" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl105" name = "dl105" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl106" name = "dl106" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl107" name = "dl107" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl108" name = "dl108" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl109" name="dl109" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl110" name="dl110" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row lab10" style="display: none">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <!-- Empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Empresa</label>
-                    <input type = "text" class = "form-control" id = "dl111" name = "dl111" placeholder = "Nombre de la empresa" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Direccion</label>
-                    <input type = "text" class = "form-control" id = "dl112" name = "dl112" placeholder = "Direccion de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Telefono  -->
-                  <div class="form-group col-xs-6">
-                    <label>Telefono</label>
-                    <input type = "number" class = "form-control" id = "dl113" name = "dl113" placeholder = "Numero telefonico de la empresa" required>
-                  </div>
-                  <!-- Cargo empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto</label>
-                    <input type = "text" class = "form-control" id = "dl114" name = "dl114" placeholder = "Puesto que desempeño" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Jefe Inmediato  -->
-                  <div class="form-group col-xs-6">
-                    <label>Jefe Inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl115" name = "dl115" placeholder = "Nombre del jefe inmediato" required>
-                  </div>
-                  <!-- Direccion empresa  -->
-                  <div class="form-group col-xs-6">
-                    <label>Puesto del Jefe inmediato</label>
-                    <input type = "text" class = "form-control" id = "dl116" name = "dl116" placeholder = "Puesto del Jefe inmediato" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Fecha de inicio  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha inicio</label>
-                    <input type = "text" class = "form-control" id = "dl117" name = "dl117" placeholder = "Fecha de inicio de labores" required>
-                  </div>
-                  <!-- Fecha de salida  -->
-                  <div class="form-group col-xs-6">
-                    <label>Fecha de Salida</label>
-                    <input type = "text" class = "form-control" id = "dl118" name = "dl118" placeholder = "Fecha de salida de la empresa" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!-- Ultimo Salario  -->
-                  <div class="form-group col-xs-6">
-                    <label>Ultimo salario</label>
-                    <input type = "number" class = "form-control" id = "dl119" name = "dl119" placeholder = "Ultimo salario" required>
-                  </div>
-                  <!-- Motivo de retiro  -->
-                  <div class="form-group col-xs-6">
-                    <label>Motivo de retiro</label>
-                    <textarea  class="form-control" id="dl120" name="dl120" placeholder="Motivo de terio" rows="3" required></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <!--Telefono casa -->
-                  <div class="form-group col-xs-12"
-                    <label>Referencia obtenida de la empresa</label>
-                    <textarea  class="form-control" id="dl121" name="dl121" placeholder="Referencia obtenida por parte de la empresa" rows="3" required></textarea>
-                  </div>
-                </div>
+            <?php $contador = 1; ?>
+            @for ($i = 1; $i < 11; $i++ )
+                <div class="row lab{{ $i }}" @if($i != 1 )  style="display: none" @endif>
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <h4>Referencia laboral #{{ $i }}</h4>
+                    <hr>
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label>Empresa</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Nombre de la empresa" required>
+                      </div>
+
+                      <div class="form-group col-xs-6">
+                        <label>Direccion</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Direccion de la empresa" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label>Telefono</label>
+                        <input type = "number" class = "form-control" name = "dl{{$contador++}}" placeholder = "Numero telefonico de la empresa" required>
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label>Puesto</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Puesto que desempeño" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label>Jefe Inmediato</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Nombre del jefe inmediato" required>
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label>Puesto del Jefe inmediato</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Puesto del Jefe inmediato" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label>Fecha inicio</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Fecha de inicio de labores" required>
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label>Fecha de Salida</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Fecha de salida de la empresa" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label>Ultimo salario</label>
+                        <input type = "number" class = "form-control" name = "dl{{$contador++}}" placeholder = "Ultimo salario" required>
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label>Motivo de retiro</label>
+                        <textarea  class="form-control" name="dl{{$contador++}}" placeholder="Motivo de terio" rows="3" required></textarea>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!--Telefono casa -->
+                      <div class="form-group col-xs-12">
+                        <h4>Referencia obtenidad de la empresa</h4>
+                        <hr>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+
+                      <div class="form-group col-xs-6">
+                        <label>Departamento que confirma</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Departamento que confirma" required>
+                      </div>
+
+                      <div class="form-group col-xs-6">
+                        <label>Puesto desempeñado</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Puesto desempeñado" required>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-xs-6">
+                        <label>Fortalezas laborales</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Fortalezas laborales" required>
+                      </div>
+
+                      <div class="form-group col-xs-6">
+                        <label>Áreas de mejora</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Área de mejora" required>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-xs-6">
+                        <label>Le aparecen llamadas de atención</label>
+                        <select class="form-control col-xs-6" name = "dl{{$contador++}}">
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-xs-6">
+                        <label>Fechas en las que laboró</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "2015/01/01 al 2015/12/31" required>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-xs-6">
+                        <label>Motivo del retiro</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Motivo del retiro" required>
+                      </div>
+
+                      <div class="form-group col-xs-6">
+                        <label>Quien cofirma</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Quien confirma" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-xs-6">
+                        <label>Mencione como fue su desempeño</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Mencione como fue su desempeño" required>
+                      </div>
+                      <!-- Motivo de retiro  -->
+                      <div class="form-group col-xs-6">
+                        <label>Fortaleza laboral</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Fortaleza laboral" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-xs-6">
+                        <label>Área de mejora</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Área de mejora" required>
+                      </div>
+
+                      <div class="form-group col-xs-6">
+                        <label>Como fueron sus relaciones interpersonales</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Como fueron sus relaciones interpersonales" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label>Motivo de retiro</label>
+                        <input type = "text" class = "form-control" name = "dl{{$contador++}}" placeholder = "Motivo de retiro" required>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            @endfor
 
-              </div>
-            </div>
             <div class="row">
               <div class="col-sm-10 col-sm-offset-1">
                 <div class="row">
@@ -1703,6 +1013,7 @@
                 </div>
               </div>
             </div>
+
           </div>
           <!-- Presupuesto Familiar -->
           <div class="tab-pane" id="presupuesto">
@@ -1765,6 +1076,8 @@
                         <select class="form-control col-xs-6" name = "hd3">
                           <option>Lamina</option>
                           <option>Block</option>
+                          <option>Formaleta</option>
+                          <option>Adobe</option>
                         </select>
                     </div>
                     <div class="form-group col-xs-6">
@@ -1780,7 +1093,7 @@
                     <div class="form-group col-xs-6">
                         <label>¿Material del piso?</label>
                         <select class="form-control col-xs-6" name = "hd5">
-                          <option>Cerramico</option>
+                          <option>Ceramico</option>
                           <option>Cemento</option>
                           <option>Tierra</option>
                         </select>
@@ -1975,24 +1288,29 @@
               </div>
             </div>
           </div>
-
-          <!-- Vecinos -->
           <div class="tab-pane" id = "vecinos">
-            <div class="row">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  @foreach(config('presupuesto.vecinos') as $key => $description)
-                     <div class="row">
-                        <div class="form-group col-xs-12">
-                          <label>{{ $description }}</label>
-                          <input type = "text" class = "form-control" name = "v{{ $key + 1}}" placeholder = "{{ $description }}" required>
-                        </div>
-                      </div>
-                  @endforeach
-                </div>
+              <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                      <?php $indice = 1; ?>
+                      @for ($i = 1; $i < 4; $i++)
+                          <div class="row">
+                              <h3>Referencia personales #{{{ $i }}} </h3>
+                              @foreach(config('presupuesto.vecinos') as $key => $description)
+                                  <?php $field = "v" . $indice ?>
+                                  <div class="row">
+                                      <div class="form-group col-xs-12">
+                                          <label>{{ $description }}</label>
+                                          {!! Form::text( $field  ,null, ['class' => 'form-control'] ) !!}
+                                      </div>
+                                  </div>
+                                  <?php $indice++; ?>
+                              @endforeach
+                          </div>
+                      @endfor
+                  </div>
               </div>
-            </div>
           </div>
+
       <!-- pagina pra subir archivos -->
       <div class="tab-pane" id = "archivos">
         <div class="row">
@@ -2085,7 +1403,7 @@
     conteo++;
   });
 
-  var conteo2 = 1;
+  var conteo2 = 2;
   $("#addLab").click(function(e){
     $(".lab" + conteo2).css("display","block");
     conteo2++;

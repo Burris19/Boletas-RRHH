@@ -2,7 +2,7 @@
 
 return [
 	'inputs' => [
-		'Salario (trabajo actual o nuevo trabajo)',
+		'Presupuesto mensual',
 		'Otros Ingresos',
 		'Alquileres',
 		'Alimentacion',
@@ -77,5 +77,6 @@ return [
 		'Casa lateral derecha'
 
 	]
+
 
 ];

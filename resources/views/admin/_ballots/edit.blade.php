@@ -805,626 +805,160 @@
 
             <!-- Informacion Laboral -->
             <div class="tab-pane" id="laboral">
-                <!-- Primera Empresa -->
-                <div class="row">
+              <?php $indice = 0; $contador = 1; ?>
+              @for ($i = 0 ; $i < 10; $i++ )
+                  <div class="row lab{{ $i }}" @if( $dl[$indice]->empresa === '-----' ) @if( $i != 0 ) style="display: none" @endif  @endif >
                     <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl1', $dl[0]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl2', $dl[0]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
+                      <h4>Referencia laboral #{{ $i+1 }}</h4>
+                      <hr>
+                      <div class="row">
+                          <div class="form-group col-xs-6">
+                              <label>Empresa</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->empresa }}">
+                          </div>
+                          <div class="form-group col-xs-6">
+                              <label>Direccion</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->direccion }}">
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-xs-6">
+                              <label>Telefono</label>
+                              <input type = "number" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->telefono }}">
+                          </div>
+                          <div class="form-group col-xs-6">
+                              <label>Puesto</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->puesto }}">
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-xs-6">
+                              <label>Jefe Inmediato</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->jefe_inmediato }}">
+                          </div>
+                          <div class="form-group col-xs-6">
+                              <label>Puesto del Jefe inmediato</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->puesto_jefe_inmediato }}">
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-xs-6">
+                              <label>Fecha inicio</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fecha_inicio }}">
+                          </div>
+                          <div class="form-group col-xs-6">
+                              <label>Fecha de Salida</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fecha_retiro }}">
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-xs-6">
+                              <label>Ultimo salario</label>
+                              <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->ultimo_salario }}">
+                          </div>
+                          <div class="form-group col-xs-6">
+                              <label>Motivo de retiro</label>
+                              <textarea  class="form-control" name="dl{{$contador++}}" value="{{ $dl[$indice]->motivo_despido }}" placeholder="Motivo de terio" rows="3" required>{{ $dl[$i]->motivo_despido }}</textarea>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-xs-12">
+                          <h4>Referencia obtenidad de la empresa</h4>
+                          <hr>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl3', $dl[0]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl4', $dl[0]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-xs-6">
+                          <label>Departamento que confirma</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->departamento_que_confirma }}" placeholder = "Departamento que confirma" required>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl5', $dl[0]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl6', $dl[0]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
+
+                        <div class="form-group col-xs-6">
+                          <label>Puesto desempeñado</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->puesto_desempeñado }}" placeholder = "Puesto desempeñado" required>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl7', $dl[0]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl8', $dl[0]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
+
+                      </div>
+
+                      <div class="row">
+
+                        <div class="form-group col-xs-6">
+                          <label>Fortalezas laborales</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fortalezas_laborales }}" placeholder = "Fortalezas laborales" required>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl9', $dl[0]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl10" placeholder="Motivo de terio" rows="3" required>{{ $dl[0]->motivo_despido }}</textarea>
-                            </div>
+
+                        <div class="form-group col-xs-6">
+                          <label>Áreas de mejora</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->areas_de_mejora }}" placeholder = "Área de mejora" required>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl11" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[0]->referencia_obtenida }}</textarea>
-                            </div>
+
+                      </div>
+
+                      <div class="row">
+
+                        <div class="form-group col-xs-6">
+                          <label>Le aparecen llamadas de atención</label>
+                          <?php $name = 'dl' . $contador++ ?>
+                          {!! Form::select( $name, ['Si' => 'Si', 'No' => 'No'] , $dl[$indice]->le_aparecen_llamadas_de_atencion , ['class' => 'form-control'] ) !!}
                         </div>
+
+                        <div class="form-group col-xs-6">
+                          <label>Fechas en las que laboró</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fechas_en_las_que_laboro }}" placeholder = "2015/01/01 al 2015/12/31" required>
+                        </div>
+
+                      </div>
+
+                      <div class="row">
+
+                        <div class="form-group col-xs-6">
+                          <label>Motivo del retiro</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->motivo_del_retiro }}" placeholder = "Motivo del retiro" required>
+                        </div>
+
+                        <div class="form-group col-xs-6">
+                          <label>Quien cofirma</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->quien_cofirma }}" placeholder = "Quien confirma" required>
+                        </div>
+                      </div>
+
+                      <div class="row">
+
+                        <div class="form-group col-xs-6">
+                          <label>Mencione como fue su desempeño</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->mencione_como_fue_su_desempeno }}" placeholder = "Mencione como fue su desempeño" required>
+                        </div>
+                        <!-- Motivo de retiro  -->
+                        <div class="form-group col-xs-6">
+                          <label>Fortaleza laboral</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->fortaleza_laboral2 }}" placeholder = "Fortaleza laboral" required>
+                        </div>
+                      </div>
+
+                      <div class="row">
+
+                        <div class="form-group col-xs-6">
+                          <label>Área de mejora</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->area_de_mejora2 }}" placeholder = "Área de mejora" required>
+                        </div>
+
+                        <div class="form-group col-xs-6">
+                          <label>Como fueron sus relaciones interpersonales</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->como_fueron_sus_relaciones_interpersonales }}" placeholder = "Como fueron sus relaciones interpersonales" required>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-xs-12">
+                          <label>Motivo de retiro</label>
+                          <input type = "text" class = "form-control" name = "dl{{$contador++}}" value="{{ $dl[$indice]->motivo_de_retiro2 }}" placeholder = "Motivo de retiro" required>
+                        </div>
+                      </div>
+
                     </div>
-                </div>
-                <!-- Segunda Empresa -->
-                <div class="row lab1"  @if( $dl[1]->empresa === '-----' )  style="display: none"  @endif >
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl12', $dl[1]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl13', $dl[1]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl14', $dl[1]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl15', $dl[1]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl16', $dl[1]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl17', $dl[1]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl18', $dl[1]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl19', $dl[1]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl20', $dl[1]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl21" placeholder="Motivo de terio" rows="3" required>{{ $dl[1]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl22" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[1]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tercera Empresa -->
-                <div class="row lab2" @if( $dl[2]->empresa === '-----' )  style="display: none"  @endif >
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl23', $dl[2]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl24', $dl[2]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl25', $dl[2]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl26', $dl[2]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl27', $dl[2]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl28', $dl[2]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl29', $dl[2]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl30', $dl[2]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl31', $dl[2]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl32" placeholder="Motivo de terio" rows="3" required>{{ $dl[2]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl33" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[2]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cuarta Empresa  -->
-                <div class="row lab3" @if( $dl[3]->empresa === '-----' )  style="display: none"  @endif >
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl34', $dl[3]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl35', $dl[3]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl36', $dl[3]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl37', $dl[3]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl38', $dl[3]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl39', $dl[3]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl40', $dl[3]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl41', $dl[3]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl42', $dl[3]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl43" placeholder="Motivo de terio" rows="3" required>{{ $dl[3]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl44" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[3]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Quinta Empresa  -->
-                <div class="row lab4" @if( $dl[4]->empresa === '-----' )  style="display: none"  @endif>
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl45', $dl[4]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl46', $dl[4]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl47', $dl[4]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl48', $dl[4]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl49', $dl[4]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl50', $dl[4]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl51', $dl[4]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl52', $dl[4]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl53', $dl[4]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl54" placeholder="Motivo de terio" rows="3" required>{{ $dl[4]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl55" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[4]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sexta Empresa   -->
-                <div class="row lab5" @if( $dl[5]->empresa === '-----' )  style="display: none"  @endif>
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl56', $dl[5]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl57', $dl[5]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl58', $dl[5]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl59', $dl[5]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl60', $dl[5]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl61', $dl[5]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl62', $dl[5]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl63', $dl[5]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl64', $dl[5]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl65" placeholder="Motivo de terio" rows="3" required>{{ $dl[5]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl66" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[5]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Septima Empresa -->
-                <div class="row lab6" @if( $dl[6]->empresa === '-----' )  style="display: none"  @endif>
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl67', $dl[6]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl68', $dl[6]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl69', $dl[6]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl70', $dl[6]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl71', $dl[6]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl72', $dl[6]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl73', $dl[6]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl74', $dl[6]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl75', $dl[6]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl76" placeholder="Motivo de terio" rows="3" required>{{ $dl[6]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl77" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[6]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Octava Empresa  -->
-                <div class="row lab7" @if( $dl[7]->empresa === '-----' )  style="display: none"  @endif >
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl78', $dl[7]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl79', $dl[7]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl80', $dl[7]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl81', $dl[7]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl82', $dl[7]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl83', $dl[7]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl84', $dl[7]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl85', $dl[7]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl86', $dl[7]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl87" placeholder="Motivo de terio" rows="3" required>{{ $dl[7]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl88" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[7]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Novena Empresa  -->
-                <div class="row lab8" @if( $dl[8]->empresa === '-----' )  style="display: none"  @endif>
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl89', $dl[8]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl90', $dl[8]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl91', $dl[8]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl92', $dl[8]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl93', $dl[8]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl94', $dl[8]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl95', $dl[8]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl96', $dl[8]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl97', $dl[8]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl98" placeholder="Motivo de terio" rows="3" required>{{ $dl[8]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl99" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[8]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Decima Empresa  -->
-                <div class="row lab9" @if( $dl[9]->empresa === '-----' )  style="display: none"  @endif>
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Empresa</label>
-                                {!! Form::text( 'dl100', $dl[9]->empresa ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Direccion</label>
-                                {!! Form::text( 'dl101', $dl[9]->direccion ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Telefono</label>
-                                {!! Form::number( 'dl102', $dl[9]->telefono ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto</label>
-                                {!! Form::text( 'dl103', $dl[9]->puesto ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Jefe Inmediato</label>
-                                {!! Form::text( 'dl104', $dl[9]->jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Puesto del Jefe inmediato</label>
-                                {!! Form::text( 'dl105', $dl[9]->puesto_jefe_inmediato ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Fecha inicio</label>
-                                {!! Form::text( 'dl106', $dl[9]->fecha_inicio ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Fecha de Salida</label>
-                                {!! Form::text( 'dl107', $dl[9]->fecha_retiro ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label>Ultimo salario</label>
-                                {!! Form::number( 'dl108', $dl[9]->ultimo_salario ,  ['class' => 'form-control'] ) !!}
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label>Motivo de retiro</label>
-                                <textarea  class="form-control" name="dl109" placeholder="Motivo de terio" rows="3" required>{{ $dl[9]->motivo_despido }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>Referencia obtenida de la empresa</label>
-                                <textarea  class="form-control" name="dl110" placeholder="Referencia obtenida por parte de la empresa" rows="3" required>{{ $dl[9]->referencia_obtenida }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                   <?php $indice++ ?>
+              @endfor
                 <!-- Boton Agregar -->
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
@@ -1661,21 +1195,26 @@
         </div>
     </div>
 
-    <!-- Vecinos -->
+    <!-- Informacion sobre los vecinos -->
     <div class="tab-pane" id = "vecinos">
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
-                <div class="row">
-                    @foreach(config('presupuesto.vecinos') as $key => $description)
-                        <?php $field = "v" . ($key + 1); ?>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <label>{{ $description }}</label>
-                                {!! Form::text( $field  ,$ve[0]->$field , ['class' => 'form-control'] ) !!}
+                <?php $indice = 1; ?>
+                @for ($i = 1; $i < 4 ; $i++)
+                    <div class="row">
+                        <h3>Referencia personales #{{{ $i }}} </h3>
+                        @foreach(config('presupuesto.vecinos') as $key => $description)
+                            <?php $field = "v" . $indice; $x = ($i - 1); $value = "v" . ($key + 1 ) ;?>
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <label>{{ $description }}</label>
+                                    {!! Form::text( $field  ,$ve[$x]->$value , ['class' => 'form-control'] ) !!}
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                            <?php $indice++; ?>
+                        @endforeach
+                    </div>
+                @endfor
             </div>
         </div>
     </div>

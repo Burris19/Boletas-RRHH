@@ -87,6 +87,7 @@ class BallotsController extends CrudController {
         $sa  = SaludData::where('id_record',$id)->get();
         $vi  = ViciosData::where('id_record',$id)->get();
         $ve  = VecinosData::where('id_record',$id)->get();
+        //return $ve[0];
         return view($this->root . '/' . $this->module . '/edit',compact('db','dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho','dl','da'));
     }
 
@@ -230,29 +231,30 @@ class BallotsController extends CrudController {
 
         //Informacion Laboral
             $e = 1;
-            while ( $e < 122) {
-                $dataLabor['empresa'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['direccion'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['telefono'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['puesto'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['jefe_inmediato'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['puesto_jefe_inmediato'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['fecha_inicio'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['fecha_retiro'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['ultimo_salario'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['motivo_despido'] = $data['dl'.$e];
-                $e++;
-                $dataLabor['referencia_obtenida'] = $data['dl'.$e];
-                $e++;
+            while ( $e < 231) {
+                $dataLabor['empresa']                                     = $data['dl'.$e++];
+                $dataLabor['direccion']                                   = $data['dl'.$e++];
+                $dataLabor['telefono']                                    = $data['dl'.$e++];
+                $dataLabor['puesto']                                      = $data['dl'.$e++];
+                $dataLabor['jefe_inmediato']                              = $data['dl'.$e++];
+                $dataLabor['puesto_jefe_inmediato']                       = $data['dl'.$e++];
+                $dataLabor['fecha_inicio']                                = $data['dl'.$e++];
+                $dataLabor['fecha_retiro']                                = $data['dl'.$e++];
+                $dataLabor['ultimo_salario']                              = $data['dl'.$e++];
+                $dataLabor['motivo_despido']                              = $data['dl'.$e++];
+                $dataLabor['departamento_que_confirma']                   = $data['dl'.$e++];
+                $dataLabor['puesto_desempeñado']                          = $data['dl'.$e++];
+                $dataLabor['fortalezas_laborales']                        = $data['dl'.$e++];
+                $dataLabor['areas_de_mejora']                             = $data['dl'.$e++];
+                $dataLabor['le_aparecen_llamadas_de_atencion']            = $data['dl'.$e++];
+                $dataLabor['fechas_en_las_que_laboro']                    = $data['dl'.$e++];
+                $dataLabor['motivo_del_retiro']                           = $data['dl'.$e++];
+                $dataLabor['quien_cofirma']                               = $data['dl'.$e++];
+                $dataLabor['mencione_como_fue_su_desempeno']              = $data['dl'.$e++];
+                $dataLabor['fortaleza_laboral2']                          = $data['dl'.$e++];
+                $dataLabor['area_de_mejora2']                             = $data['dl'.$e++];
+                $dataLabor['como_fueron_sus_relaciones_interpersonales']  = $data['dl'.$e++];
+                $dataLabor['motivo_de_retiro2']                           = $data['dl'.$e++];
                 $dataLabor['id_record'] = $ballot->id;
                 $this->laborDataRepo->create($dataLabor);
             }
@@ -278,7 +280,30 @@ class BallotsController extends CrudController {
             $this->viciosDataRepo->create($data);
 
         // Vecinos
-            $this->vecinosDataRepo->create($data);
+        $i = 1;
+        while ( $i < 28 ) {
+            $vecinos['v1'] = $data['v'.$i];
+            $i++;
+            $vecinos['v2'] = $data['v'.$i];
+            $i++;
+            $vecinos['v3'] = $data['v'.$i];
+            $i++;
+            $vecinos['v4'] = $data['v'.$i];
+            $i++;
+            $vecinos['v5'] = $data['v'.$i];
+            $i++;
+            $vecinos['v6'] = $data['v'.$i];
+            $i++;
+            $vecinos['v7'] = $data['v'.$i];
+            $i++;
+            $vecinos['v8'] = $data['v'.$i];
+            $i++;
+            $vecinos['id_record'] = $ballot->id;
+            $vecinos['v9'] = $data['v'.$i];
+
+            $this->vecinosDataRepo->create($vecinos);
+            $i++;
+        }
 
 
         //return $data;
@@ -507,29 +532,32 @@ class BallotsController extends CrudController {
         $dataLabor  = LaborData::where('id_record',$id)->get();
         $indice = 0;
         $e = 1;
-        while ( $e < 111) {
-            $dataLabor[$indice]->empresa = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->direccion = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->telefono = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->puesto = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->jefe_inmediato = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->puesto_jefe_inmediato = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->fecha_inicio = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->fecha_retiro = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->ultimo_salario = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->motivo_despido = $data['dl'.$e];
-            $e++;
-            $dataLabor[$indice]->referencia_obtenida = $data['dl'.$e];
-            $e++;
+        while ( $e < 231) {
+            $dataLabor[$indice]->empresa = $data['dl'.$e++];
+            $dataLabor[$indice]->direccion = $data['dl'.$e++];
+            $dataLabor[$indice]->telefono = $data['dl'.$e++];
+            $dataLabor[$indice]->puesto = $data['dl'.$e++];
+            $dataLabor[$indice]->jefe_inmediato = $data['dl'.$e++];
+            $dataLabor[$indice]->puesto_jefe_inmediato = $data['dl'.$e++];
+            $dataLabor[$indice]->fecha_inicio = $data['dl'.$e++];
+            $dataLabor[$indice]->fecha_retiro = $data['dl'.$e++];
+            $dataLabor[$indice]->ultimo_salario = $data['dl'.$e++];
+            $dataLabor[$indice]->motivo_despido = $data['dl'.$e++];
+
+            $dataLabor[$indice]->departamento_que_confirma = $data['dl'.$e++];
+            $dataLabor[$indice]->puesto_desempeñado = $data['dl'.$e++];
+            $dataLabor[$indice]->fortalezas_laborales = $data['dl'.$e++];
+            $dataLabor[$indice]->areas_de_mejora = $data['dl'.$e++];
+            $dataLabor[$indice]->le_aparecen_llamadas_de_atencion = $data['dl'.$e++];
+            $dataLabor[$indice]->fechas_en_las_que_laboro = $data['dl'.$e++];
+            $dataLabor[$indice]->motivo_del_retiro = $data['dl'.$e++];            
+            $dataLabor[$indice]->quien_cofirma = $data['dl'.$e++];
+            $dataLabor[$indice]->mencione_como_fue_su_desempeno = $data['dl'.$e++];
+            $dataLabor[$indice]->fortaleza_laboral2 = $data['dl'.$e++];
+            $dataLabor[$indice]->area_de_mejora2 = $data['dl'.$e++];
+            $dataLabor[$indice]->como_fueron_sus_relaciones_interpersonales = $data['dl'.$e++];
+            $dataLabor[$indice]->motivo_de_retiro2 = $data['dl'.$e++];
+
             $dataLabor[$indice]->id_record = $id;
             $dataLabor[$indice]->save();
             $indice++;
@@ -595,19 +623,23 @@ class BallotsController extends CrudController {
         $dataVicios->save();
 
         // Vecinos
-        $dataVecinos = VecinosData::where('id_record',$id)->first();
-        $dataVecinos = $this->vecinosDataRepo->update($dataVecinos,$data);
-        $dataVecinos->v1   = $data['v1'];
-        $dataVecinos->v2   = $data['v2'];
-        $dataVecinos->v3   = $data['v3'];
-        $dataVecinos->v4   = $data['v4'];
-        $dataVecinos->v5   = $data['v5'];
-        $dataVecinos->v6   = $data['v6'];
-        $dataVecinos->v7   = $data['v7'];
-        $dataVecinos->v8   = $data['v8'];
-        $dataVecinos->v9   = $data['v9'];
-        $dataVecinos->id_record = $id;
-        $dataVecinos->save();
+        $dataVecinos = VecinosData::where('id_record',$id)->get();
+        $i = 0;
+        $indice = 1 ;
+        while ( $indice < 28 ) {
+            $dataVecinos[$i]->v1   = $data['v'.$indice++];
+            $dataVecinos[$i]->v2   = $data['v'.$indice++];
+            $dataVecinos[$i]->v3   = $data['v'.$indice++];
+            $dataVecinos[$i]->v4   = $data['v'.$indice++];
+            $dataVecinos[$i]->v5   = $data['v'.$indice++];
+            $dataVecinos[$i]->v6   = $data['v'.$indice++];
+            $dataVecinos[$i]->v7   = $data['v'.$indice++];
+            $dataVecinos[$i]->v8   = $data['v'.$indice++];
+            $dataVecinos[$i]->v9   = $data['v'.$indice++];
+            $dataVecinos[$i]->id_record = $id;
+            $dataVecinos[$i]->save();
+            $i++;
+        }
 
         // Generamos el reporte
         $folder = 'pdfs';
