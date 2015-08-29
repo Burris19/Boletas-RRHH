@@ -96,6 +96,7 @@ class BallotsController extends CrudController {
     public function store(Request $request)
     {
         $data = $request->all();
+
         for($i = 1 ; $i<=9 ; $i++)
         {
             if($request->hasFile('input'.$i)) {
@@ -336,6 +337,8 @@ class BallotsController extends CrudController {
         }
 
 
+
+
         //return $data;
         // Generamos el reporte
         $folder = 'pdfs';
@@ -389,6 +392,9 @@ class BallotsController extends CrudController {
     {
         $data = $request->all();
         $data['id_record'] = $id;
+        //return $data;
+
+
 
         $datafile = FileData::where('id_record',$id)->get();
         for($i = 1 ; $i <= 9 ; $i++ )
