@@ -1258,6 +1258,13 @@
                             </table>
                         </div>
                     </div>
+                    <div class="row">
+                        <!--Telefono casa -->
+                        <div class="form-group col-xs-12"
+                          <label>Observacion</label>
+                          <textarea  class="form-control" name="observacion" rows="3" required> {{ $db->observacion }} </textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

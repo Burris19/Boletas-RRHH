@@ -1326,7 +1326,14 @@
                       </tr>
                     @endforeach
                   </tbody>
-                </table>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <!--Telefono casa -->
+                <div class="form-group col-xs-12"
+                  <label>Observacion</label>
+                  <textarea  class="form-control" name="observacion" rows="3" required></textarea>
                 </div>
               </div>
             </div>

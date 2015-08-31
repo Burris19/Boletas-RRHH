@@ -147,6 +147,7 @@ class BallotsController extends CrudController {
         $ballot_data['puesto'] = $data['puesto_empresa'];
         $ballot_data['empresa'] = $data['nombre_empresa'];
         $ballot_data['nombre'] = $data['dp1']. ' ' . $data['dp2'];
+        $ballot_data['observacion'] = $data['observacion'];
         $ballot = $this->repo->create($ballot_data);
 
         //Obtemos el id del archivo
@@ -446,6 +447,7 @@ class BallotsController extends CrudController {
         $ballot_data->puesto = $data['puesto_empresa'];
         $ballot_data->empresa = $data['nombre_empresa'];
         $ballot_data->nombre = $data['dp1']. ' ' . $data['dp2'];
+        $ballot_data->observacion = $data['observacion'];
         $ballot_data->save();
 
         //Guardamos en la tabla datos personales

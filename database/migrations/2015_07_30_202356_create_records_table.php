@@ -17,6 +17,7 @@ class CreateRecordsTable extends Migration {
 			$table->string('puesto');
 			$table->string('empresa');
 			$table->string('nombre');
+			$table->string('observacion');
 			$table->string('url');
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users');

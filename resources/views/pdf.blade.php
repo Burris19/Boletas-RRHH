@@ -59,8 +59,7 @@
 							<p>{{ $data['job'] }}</p>
 					</div>
 				</div>
-				<div class="container">
-						<h4 class="title">Resultado de la investigacion</h4>
+				<div class="container">						
 						@include('files.datosConclusion')
 				</div>
 				<div class="container">
