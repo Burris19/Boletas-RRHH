@@ -79,5 +79,4 @@
                 <td colspan="5">{{ $data['dl'.$i] }}</td>
             </tr>
     </table>
-
 @endfor
