@@ -351,11 +351,9 @@ class BallotsController extends CrudController {
         }
 
         $ballot->url = $folder . '/' . time() . '.pdf';
-        $ballot->save();
+        $ballot->save();        
 
-        //return $data;
-
-        $data['dp16'] = "-----";
+        
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot->url);
 
@@ -386,7 +384,7 @@ class BallotsController extends CrudController {
 
     public function update(Request $request, $id)
     {
-        $data = $request->all();
+        $data = $request->all();        
 
         $data['id_record'] = $id;
 
@@ -399,7 +397,8 @@ class BallotsController extends CrudController {
                 $image = UploadX::uploadFile($request->file('input'.$i),'pictures', $i . time());
                 $data['input'.$i] = $image['url'];
             } else {
-                $data['input'.$i] = '';
+                $foto = $datafile[$i-1]->url;
+                $data['input'.$i] = $foto;
             }
         }
 
@@ -719,7 +718,7 @@ class BallotsController extends CrudController {
         $ballot_data->url = $folder . '/' . time() . '.pdf';
         $ballot_data->save();
 
-        $data['dp16'] = "-----";
+                    
 
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot_data->url);
