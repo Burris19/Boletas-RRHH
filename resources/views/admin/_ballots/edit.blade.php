@@ -996,13 +996,13 @@
                             <tr>
                                 <th><label>{{ $description }}</label></th>
                                 <th>
-                                    <input type = "number" value="{{$pf[$key]->ingresos}}" class = "form-control pf" style="text-align: center" name="ingreso{{ $key + 1 }}" id="pf{{ $key + 1 }}">
+                                    <input type = "number" value="{{$pf[$key]->ingresos}}" class = "form-control pf" style="text-align: center" name="ingreso{{ $key + 1 }}" id="pi{{ $key + 1 }}">
                                 </th>
                                 <th>
-                                    <input type = "number" value="{{$pf[$key]->egresos}}" class = "form-control pf" style="text-align: center" name="egreso{{ $key + 1 }}" id="pf2{{ $key + 1 }}">
+                                    <input type = "number" value="{{$pf[$key]->egresos}}" class = "form-control pf" style="text-align: center" name="egreso{{ $key + 1 }}" id="pe{{ $key + 1 }}">
                                 </th>
                                 <th>
-                                    <input type = "number" value="{{$pf[$key]->diferencia}}" class = "form-control pf" style="text-align: center" name="diferencia{{ $key + 1 }}" id="pf3{{ $key + 1 }}">
+                                    <input type = "number" value="{{$pf[$key]->diferencia}}" class = "form-control pf" style="text-align: center" name="diferencia{{ $key + 1 }}" id="po{{ $key + 1 }}">
                                 </th>
                             </tr>
                         @endforeach
@@ -1290,9 +1290,9 @@
         function calcularTotal(){
             var total = 0;
             for (var i = 1 ; i <= 23; i++) {
-                var ingreso = $('#pf'+i).val();
-                var egreso  = $('#pf2'+i).val();
-                var resultado = $('#pf3'+i);
+                var ingreso = $('#pi'+i).val();
+                var egreso  = $('#pe'+i).val();
+                var resultado = $('#po'+i);
                 total = total + (ingreso - egreso);
 
                 if (total < 0) {
