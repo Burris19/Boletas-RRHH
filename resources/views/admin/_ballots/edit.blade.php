@@ -1044,13 +1044,13 @@
                             {!! Form::select( 'hd5', ['Ceramico' => 'Ceramico', 'Cemento' => 'Cemento', 'Tierra' => 'Tierra' ] , $ho[0]->hd5 , ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group col-xs-6">
-                            <label>¿Posee vehiculo pripio?</label>
+                            <label>¿Posee vehiculo propio?</label>
                             {!! Form::select( 'hd6', ['Si' => 'Si', 'No' => 'No'] , $ho[0]->hd6 , ['class' => 'form-control'] ) !!}
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label>¿Posee motocicleta pripia?</label>
+                            <label>¿Posee motocicleta propia?</label>
                             {!! Form::select( 'hd7', ['Si' => 'Si', 'No' => 'No'] , $ho[0]->hd7 , ['class' => 'form-control'] ) !!}
                         </div>
                     </div>

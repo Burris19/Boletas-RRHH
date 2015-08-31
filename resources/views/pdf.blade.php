@@ -6,7 +6,7 @@
 	{!! Html::style('/css/pdf.css') !!}
 </head>
 <body>
-		<div id="principal">
+		<div class="principal">
 				<div class="header">
 						@include('files.encabezado')
 				</div>
@@ -36,6 +36,10 @@
 				<div class="container">
 						<h4 class="title">presupuesto</h4>
 						@include('files.datosPresupuesto')
+				</div>
+				<div class="container">
+						<h4 class="title">informacion sobre la vivienda</h4>
+						@include('files.datosVivienda')
 				</div>
 				<div class="container">
 						<h4 class="title">Cuadro de salud</h4>

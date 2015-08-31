@@ -1084,7 +1084,7 @@
                         </select>
                     </div>
                     <div class="form-group col-xs-6">
-                        <label>¿Posee vehiculo pripio?</label>
+                        <label>¿Posee vehiculo propio?</label>
                         <select class="form-control col-xs-6" name = "hd6">
                           <option>Si</option>
                           <option>No</option>
@@ -1095,7 +1095,7 @@
 
                   <div class="row">
                     <div class="form-group col-xs-6">
-                        <label>¿Posee motocicleta pripia?</label>
+                        <label>¿Posee motocicleta propia?</label>
                         <select class="form-control col-xs-6" name = "hd7">
                           <option>Si</option>
                           <option>No</option>
