@@ -377,8 +377,15 @@ class BallotsController extends CrudController {
     {
         $da  = FileData::where('id_record',$id)->get();
         $url = $da[8]->url;
-        $file = file_get_contents(public_path() . '/' . $url);
-        return response($file,200)->header('Content-Type','application/pdf');
+        if($url != '-----') {
+            $file = file_get_contents(public_path() . '/' . $url);
+            return response($file,200)->header('Content-Type','application/pdf');            
+        }
+        else {
+            return "No se ha subido ningun archivo";
+        }
+
+
     }
 
 
