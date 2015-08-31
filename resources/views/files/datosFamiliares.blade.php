@@ -1,129 +1,85 @@
-<div class="datos-familiares">
-	<div>
-		<div class="titulos-encabezados">
-			<div>Datos Familiares </div>
+<span><strong>Informacion del Padre</strong></span>
+		<div class="info-text">
+				<span class="label" for="">Nombre del Padre:</span>
+				<span class="value">{{ $data['df1'] }}</span>
+				<span class="label" for="">Edad:</span>
+				<span class="value ">{{ $data['df2'] }}</span>
 		</div>
-	</div>
-	<div class="cuerpo-datos-familares">
-		<div class="Izquierda">
-			<div>
-				<div class="label-datos-familiares"><strong>Nombre del Padre:</strong></div>
-				<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df1'] }}"></div>
-			</div>
-			<div>
-				<div class="label-datos-familiares"><strong>Edad:</strong></div>
-				<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df2'] }}"></div>
-			</div>
-			<div>
-				<div class="label-datos-familiares"><strong>Dirección:</strong></div>
-				<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df7'] }}"></div>
-			</div>
-			<div>
-				<div class="label-datos-familiares"><strong>Ingresos:</strong></div>
-				<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df4'] }}"></div>
-			</div>
+		<div class="info-text">
+				<span class="label" for="">Dirección:</span>
+				<span class="value">{{ $data['df7'] }}</span>
+				<span class="label" for="">Ingresos:</span>
+				<span class="value ">{{ $data['df4'] }}</span>
 		</div>
-		<div class="Derecho">
-			<div>
-				<div class="label-datos-familiares"><strong>Numéro Telefónico:</strong></div>
-				<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df6'] }}"></div>
-			</div>
-			<div>
-				<div class="label-datos-familiares"><strong>A qué se dedica:</strong></div>
-				<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df5'] }}"></div>
-			</div>
-			<div>
-				<div class="label-datos-familiares"><strong>Originario de:</strong></div>
-				<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df3'] }}"></div>
-			</div>
+		<div class="info-text">
+				<span class="label" for="">Numéro Telefónico:</span>
+				<span class="value">{{ $data['df6'] }}</span>
+				<span class="label" for="">A qué se dedica:</span>
+				<span class="value ">{{ $data['df5'] }}</span>
 		</div>
-		<div class="footer-relacion">
-			<div>
-				<div class="label" id="input-direccion"><strong>Relacion con Padre:</strong></div>
-				<div class="input3" id="label-direccion"><input type = "text" value = "{{ $data['df8'] }}"></div>
-			</div>
+		<div class="info-text">
+				<span class="label" for="">Originario de:</span>
+				<span class="value">{{ $data['df3'] }}</span>
+				<span class="label" for="">Relacion con Padre:</span>
+				<span class="value ">{{ $data['df8'] }}</span>
 		</div>
-		<div class="madre">
-			<div class="Izquierda">	
-				<div>
-					<div class="label-datos-familiares"><strong>Nombre de la Madre:</strong></div>
-					<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df9'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares"><strong>Edad:</strong></div>
-					<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df10'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares"><strong>Dirección:</strong></div>
-					<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df15'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares"><strong>Ingresos:</strong></div>
-					<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df12'] }}"></div>
-				</div>
-			</div>
-			<div class="Derecho">
-				<div>
-					<div class="label-datos-familiares"><strong>Numéro Telefónico:</strong></div>
-					<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df14'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares"><strong>A qué se dedica:</strong></div>
-					<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df13'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares"><strong>Originaria de:</strong></div>
-					<div class="input-datos-familiares"><input type = "text" value = "{{ $data['df11'] }}"></div>
-				</div>
-			</div>
-			<div class="footer-relacion">
-				<div>
-					<div class="label" id="input-direccion"><strong>Relacion con Madre:</strong></div>
-					<div class="input3" id="label-direccion"><input type = "text" value = "{{ $data['df16'] }}"></div>
-				</div>
-			</div>
-		</div> 
-		<div class="madre">
-			<div class="Izquierda">	
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>Nombre del Esposo:</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df17'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>Edad:</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df18'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>Dirección:</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df23'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>A qué se dedica:</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df21'] }}"></div>
-				</div>
-			</div>
-			<div class="Derecho">
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>Numéro Telefónico:</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df22'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>Ingresos:</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df20'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>Originario de:</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df19'] }}"></div>
-				</div>
-				<div>
-					<div class="label-datos-familiares-esposo"><strong>Número de hijos</strong></div>
-					<div class="input-datos-familiares-esposo"><input type = "text" value = "{{ $data['df19'] }}"></div>
-				</div>
-			</div>
-		</div>		
-		<div>
-			<div class="lbl"><strong>¿Tiene o tuvo un familiar privado de su libertad ?</strong></div>
-			<div class="inp"><textarea cols="40" rows="3">{{ $data['df80'] }}, {{ $data['df81'] }}</textarea> </div>
-		</div> 
-	</div>
-</div>
+<span><strong>Informacion de la Madre</strong></span>
+		<div class="info-text">
+				<span class="label" for="">Nombre del Madre:</span>
+				<span class="value">{{ $data['df9'] }}</span>
+				<span class="label" for="">Edad:</span>
+				<span class="value ">{{ $data['df10'] }}</span>
+		</div>
+
+		<div class="info-text">
+				<span class="label" for="">Dirección:</span>
+				<span class="value">{{ $data['df15'] }}</span>
+				<span class="label" for="">Ingresos:</span>
+				<span class="value ">{{ $data['df12'] }}</span>
+		</div>
+		<div class="info-text">
+				<span class="label" for="">Numéro Telefónico:</span>
+				<span class="value">{{ $data['df14'] }}</span>
+				<span class="label" for="">A qué se dedica:</span>
+				<span class="value ">{{ $data['df13'] }}</span>
+		</div>
+		<div class="info-text">
+				<span class="label" for="">Originario de:</span>
+				<span class="value">{{ $data['df11'] }}</span>
+				<span class="label" for="">Relacion con Padre:</span>
+				<span class="value ">{{ $data['df16'] }}</span>
+		</div>
+<span><strong>Información del cónyuge</strong></span>
+		<div class="info-text">
+				<span class="label" for="">Nombre del cónyuge:</span>
+				<span class="value">{{ $data['df17'] }}</span>
+				<span class="label" for="">Edad:</span>
+				<span class="value ">{{ $data['df18'] }}</span>
+		</div>
+		<div class="info-text">
+				<span class="label" for="">Dirección:</span>
+				<span class="value">{{ $data['df23'] }}</span>
+				<span class="label" for="">Ingresos:</span>
+				<span class="value ">{{ $data['df20'] }}</span>
+		</div>
+		<div class="info-text">
+				<span class="label" for="">Numéro Telefónico:</span>
+				<span class="value">{{ $data['df22'] }}</span>
+				<span class="label" for="">A qué se dedica:</span>
+				<span class="value ">{{ $data['df21'] }}</span>
+		</div>
+		<div class="info-text">
+				<span class="label" for="">Originario de:</span>
+				<span class="value">{{ $data['df19'] }}</span>
+		</div>
+<span><strong>Informacion adicional</strong></span>
+		<div class="info-text">
+				<span class="label" for="">Número de hijos:</span>
+				<span class="value">{{ $data['df79'] }}</span>
+				<span class="label" for="">¿Tiene o tuvo un familiar privado de su libertad ?</span>
+				<span class="value ">{{ $data['df80'] }}</span>
+		</div>
+		<div class="info-text">
+				<span class="label" for="">Explicacion:</span>
+				<span class="value total">{{ $data['df81'] }}</span>
+		</div>

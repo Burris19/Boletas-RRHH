@@ -1,15 +1,7 @@
-<div class="encabezado">
-	<div class="logo">
-		<img src="logo.gif">
-	</div>
-	<div class="Titulo">
+<img src="logo.gif" class="img-logo">
+<div>
 		<h2>Estudio Socioeconomico</h2>
-	</div>
-	<div class="foto">
-		@if( $data['input1'] === '-----' )
-
-		@else
-			<img src="{{ $data['input1'] }}" alt="" class="imgg"/>
-		@endif
-	</div>
 </div>
+@if( $data['input1'] != '-----' )
+		<img src="{{ $data['input1'] }}" alt="" class="img-person"/>
+@endif

@@ -1,79 +1,53 @@
-<div>
-	<div class="titulos-encabezados">
-	  <div>Datos Personales</div>
-	</div>
+<div class="info-text">
+		<span class="label" for="">Nombre:</span>
+		<span class="value">{{ $data['dp1'] }}</span>
+		<span class="label" for="">Apellidos:</span>
+		<span class="value ">{{ $data['dp2'] }}</span>
 </div>
-<div class="CuerpoDatosPersonales">
-    <div class="Izquierda">
-        <div>
-            <div class="label"><strong>Nombres:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp1'] }}"></div>
-        </div>
 
-        <div>
-            <div class="label"><strong>Apellidos:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp2'] }}"></div>
-        </div>
+<div class="info-text">
+		<span class="label" for="">Profesión:</span>
+		<span class="value">{{ $data['dp6'] }}</span>
+		<span class="label" for="">Edad:</span>
+		<span class="value ">{{ $data['dp5'] }}</span>
+</div>
 
-        <div>
-            <div class="label"><strong>Profesión:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp6'] }}"></div>
-        </div>
+<div class="info-text">
+		<span class="label" for="">Posee licencia de conducir:</span>
+		<span class="value">{{ $data['dp10'] }}</span>
+		<span class="label" for="">Estado civil:</span>
+		<span class="value ">{{ $data['dp7'] }}</span>
+</div>
 
-        <div>
-            <div class="label"><strong>Posee licencia de conducir:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp10'] }}"></div>
-        </div>
+<div class="info-text">
+		<span class="label" for="">Teléfono Casa:</span>
+		<span class="value">{{ $data['dp3'] }}</span>
+		<span class="label" for="">Celular:</span>
+		<span class="value ">{{ $data['dp4'] }}</span>
+</div>
 
-        <div>
-            <div class="label"><strong>Estado civil:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp7'] }}"></div>
-        </div>
+<div class="info-text">
+		<span class="label" for="">DPI:</span>
+		<span class="value">{{ $data['dp8'] }}</span>
+		<span class="label" for="">NIT:</span>
+		<span class="value ">{{ $data['dp9'] }}</span>
+</div>
 
-        <div>
-            <div class="label"><strong>Edad:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp5'] }}"></div>
-        </div>
 
-        <div>
-            <div class="label"><strong>Teléfono Casa:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp3'] }}"></div>
-        </div>
-    </div>
-    <div class="Derecho">
-        <div>
-            <div class="label"><strong>Celular:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp4'] }}"></div>
-        </div>
-        <div>
-            <div class="label"><strong>DPI:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp8'] }}"></div>
-        </div>
-        <div>
-            <div class="label"><strong>NIT:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp9'] }}"></div>
-        </div>
-        <div>
-            <div class="label"><strong>No. Licencia:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp12'] }}"></div>
-        </div>
-        <div>
-            <div class="label"><strong>Tipo de licencia:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp11'] }}"></div>
-        </div>
-        <div>
-            <div class="label"><strong>Religión:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp13'] }}"></div>
-        </div>
-        <div>
-            <div class="label"><strong>Tipo de sangre:</strong></div>
-            <div class="input"><input type = "text" value = "{{ $data['dp14'] }}"></div>
-        </div>
-    </div>
-    <div class="footer">
-        <div>
-            <div class="label" id="input-direccion"><strong>Dirección Actual:</strong></div>
-            <div class="input3" id="label-direccion"><input type = "text" value = "{{ $data['dp15'] }}"></div>
-        </div>
-    </div>
+<div class="info-text">
+		<span class="label" for="">No. Licencia:</span>
+		<span class="value">{{ $data['dp12'] }}</span>
+		<span class="label" for="">Tipo de licencia:</span>
+		<span class="value ">{{ $data['dp11'] }}</span>
+</div>
+
+<div class="info-text">
+		<span class="label" for="">Religión:</span>
+		<span class="value">{{ $data['dp13'] }}</span>
+		<span class="label" for="">Tipo de sangre:</span>
+		<span class="value ">{{ $data['dp14'] }}</span>
+</div>
+<div class="info-text">
+		<span class="label" for="">Dirección Actual:</span>
+		<span class="value total">{{ $data['dp15'] }}</span>
 </div>

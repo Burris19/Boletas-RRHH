@@ -13,6 +13,12 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
+Route::get('prueba', function() {
+  //return view('pdf');
+          $pdf = App::make('dompdf');
+          $pdf->loadView('pdf')->setPaper('a4');
+          return $pdf->stream();
+});
 
 Route::group(['prefix'=>'/','namespace'=>'Admin'],function(){
     Route::resource('ballots','BallotsController');

@@ -65,6 +65,7 @@ class BallotsController extends CrudController {
         $this->filesDataRepo      = $filesDataRepo;
     }
 
+
     public function create()
     {
         return view($this->root . '/' . $this->module . '/create');
@@ -95,8 +96,7 @@ class BallotsController extends CrudController {
 
     public function store(Request $request)
     {
-        $data = $request->all();
-
+        $data = $request->all();        
         for($i = 1 ; $i<=9 ; $i++)
         {
             if($request->hasFile('input'.$i)) {
@@ -384,17 +384,11 @@ class BallotsController extends CrudController {
     }
 
 
-
-
-
-
     public function update(Request $request, $id)
     {
         $data = $request->all();
+
         $data['id_record'] = $id;
-        //return $data;
-
-
 
         $datafile = FileData::where('id_record',$id)->get();
         for($i = 1 ; $i <= 9 ; $i++ )

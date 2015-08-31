@@ -1,18 +1,11 @@
-<div>
-	<div class="Izquierda">
-		<div>
-			<div class="label"><strong>Código:</strong></div>
-			<div class="input"><input type = "text" value = "{{ $data['id_record'] }}"></div>
-		</div>
-		<div>
-			<div class="label"><strong>Empresa Cliente:</strong></div>
-			<div class="input"><input type = "text" value = "{{ $data['nombre_empresa']}}"></div>
-		</div>
-	</div>
-	<div class="Derecho">
-		<div>
-			<div class="label"><strong>Puesto al qué aplica:</strong></div>
-			<div class="input"><input type = "text" value = "{{ $data['puesto_empresa']}}"></div>
-		</div>
-	</div>
+<div class="info-text">
+		<span class="label" for="">Código:</span>
+		<span class="value">{{ $data['id_record'] }}</span>
+		<span class="label" for="">Puesto al qué aplica:</span>
+		<span class="value ">{{ $data['nombre_empresa'] }}</span>
+</div>
+
+<div class="info-text">
+		<span class="label" for="">Puesto al qué aplica:</span>
+		<span class="value">{{ $data['puesto_empresa'] }}</span>
 </div>
