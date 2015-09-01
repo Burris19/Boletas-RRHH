@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Models;
 
@@ -11,11 +11,12 @@ class Record extends BaseModel {
 		'puesto',
 		'empresa',
 		'nombre',
-		'observacion'
+		'observacion',
+		'estado'
 	];
 
 	public $relations =['user'];
-	
+
     public function user()
     {
         return $this->hasOne('App\Models\User','id','id_user');

@@ -13,19 +13,15 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
-Route::get('prueba', function() {
-  //return view('pdf');
-          $pdf = App::make('dompdf');
-          $pdf->loadView('pdf')->setPaper('a4');
-          return $pdf->stream();
-});
 
 Route::group(['prefix'=>'/','namespace'=>'Admin'],function(){
     Route::resource('ballots','BallotsController');
     Route::resource('users','UsersController');
     Route::resource('users/{id}/delete','UsersController@showDelete');
+    Route::resource('ballots/{id}/delete','BallotsController@showDelete');
     Route::get('pdf/{id}','BallotsController@getPDF');
     Route::get('infor/{id}','BallotsController@getInfor');
+
 
 });
 

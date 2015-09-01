@@ -15,6 +15,7 @@ use App\Repositories\SaludDataRepo;
 use App\Repositories\ViciosDataRepo;
 use App\Repositories\VecinosDataRepo;
 use App\Repositories\FilesDataRepo;
+use App\Models\Record;
 use App\Models\FamilyData;
 use App\Models\EducationData;
 use App\Models\BudgetData;
@@ -65,6 +66,12 @@ class BallotsController extends CrudController {
         $this->filesDataRepo      = $filesDataRepo;
     }
 
+    public function index()
+    {
+        $data = Record::where('estado','ready')->get();
+        $fields = $this->fields();
+        return view($this->root . '/' . $this->module  .'/list', compact('data','fields'));
+    }
 
     public function create()
     {
@@ -93,10 +100,15 @@ class BallotsController extends CrudController {
         return view($this->root . '/' . $this->module . '/edit',compact('db','dp','dfp','dfm','dfe','dfh','dep','des','ded','deu','pf','ve','vi','sa','ho','dl','da'));
     }
 
+    public function showDelete($id)
+    {
+        $data = $this->repo->findOrFail($id);
+        return view($this->root . '/' . $this->module . '/delete',compact('data'));
+    }
 
     public function store(Request $request)
     {
-        $data = $request->all();        
+        $data = $request->all();
         for($i = 1 ; $i<=9 ; $i++)
         {
             if($request->hasFile('input'.$i)) {
@@ -147,6 +159,7 @@ class BallotsController extends CrudController {
         $ballot_data['puesto'] = $data['puesto_empresa'];
         $ballot_data['empresa'] = $data['nombre_empresa'];
         $ballot_data['nombre'] = $data['dp1']. ' ' . $data['dp2'];
+        $ballot_data['estado'] = 'ready';
         $ballot_data['observacion'] = $data['observacion'];
         $ballot = $this->repo->create($ballot_data);
 
@@ -337,11 +350,6 @@ class BallotsController extends CrudController {
             $i++;
         }
 
-
-
-
-        //return $data;
-        // Generamos el reporte
         $folder = 'pdfs';
         if (!is_dir($folder))
         {
@@ -352,9 +360,9 @@ class BallotsController extends CrudController {
         }
 
         $ballot->url = $folder . '/' . time() . '.pdf';
-        $ballot->save();        
+        $ballot->save();
 
-        
+
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot->url);
 
@@ -363,8 +371,6 @@ class BallotsController extends CrudController {
             'success' => true,
             'id' =>  $ballot->id
         ];
-
-
     }
     public function getPDF($id)
     {
@@ -380,19 +386,15 @@ class BallotsController extends CrudController {
         $url = $da[8]->url;
         if($url != '-----') {
             $file = file_get_contents(public_path() . '/' . $url);
-            return response($file,200)->header('Content-Type','application/pdf');            
+            return response($file,200)->header('Content-Type','application/pdf');
         }
         else {
             return "No se ha subido ningun archivo";
         }
-
-
     }
-
-
     public function update(Request $request, $id)
     {
-        $data = $request->all();        
+        $data = $request->all();
 
         $data['id_record'] = $id;
 
@@ -727,8 +729,6 @@ class BallotsController extends CrudController {
         $ballot_data->url = $folder . '/' . time() . '.pdf';
         $ballot_data->save();
 
-                    
-
         $pdf_factory = \App::make('dompdf');
         $pdf = $pdf_factory->loadView('pdf',compact('data'))->save($ballot_data->url);
 
@@ -738,5 +738,16 @@ class BallotsController extends CrudController {
             'id' =>  $id
         ];
 
+    }
+    public function destroy($id)
+    {
+        $data['name'] = \Auth::user()->name;
+        $data['job'] = \Auth::user()->job;
+        $ballot_data = $this->repo->findOrFail($id);
+        $ballot_data = $this->repo->update($ballot_data, $data);
+        $ballot_data->id_user = \Auth::id();
+        $ballot_data->estado = "destroy";
+        $ballot_data->save();
+        return ['success'=>'true','message'=>'Registro eliminado exitosamente'];
     }
 }

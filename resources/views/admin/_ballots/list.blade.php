@@ -32,13 +32,14 @@
             <td>{{ $value->user->name }}</td>
             <td class="text-center">
                 <a href="#" data-id="{{ $value->id }}" data-toggle="tooltip" class="btn btn-effect-ripple btn-xs btn-success edit"><i class="fa fa-pencil"></i></a>
-                <a href="{{ action('Admin\BallotsController@getPDF', $value->id) }}" target="_blank" data-toggle="tooltip"  class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>                
+                <a href="{{ action('Admin\BallotsController@getPDF', $value->id) }}" target="_blank" data-toggle="tooltip"  class="btn btn-effect-ripple btn-xs btn-success download"><i class="fa fa-download"></i></a>
                 <a href="{{ action('Admin\BallotsController@getInfor', $value->id) }}" target="_blank" data-toggle="tooltip"  class="btn btn-effect-ripple btn-xs btn-danger download"><i class="fa fa-download"></i></a>
-                
+                <a href="#" data-id="{{ $value->id }}" data-toggle="tooltip" title="Eliminar" class="btn btn-effect-ripple btn-xs btn-danger delete"><i class="fa fa-times"></i></a>
             </td>
          </tr>
     @endforeach
 @stop
+<div id="div-modal"></div>
 <script>
     $(function(){
         CRUD.url_base = 'ballots';

@@ -1,5 +1,8 @@
 $(function(){
 
+
+
+
 $('#btn-open-wizard').click(function(e) {
     $("#page").load("ballots/create");
 });

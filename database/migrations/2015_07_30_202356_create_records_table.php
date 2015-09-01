@@ -13,15 +13,17 @@ class CreateRecordsTable extends Migration {
 	public function up()
 	{
 		Schema::create('records', function(Blueprint $table){
-			$table->increments('id');
-			$table->string('puesto');
-			$table->string('empresa');
-			$table->string('nombre');
-			$table->string('observacion');
-			$table->string('url');
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->timestamps();
+				$table->increments('id');
+				$table->string('puesto');
+				$table->string('empresa');
+				$table->string('nombre');
+				$table->string('observacion');
+				$table->string('url');
+				$table->string('estado');
+
+        $table->integer('id_user')->unsigned();
+        $table->foreign('id_user')->references('id')->on('users');
+        $table->timestamps();
 		});
 	}
 

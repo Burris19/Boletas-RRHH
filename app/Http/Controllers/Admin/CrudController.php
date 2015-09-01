@@ -29,7 +29,6 @@ class CrudController extends Controller {
     {
         $data = $this->repo->getAll();
         $fields = $this->fields();
-
         return view($this->root . '/' . $this->module  .'/list', compact('data','fields'));
     }
 
@@ -78,7 +77,7 @@ class CrudController extends Controller {
      */
     public function show(Request $request, $id)
     {
-        $action = $request->get('action');        
+        $action = $request->get('action');
         $data = $this->repo->findOrFail($id);
         if($action=='delete')
         {
