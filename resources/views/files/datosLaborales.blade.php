@@ -65,7 +65,7 @@
             <tr>
                 <td><strong>Mencione como fue su desempeño:</strong></td>
                 <td>{{ $data['dl'.$i++] }}</td>
-                <td><strong>Cual fue su fortaleza laboral:</strong></td>
+                <td><strong>Cuál fue su fortaleza laboral:</strong></td>
                 <td colspan="3">{{ $data['dl'.$i++] }}</td>
             </tr>
             <tr>

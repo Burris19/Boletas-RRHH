@@ -1,7 +1,7 @@
 <div class="info-text">
 		<span class="label" for="">¿La vivienda es propia?</span>
 		<span class="value">{{ $data['hd1'] }}</span>
-		<span class="label" for="">Numero de habitaciones / de cuantos niveles es su casa</span>
+		<span class="label" for="">Número de habitaciones / de cuantos niveles es su casa</span>
 		<span class="value ">{{ $data['hd2'] }}</span>
 </div>
 <div class="info-text">

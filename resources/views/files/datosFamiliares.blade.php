@@ -1,4 +1,4 @@
-<span><strong>Informacion del Padre</strong></span>
+<span><strong>Información del Padre</strong></span>
 		<div class="info-text">
 				<span class="label" for="">Nombre del Padre:</span>
 				<span class="value">{{ $data['df1'] }}</span>
@@ -20,10 +20,10 @@
 		<div class="info-text">
 				<span class="label" for="">Originario de:</span>
 				<span class="value">{{ $data['df3'] }}</span>
-				<span class="label" for="">Relacion con Padre:</span>
+				<span class="label" for="">Relación con el Padre:</span>
 				<span class="value ">{{ $data['df8'] }}</span>
 		</div>
-<span><strong>Informacion de la Madre</strong></span>
+<span><strong>Información de la Madre</strong></span>
 		<div class="info-text">
 				<span class="label" for="">Nombre del Madre:</span>
 				<span class="value">{{ $data['df9'] }}</span>
@@ -46,7 +46,7 @@
 		<div class="info-text">
 				<span class="label" for="">Originario de:</span>
 				<span class="value">{{ $data['df11'] }}</span>
-				<span class="label" for="">Relacion con Padre:</span>
+				<span class="label" for="">Relación con la madre:</span>
 				<span class="value ">{{ $data['df16'] }}</span>
 		</div>
 <span><strong>Información del cónyuge</strong></span>
@@ -72,7 +72,7 @@
 				<span class="label" for="">Originario de:</span>
 				<span class="value">{{ $data['df19'] }}</span>
 		</div>
-<span><strong>Informacion adicional</strong></span>
+<span><strong>Información adicional</strong></span>
 		<div class="info-text">
 				<span class="label" for="">Número de hijos:</span>
 				<span class="value">{{ $data['df79'] }}</span>
