@@ -24,7 +24,7 @@
                 <td colspan="3">{{ $data['dl'.$i++] }}</td>
             </tr>
             <tr>
-                <td><strong>Fecha Incio:</strong></td>
+                <td><strong>Fecha Inicio:</strong></td>
                 <td>{{ $data['dl'.$i++] }}</td>
                 <td><strong>Fecha Fin:</strong></td>
                 <td>{{ $data['dl'.$i++] }}</td>
