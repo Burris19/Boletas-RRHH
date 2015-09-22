@@ -15,7 +15,7 @@ class AdminTableSeeder extends Seeder {
             'username' => 'admin',
 			'name' => 'Ingrid Jeanette Consenza Vargas',
 			'job' => 'Encargada de Reclutamiento',
-            'password' => \Hash::make('recruitment2015'),
+            'password' => \Hash::make('socio2015'),
             'type' => 'administrator'
 		));
 	}

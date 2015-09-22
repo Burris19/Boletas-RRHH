@@ -52,7 +52,8 @@ class UsersController extends CrudController {
                 ->input('username','Usuario:','',$data->username)
                 ->input('name','Nombre Completo:','',$data->name)
                 ->input('job','Puesto Laboral:','',$data->job)
-                ->select('type','Tipo:',$type,$data->type);
+                ->select('type','Tipo:',$type,$data->type)
+                ->input('password','Contraseña:','');
 
         }
         else
