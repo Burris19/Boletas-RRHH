@@ -1,6 +1,3 @@
-window.table = App.initDT('.table');
-$('[data-toggle="tooltip"], .enable-tooltip').tooltip({container: 'body', animation: false});
-
 $('#btn-save').click(function(e){
     if($('#form-create').valid()){
         $('#btn-save').prop('disabled',true);
@@ -61,3 +58,7 @@ $('.delete').click(function(e){
     });
     e.preventDefault();
 })
+
+
+window.table = App.initDT('.table');
+$('[data-toggle="tooltip"], .enable-tooltip').tooltip({container: 'body', animation: false});

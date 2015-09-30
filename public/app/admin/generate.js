@@ -1,19 +1,10 @@
 $(function(){
 
 
-
-
 $('#btn-open-wizard').click(function(e) {
     $("#page").load("ballots/create");
 });
 
-$('.edit').click(function(e){
-    $url = 'ballots/' + $(this).data('id') + '/edit';
-    $("#page").load($url);
-    Helper.unblockPage();
-    e.preventDefault();
-
-});
 
 $('[name = "finish"]').click(function(){
     $('[name = "finish"]').prop('disabled',true);
@@ -45,6 +36,13 @@ $('[name = "update"]').click(function(){
             console.error(thrownError);
         }
     });
+});
+
+$('.edit').click(function(e){    
+    $url = 'ballots/' + $(this).data('id') + '/edit';
+    $("#page").load($url);
+    Helper.unblockPage();
+    e.preventDefault();
 });
 
 });

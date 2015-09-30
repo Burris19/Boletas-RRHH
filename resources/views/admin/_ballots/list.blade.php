@@ -45,6 +45,7 @@
         CRUD.url_base = 'ballots';
     })
 </script>
-{!! Html::script('app/helpers/crud_operate.js') !!}
+
 {!! Html::script('app/admin/generate.js') !!}
+{!! Html::script('app/helpers/crud_operate.js') !!}
 @stop
