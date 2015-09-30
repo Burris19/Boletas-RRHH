@@ -25,10 +25,10 @@ $('.edit').click(function(e){
                 CRUD.action('#form-edit', function () {
                     setTimeout(function(){
                         Helper.blockPage();
-                        $(window.$contenedor).load(CRUD.url_base, function () {
+                        $(window.$contenedor).load(CRUD.url_base, function () {                            
                             $('#modal-edit').modal('hide');
                             $('.modal-backdrop').remove();
-                            Helper.unblockPage();
+                            Helper.unblockPage();                            
                         })
                     },1000);
                     $('#btn-edit').prop('disabled',false);
@@ -45,8 +45,7 @@ $('.delete').click(function(e){
         Helper.unblockPage();
         $('#modal-delete').modal({show:true});
         $('#btn-delete').click(function(){
-            $('#btn-delete').prop('disabled',true);
-            debugger
+            $('#btn-delete').prop('disabled',true);            
             CRUD.action('#form-delete',function(){
                 $(window.$contenedor).load(CRUD.url_base ,function(){
                     $('#modal-delete').modal('hide');
